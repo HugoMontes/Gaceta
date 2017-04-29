@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+    </f:facet>
+    <title>Gaceta Electronica del Registro de Comercio de Bolivia</title>
+    <h:outputScript name="js/ripple.js" library="ultima-layout"/>
+    <h:outputScript name="js/layout.js" library="ultima-layout"/>
+</h:head>
+<ui:include src="./top.xhtml"/>
+<h:form id="formLogin">
+    <p:growl id="msgsReg" showDetail="true"/>
+    <h:body styleClass="login-body">
+        <div class="card login-panel ui-fluid">
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <p:graphicImage name="rueda.jpg" library="libimg"/>
+                </div>
+                <h1 style="margin: 0 auto;">Ingreso de Usuarios</h1>
+                <div class="ui-g-12">
+                    <h:panelGroup styleClass="md-inputfield">
+                        <p:inputText value="#{credentialsBean.username}"/>
+                        <label>Cuenta de Usuario</label>
+                    </h:panelGroup>
+                </div>
+                <div class="ui-g-12">
+                    <h:panelGroup styleClass="md-inputfield">
+                        <p:password value="#{credentialsBean.password}"/>
+                        <label>Contraseña</label>
+                    </h:panelGroup>
+                </div>
+                <div class="ui-g-12">
+                    <p:commandButton action="#{credentialsBean.iniciarSesion}" value="Iniciar Sesion"
+                                     icon="ui-icon-person" update="formLogin" ajax="true"/>
+                    <p:button outcome="/landing.xhtml" value="Ir a Inicio" icon="ui-icon-home"/>
+                    <!--p:commandButton outcome="/landing.xhtml" value="Ir a Inicio" icon="ui-icon-home"/-->
+                </div>
+
+                <div class="ui-g-12">
+                    <p:outputLabel value="En caso de extravío de la contraseña comuníquese con la linea gratuita"
+                                   style="font-size: 0.8em"/>
+                    <p:outputLabel value="800 10 7990" style="font-size: 0.8em"/>
+                </div>
+            </div>
+
+
+        </div>
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+        <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+    </h:body>
+</h:form>
+
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+  <class name="tbInMunicipios" table="tbinmunicipios">
+    <id column="idMunicipio" name="idMunicipio" type="string">
+      <generator class="assigned"/>
+    </id>
+    <property column="municipio" name="municipio" type="string"/>
+    <property column="idDepartamento" name="idDepartamento" type="string"/>
+    <property column="departamento" name="departamento" type="string"/>
+    <property column="idProvincia" name="idProvincia" type="string"/>
+    <property column="provincia" name="provincia" type="string"/>
+  </class>
+</hibernate-mapping>

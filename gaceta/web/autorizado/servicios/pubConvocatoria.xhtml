@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="content">
+        <h:head>
+            <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+            <h:outputStylesheet name="css/animate.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+            <h:outputScript library="js" name="calendar_es.js"/>
+            <script type="text/javascript">
+                function redirectUser() {
+                    window.location = "../principal.xhtml";
+                }
+            </script>
+        </h:head>
+        <h:form id="formPubConvoca">
+            <h1>Convocatoria a ${pubConvocatoriaBean.tipoReunion}</h1>
+            <p:growl id="msgsReg" showDetail="true" sticky="true"/>
+            <div class="">
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <div class="card card-w-title">
+                            <p:wizard nextLabel="Siguiente" backLabel="Anterior"
+                                      flowListener="#{pubConvocatoriaBean.onFlowProcess}" showStepStatus="true"
+                                      style="font-size: 100%">
+                                <p:tab id="datosConvocatoria" title="Datos de la Convocatoria" titleStyle="font-size: 90%">
+                                    <div class="ui-fluid">
+                                        <p:growl id="mesg1" autoUpdate="true"/>
+                                        <p:panelGrid columns="3"
+                                                     columnClasses="ui-grid-col-2,ui-grid-col-6,ui-grid-col-4"
+                                                     layout="grid" styleClass="ui-panelgrid-blank">
+                                            <p:outputLabel for="txtMatricula" value="Número de Matrícula:"
+                                                           class="txtLabel"/>
+                                            <p:inputText id="txtMatricula" required="true" readonly="true"
+                                                         value="#{pubConvocatoriaBean.usuarioSesion.idLoginEmpresa}"/>
+                                            <p:message for="txtMatricula"/>
+                                            <p:outputLabel for="txtEmpresa" value="Denominacion / Razon Social:"
+                                                           class="txtLabel"/>
+                                            <p:inputText id="txtEmpresa" required="true" readonly="true"
+                                                         value="#{pubConvocatoriaBean.usuarioSesion.sociedadConstituye}"/>
+                                            <p:message for="txtEmpresa"/>
+                                        </p:panelGrid>
+                                        <p:panelGrid columns="3"
+                                                     columnClasses="ui-grid-col-2,ui-grid-col-8,ui-grid-col-2"
+                                                     layout="grid" styleClass="ui-panelgrid-blank">
+                                            <p:outputLabel value="Fecha de Publicación:" class="txtLabel"
+                                                           for="fecPublica1"/>
+                                            <p:calendar id="fecPublica1" pattern="yyyy/MM/dd" required="true"
+                                                        requiredMessage="Debe seleccionar la fecha de publicación"
+                                                        value="#{pubConvocatoriaBean.fecPublica1}" locale="es"
+                                                        placeholder="Seleccione la fecha de la publicación">
+                                                <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                            </p:calendar>
+                                            <p:message for="fecPublica1"/>
+                                            <p:outputLabel for="selDptoDoc" value="Departamento:"
+                                                           class="txtLabel"/>
+                                            <p:selectOneMenu id="selDptoDoc" value="#{pubConvocatoriaBean.dptoOrigen}"
+                                                             style="font-size: 1.1em;background: #ffffff"
+                                                             requiredMessage="Debe seleccionar un Departamento"
+                                                             valueChangeListener="#{pubConvocatoriaBean.cargaMunipDoc}"
+                                                             required="true">
+                                                <p:ajax event="change" update="municipioDoc"/>
+                                                <f:selectItem itemLabel="Seleccione un Departamento" itemValue=""/>
+                                                <f:selectItem itemLabel="Chuquisaca" itemValue="01"/>
+                                                <f:selectItem itemLabel="La Paz" itemValue="02"/>
+                                                <f:selectItem itemLabel="Cochabamba" itemValue="03"/>
+                                                <f:selectItem itemLabel="Oruro" itemValue="04"/>
+                                                <f:selectItem itemLabel="Potosi" itemValue="05"/>
+                                                <f:selectItem itemLabel="Tarija" itemValue="06"/>
+                                                <f:selectItem itemLabel="Santa Cruz" itemValue="07"/>
+                                                <f:selectItem itemLabel="Beni" itemValue="08"/>
+                                                <f:selectItem itemLabel="Pando" itemValue="09"/>
+                                            </p:selectOneMenu>
+                                            <p:message for="selDptoDoc"/>
+
+                                            <p:outputLabel for="municipioDoc" value="Municipio:" class="txtLabel"/>
+                                            <p:selectOneMenu id="municipioDoc" value="#{pubConvocatoriaBean.distOrigen}"
+                                                             style="font-size: 1.1em;background: #ffffff"
+                                                             required="true"
+                                                             requiredMessage="Debe seleccionar el Municipio"
+                                                             autoWidth="false" filter="true"
+                                                             filterMatchMode="startsWith">
+                                                <f:selectItem itemLabel="Seleccione el Municipio" itemValue=""/>
+                                                <f:selectItems var="tbMunipDoc"
+                                                               value="#{pubConvocatoriaBean.municipiosDoc}"
+                                                               itemLabel="#{tbMunipDoc.municipio}"
+                                                               itemValue="#{tbMunipDoc.municipio}"/>
+                                            </p:selectOneMenu>
+                                            <p:message for="municipioDoc"/>
+
+                                            <p:outputLabel for="txtUbicacion" value="Ubicación:" class="txtLabel"/>
+                                            <p:inputText id="txtUbicacion" required="true"
+                                                         value="#{pubConvocatoriaBean.txtUbicacion}"
+                                                         placeholder="Digite la dirección donde se realizará la ${pubConvocatoriaBean.tipoReunion.toLowerCase()}"
+                                                         requiredMessage="Debe digitar la direccion donde se llevara  a cabo la ${pubConvocatoriaBean.tipoReunion.toLowerCase()}"/>
+                                            <p:message for="txtUbicacion"/>
+
+                                            <p:outputLabel for="fecJunta" value="Fecha de la ${pubConvocatoriaBean.tipoReunion}:" class="txtLabel"/>
+                                            <p:calendar id="fecJunta" pattern="yyyy/MM/dd" required="true"
+                                                        requiredMessage="Debe seleccionar la fecha de publicación"
+                                                        value="#{pubConvocatoriaBean.fecJunta}" locale="es"
+                                                        placeholder="Seleccione la fecha de publicación">
+                                                <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                            </p:calendar>
+                                            <p:message for="fecJunta"/>
+
+                                            <p:outputLabel for="horaJunta" value="Hora de la ${pubConvocatoriaBean.tipoReunion}:" class="txtLabel"/>
+                                            <p:calendar id="horaJunta" value="#{pubConvocatoriaBean.horJunta}"
+                                                        pattern="HH:mm" timeOnly="true" label="Seleccionar Hora"
+                                                        locale="es" required="true" stepMinute="5"
+                                                        requiredMessage="Debe seleccionar la hora de la ${pubConvocatoriaBean.tipoReunion.toLowerCase()}"
+                                                        placeholder="Seleccione el horario en el que se realizará la ${pubConvocatoriaBean.tipoReunion.toLowerCase()}"/>
+                                            <p:message for="horaJunta"/>
+
+                                            <p:outputLabel for="temaJunta" value="Tema de la ${pubConvocatoriaBean.tipoReunion}:" class="txtLabel"/>
+                                            <p:inputText id="temaJunta" value="#{pubConvocatoriaBean.txtTemaJunta}"
+                                                         required="true"
+                                                         requiredMessage="Debe digitar el tema de la ${pubConvocatoriaBean.tipoReunion.toLowerCase()}"
+                                                         placeholder="Describa el tema de la ${pubConvocatoriaBean.tipoReunion.toLowerCase()}"/>
+                                            <p:message for="temaJunta"/>
+
+                                            <p:outputLabel for="selCaracter" value="Caracter de la ${pubConvocatoriaBean.tipoReunion}"
+                                                           class="txtLabel"/>
+                                            <p:selectOneMenu id="selCaracter"
+                                                             style="font-size: 1.1em;background: #ffffff"
+                                                             required="true" value="#{pubConvocatoriaBean.txtCaracter}">
+                                                <f:selectItem itemLabel="Ordinaria" itemValue="Ordinaria"/>
+                                                <f:selectItem itemLabel="Extraordinaria" itemValue="Extraordinaria"/>
+                                            </p:selectOneMenu>
+                                            <p:message for="selCaracter"/>
+                                            <p:outputLabel value="Digitar Orden del día" class="txtLabel"/>
+                                            <p:panelGrid columns="2" columnClasses="ui-grid-col-8,ui-grid-col-4"
+                                                         layout="grid" styleClass="ui-panelgrid-blank">
+                                                <p:inputText id="txtOrden" value="#{pubConvocatoriaBean.txtOrden}"
+                                                             cols="150" rows="15"
+                                                             placeholder="Digite la orden del día de la ${pubConvocatoriaBean.tipoReunion.toLowerCase()}"/>
+                                                <p:commandButton id="addOrden" value="Registrar"
+                                                                 actionListener="#{pubConvocatoriaBean.registraOrden}"
+                                                                 process="@this,txtOrden" update="tblOrdenDia,txtOrden"
+                                                                 icon="ui-icon-triangle-1-w"/>
+                                            </p:panelGrid>
+                                            <p:message for="txtOrden"/>
+                                            <p:outputLabel for="tblOrdenDia" value="Detalle Orden del día"
+                                                           class="txtLabel"/>
+
+                                            <p:dataTable id="tblOrdenDia" var="tblOrden"
+                                                         value="${pubConvocatoriaBean.contenidoOrden}"
+                                                         selectionMode="Single"
+                                                         selection="#{pubConvocatoriaBean.itemOrden}"
+                                                         rowKey="#{tblOrden.idOrden}"
+                                                         emptyMessage="Complete la informacion del Orden del Día">
+                                                <p:column headerText="N°" width="10%" style="size: 8em;">
+                                                    <h:outputLabel value="${tblOrden.idOrden}"/>
+                                                </p:column>
+                                                <p:column headerText="Detalle Orden del Día">
+                                                    <h:outputLabel value="${tblOrden.ordenDia}"/>
+                                                </p:column>
+                                                <p:column headerText="Quitar" width="20%">
+                                                    <p:commandButton icon="ui-icon-triangle-1-e"
+                                                                     actionListener="#{pubConvocatoriaBean.eliminaItem(tblOrden)}"
+                                                                     process="@this,tblOrdenDia" update="tblOrdenDia"
+                                                                     width="20%"/>
+                                                </p:column>
+                                            </p:dataTable>
+                                            <p:message for="tblOrdenDia"/>
+                                            <p:outputLabel for="txtReq" value="Requisitos:" class="txtLabel"/>
+                                            <p:inputTextarea id="txtReq" value="#{pubConvocatoriaBean.txtRequisitos}"
+                                                             required="true" cols="150" rows="10" readonly="true"/>
+                                            <p:message for="txtReq"/>
+                                            <p/>
+                                        </p:panelGrid>
+                                    </div>
+                                    <p/>
+
+                                </p:tab>
+                                <p:tab id="vistaPrevia" title="Vista Previa de la Publicación"
+                                       titleStyle="font-size: 90%">
+                                    <p:outputPanel id="pubDetalle" style="text-align:center;">
+                                        <p:panelGrid columns="1" columnClasses="ui-grid-col-4,ui-grid-col-8"
+                                                     layout="grid"
+                                                     styleClass="ui-panelgrid-blank">
+                                            <h:outputLabel value="Vista Previa de la Publicación"/>
+                                            <p:inputTextarea value="${pubConvocatoriaBean.txtPublicacion}"
+                                                             readonly="true" rows="20"
+                                                             cols="150"/>
+                                        </p:panelGrid>
+                                    </p:outputPanel>
+                                </p:tab>
+                                <p:tab id="publicacion" title="Confirmación Publicación" titleStyle="font-size: 90%">
+                                    <div class="ui-fluid" id="proPublica">
+                                        <p:panelGrid id="pnlAcep" columns="4"
+                                                     columnClasses="ui-grid-col-2,ui-grid-col-1,ui-grid-col-4"
+                                                     layout="grid"
+                                                     styleClass="ui-panelgrid-blank" style="text-align: left"
+                                                     rendered="#{pubConvocatoriaBean.vistaPrev}">
+                                            <h:outputLabel value=""/>
+                                            <p:selectBooleanCheckbox value="#{pubConvocatoriaBean.aceptacion}"
+                                                                     required="true"
+                                                                     requiredMessage="Debe aceptar las condiciones para realizar la publicacion">
+                                                <p:ajax update="btReg"/>
+                                            </p:selectBooleanCheckbox>
+                                            <p:outputLabel
+                                                    value="El contenido de esta publicacion es exclusiva responsabilidad del usuario"
+                                                    class="txtLabel"/>
+                                        </p:panelGrid>
+                                        <p:panelGrid id="pnlBtn" columns="1" columnClasses="ui-grid-col-8" layout="grid"
+                                                     styleClass="ui-panelgrid-blank" style="text-align: center"
+                                                     rendered="#{pubConvocatoriaBean.vistaPrev}">
+                                            <p:commandButton id="btReg" value="Confirmar Publicación"
+                                                             action="#{pubConvocatoriaBean.registraPublicacion()}"
+                                                             update="formPubConvoca"
+                                                             style="width: 350px;align-content: center"/>
+                                        </p:panelGrid>
+                                    </div>
+                                </p:tab>
+                            </p:wizard>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

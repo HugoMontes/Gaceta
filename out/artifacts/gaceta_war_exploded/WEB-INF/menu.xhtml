@@ -1,0 +1,56 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pu="http://primefaces.org/ultima">
+    <h:outputScript name="js/ripple.js" library="ultima-layout" />
+    <h:form id="menuform">
+        <div class="layout-menu ">
+            <div class="nano">
+                <div class="nano-content menu-scroll-content">
+                    <ui:fragment rendered="#{guestPreferences.profileMode == 'inline' and guestPreferences.menuLayout != 'menu-layout-static menu-layout-horizontal'}">
+                        <div id="features" align="center">
+                            <p:graphicImage value="#{perfilBean.dbImage}" stream="false" styleClass="logoMenu"/><p></p>
+                            <div class="ui-g">
+                                <div class="ui-g-12">
+                                        <div class="profile-name">${sessionBean.usuarioSesion.apellidoPaterno} ${sessionBean.usuarioSesion.apellidoMaterno}  ${sessionBean.usuarioSesion.nombreRepresentante} </div>
+                                        <div class="profile-name">${sessionBean.usuarioSesion.correoElectronico} </div>
+                                        <div class="profile-name">N° de Matrícula de Comercio:${sessionBean.usuarioSesion.idMatriculaAsociada} </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="features1" align="center">
+                            <div class="ui-g">
+                                <div class="ui-g-12">
+                                    <i class="material-icons" ><a href="http://www.gacetadecomercio.gob.bo:8080/gaceta/landing.xhtml">&#xE88A;</a></i>
+                                    <h3><a href="http://www.gacetadecomercio.gob.bo:8080/gaceta/landing.xhtml">Pagina Principal</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <p></p>
+                        <div></div>
+                        <div id="features3" align="center">
+                            <p:commandLink value="Cerrar Sesión" actionListener="#{sessionBean.cerrarSesion()}"  action="/landing?faces-redirect=true" icon="&#xE890;"/>
+                        </div>
+                        <p></p>
+                        <div></div>
+                    </ui:fragment>
+
+
+                    <pu:menu widgetVar="me">
+                        <p:submenu label="Opciones de Usuario" icon="&#xE851;">
+                            <p:menuitem value="Cambiar Contraseña"  outcome="/autorizado/usuario/cambioClaveIngreso"  icon="&#xE897;"/>
+                            <p:menuitem value="Cargar Logotipo"  outcome="/autorizado/usuario/cargaLogo"   icon="&#xE410;" />
+                        </p:submenu>
+                        <p:submenu label="Consultas y Reportes" icon="&#xE8DE;">
+                            <p:menuitem value="Publicaciones" outcome="/autorizado/principal" icon="&#xE88A;"/>
+                            <p:menuitem value="Publicaciones por Pagar" outcome="/autorizado/pagos" icon="&#xE8A1;"/>
+                        </p:submenu>
+                    </pu:menu>
+                    <p:menu header="Publicaciones" model="#{perfilBean.model}"  style="font-size: 0.8em;width: 100%"/>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</ui:composition>

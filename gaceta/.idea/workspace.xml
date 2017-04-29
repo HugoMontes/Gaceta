@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/PerfilBean.java" line="80" />
+    <bookmark url="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/PerfilBean.java" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0f6cd151-6ba4-4f1a-8011-18ff1a416fbf" name="Default" comment="Codigo_20170401_1&#10;Primer Modelo de Publicación de Testimonios">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/AumentoCapitalBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisminucionCapitalBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisolucionLiquidacionBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisolucionTercerosBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/FusionBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/ModificacionBeanSA.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/TransformacionBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubAumentoCapital.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubDisminucionCapital.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubDisolucionLiquidacion.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubDisolucionTerceros.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubFusion.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubModificacionSA.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubTransformacion.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/ModificacionBean.java" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/ModificacionBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubConvocatoriaAsambleaBean.java" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubConvocatoriaAsambleaBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubConvocatoriaBean.java" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubConvocatoriaBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubTransCuotasBean.java" afterPath="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubTransCuotasBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/autorizado/servicios/pubModificacion.xhtml" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubModificacion.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/autorizado/servicios/pubTransCuotas.xhtml" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubTransCuotas.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/autorizado/servicios/pubcambioDom.xhtml" afterPath="$PROJECT_DIR$/web/autorizado/servicios/pubcambioDom.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/tbTaTipoSocietarioBll.java" afterPath="$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/tbTaTipoSocietarioBll.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../gacetaDaoOrm/src/taPublicacionesContent.hbm.xml" afterPath="$PROJECT_DIR$/../gacetaDaoOrm/src/taPublicacionesContent.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../gacetaModel/src/bo/gaceta/rcb/modelo/taPublicacionesContent.java" afterPath="$PROJECT_DIR$/../gacetaModel/src/bo/gaceta/rcb/modelo/taPublicacionesContent.java" />
+    </list>
+    <ignored path="gaceta.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="E:/FolderOUT/ProyectoGaceta/gaceta/out/production/gaceta/" />
+    <ignored path="E:/FolderOUT/ProyectoGaceta/gaceta/out/test/gaceta/" />
+    <ignored path="E:/FolderOUT/ProyectoGaceta/gacetaBll/out/production/" />
+    <ignored path="E:/FolderOUT/ProyectoGaceta/gacetaBll/out/test/" />
+    <ignored path="E:/FolderOUT/ProyectoGaceta/gacetaDaoOrm/out/production/" />
+    <ignored path="E:/FolderOUT/ProyectoGaceta/gacetaDaoOrm/out/test/" />
+    <ignored path="E:/FolderOUT/ProyectoGaceta/gacetaModel/out/production/" />
+    <ignored path="E:/FolderOUT/ProyectoGaceta/gacetaModel/out/test/" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="gaceta" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Class" />
+        <option value="jsf" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/web/resources/css/bootstrap-theme.css" />
+        <option value="$PROJECT_DIR$/web/landing.xhtml" />
+        <option value="$PROJECT_DIR$/web/resources/css/cssRcb.css" />
+        <option value="$PROJECT_DIR$/web/instrumentos.xhtml" />
+        <option value="$PROJECT_DIR$/web/memorias.xhtml" />
+        <option value="$PROJECT_DIR$/web/convocatorias.xhtml" />
+        <option value="$PROJECT_DIR$/web/balances.xhtml" />
+        <option value="$PROJECT_DIR$/web/login.xhtml" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/registroBean.java" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/registroBeanNew.java" />
+        <option value="$PROJECT_DIR$/web/resources/sass/theme/_theme.scss" />
+        <option value="$PROJECT_DIR$/web/registroNew.xhtml" />
+        <option value="$PROJECT_DIR$/web/registro.xhtml" />
+        <option value="$PROJECT_DIR$/web/seleccion.xhtml" />
+        <option value="$PROJECT_DIR$/web/autorizado/pubTransUni.xhtml" />
+        <option value="$PROJECT_DIR$/web/autorizado/pubcambioDom.xhtml" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/BalanceBean.java" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/MemoriaBean.java" />
+        <option value="$PROJECT_DIR$/web/resources/ultima-layout/css/layout-blue-grey.scss" />
+        <option value="$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/impl/taPublicacionesContentImpl.java" />
+        <option value="$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/taPublicacionesContentImplDao.java" />
+        <option value="$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/tbPbPublicacionesBll.java" />
+        <option value="$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/taPublicacionesContentDao.java" />
+        <option value="$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/taPublicacionesContentBll.java" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/CambioLocalBean.java" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubTransUni.xhtml" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/tst" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubConvocatoriaAsambleaBean.java" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubConvocatoriaBean.java" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubcambioDom.xhtml" />
+        <option value="$PROJECT_DIR$/../gacetaModel/src/bo/gaceta/rcb/modelo/taPublicacionesContent.java" />
+        <option value="$PROJECT_DIR$/../gacetaDaoOrm/src/taPublicacionesContent.hbm.xml" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubModificacion.xhtml" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/ModificacionBeanSA.java" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubModificacionSA.xhtml" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/ModificacionBean.java" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubAumentoCapital.xhtml" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubDisminucionCapital.xhtml" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/AumentoCapitalBean.java" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisminucionCapitalBean.java" />
+        <option value="$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/tbTaTipoSocietarioBll.java" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/TransformacionBean.java" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/FusionBean.java" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubFusion.xhtml" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubTransformacion.xhtml" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubTransCuotas.xhtml" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubTransCuotasBean.java" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubDisolucionLiquidacion.xhtml" />
+        <option value="$PROJECT_DIR$/web/autorizado/servicios/pubDisolucionTerceros.xhtml" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisolucionTercerosBean.java" />
+        <option value="$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisolucionLiquidacionBean.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness &gt; Messages</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Performance</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Security</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability &gt; Icons</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+          <State>
+            <id>CDI(Contexts and Dependency Injection) issues</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issuesCSS</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Dependency issuesJava</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>ImportsJava</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>JBoss Seam issues</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java EE issues</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Javadoc issuesJava</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>TestNGJava</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gaceta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/libJava/themes/ultima-theme-1.0.7.jar!/" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.14619882" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel Zerain\Documents\GitHub\gaceta\gacetaDaoOrm\src" />
+      <recent name="C:\Users\Daniel Zerain\Documents\GitHub\gaceta\gaceta\web" />
+      <recent name="C:\Users\Daniel Zerain\Documents\GitHub\gaceta\gaceta\web\WEB-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="bo.gaceta.rcb.presentacion.autorizado.perfiles" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel Zerain\Documents\GitHub\gaceta\gaceta\web\autorizado\servicios" />
+      <recent name="C:\Users\Daniel Zerain\Documents\GitHub\gaceta\gaceta\web\informacion" />
+      <recent name="C:\Users\Daniel Zerain\Documents\GitHub\gaceta\gaceta\web" />
+      <recent name="C:\Users\Daniel Zerain\Documents\GitHub\gaceta\gaceta\src\bo\gaceta\rcb\presentacion" />
+      <recent name="C:\Users\Daniel Zerain\Documents\GitHub\gaceta\gaceta\web\WEB-INF" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JBoss Server.Wildfly">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 10.1.0.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="63903" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="gaceta" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="false" name="Wildfly" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 10.1.0.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" show_console_on_std_out="true" show_console_on_std_err="true">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="gaceta">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="main-server-group" />
+        <option name="USERNAME" value="zeta" />
+        <option name="PASSWORD" value="F1ndempre$a" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="63903" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="gaceta" />
+        </option>
+      </method>
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JBoss Server.Wildfly" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f6cd151-6ba4-4f1a-8011-18ff1a416fbf" name="Default" comment="" />
+      <created>1476753368434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1476753368434</updated>
+      <workItem from="1476753371599" duration="8136000" />
+      <workItem from="1476801582171" duration="8141000" />
+      <workItem from="1476879384316" duration="2303000" />
+      <workItem from="1476928776657" duration="730000" />
+      <workItem from="1476965366637" duration="1195000" />
+      <workItem from="1477309996731" duration="4067000" />
+      <workItem from="1477509202409" duration="3338000" />
+      <workItem from="1477570004785" duration="26454000" />
+      <workItem from="1477921030953" duration="553000" />
+      <workItem from="1479992623597" duration="20605000" />
+      <workItem from="1480021880208" duration="1579000" />
+      <workItem from="1480477137560" duration="34163000" />
+      <workItem from="1480952403580" duration="1797000" />
+      <workItem from="1481125804011" duration="12119000" />
+      <workItem from="1481557833902" duration="18487000" />
+      <workItem from="1481638361198" duration="2396000" />
+      <workItem from="1481745402212" duration="2483000" />
+      <workItem from="1482244834476" duration="397000" />
+      <workItem from="1482245239871" duration="7906000" />
+      <workItem from="1482419791859" duration="9293000" />
+      <workItem from="1482932748174" duration="3652000" />
+      <workItem from="1485530130385" duration="5275000" />
+      <workItem from="1485572582587" duration="55398000" />
+      <workItem from="1486479515737" duration="1824000" />
+      <workItem from="1486501235260" duration="6922000" />
+      <workItem from="1486562445629" duration="4161000" />
+      <workItem from="1487249599325" duration="1632000" />
+      <workItem from="1487627994905" duration="692000" />
+      <workItem from="1488377686859" duration="7387000" />
+      <workItem from="1488548149773" duration="2539000" />
+      <workItem from="1488899747469" duration="2218000" />
+      <workItem from="1490046188488" duration="691000" />
+      <workItem from="1490210480385" duration="1701000" />
+      <workItem from="1490632732209" duration="1780000" />
+      <workItem from="1490710921426" duration="54589000" />
+      <workItem from="1490852869090" duration="7127000" />
+      <workItem from="1490880530702" duration="12182000" />
+      <workItem from="1490920886728" duration="844000" />
+      <workItem from="1490927693122" duration="784000" />
+      <workItem from="1490928558308" duration="10615000" />
+      <workItem from="1490970168158" duration="16934000" />
+      <workItem from="1490996071699" duration="300000" />
+      <workItem from="1490998622493" duration="53310000" />
+    </task>
+    <task id="LOCAL-00001" summary="Commit Ajustes_20161017_23:31">
+      <created>1476761512388</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1476761512388</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commit Ajustes_20161028_1707">
+      <created>1477688917095</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1477688917095</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Commit Ajustes_20161028_1707">
+      <created>1477690545437</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1477690545437</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Commit Ajustes_20161124">
+      <created>1480022072532</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1480022072532</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Commit Ajustes_20161124">
+      <created>1480022238745</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1480022238745</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ajustes_20161124">
+      <created>1480022273828</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1480022273828</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ajustes_20161208">
+      <created>1481226287258</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1481226287258</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ajustes_20161220_c_1">
+      <created>1482259211973</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1482259211973</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Correccion de Bug: 20170131_1213">
+      <created>1485879261493</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1485879261493</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Codigo_20170301">
+      <created>1488407023421</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1488407023421</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Codigo_20170329">
+      <created>1490763059998</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1490763059998</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Codigo_20170330">
+      <created>1490884420883</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1490884420883</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Codigo_20170331_1">
+      <created>1490963607288</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1490963607288</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Codigo_20170331_2&#10;Se adiciona la tabla para las publicaciones">
+      <created>1490996186169</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1490996186169</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Codigo_20170401_1&#10;Primer Modelo de Publicación de Testimonios">
+      <created>1491054988872</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1491054988872</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="418699000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33802816" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35211268" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21225382" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502708" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23510292" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22751896" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1652452" sideWeight="0.3937729" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20181043" sideWeight="0.6062271" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16791044" sideWeight="0.18526544" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33802816" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35211268" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21225382" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502708" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23510292" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22751896" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1652452" sideWeight="0.3937729" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20181043" sideWeight="0.6062271" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16791044" sideWeight="0.18526544" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit Ajustes_20161017_23:31" />
+    <MESSAGE value="Commit Ajustes_20161028_1707" />
+    <MESSAGE value="Commit Ajustes_20161124" />
+    <MESSAGE value="ajustes_20161017_2332" />
+    <MESSAGE value="ajustes_20161124" />
+    <MESSAGE value="ajustes_20161208" />
+    <MESSAGE value="ajustes_20161220_c_1" />
+    <MESSAGE value="Correccion de Bug: 20170131_1213" />
+    <MESSAGE value="Codigo_20170301" />
+    <MESSAGE value="Codigo_20170329" />
+    <MESSAGE value="Codigo_20170330" />
+    <MESSAGE value="Codigo_20170331_1" />
+    <MESSAGE value="Codigo_20170331_2&#10;Se adiciona la tabla para las publicaciones" />
+    <MESSAGE value="Codigo_20170401_1&#10;Primer Modelo de Publicación de Testimonios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Codigo_20170401_1&#10;Primer Modelo de Publicación de Testimonios" />
+    <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/impl/taEmpresaImpl.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/impl/tbPbPublicacionesImpl.java</url>
+          <line>305</line>
+          <properties />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="128" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/web/resources/sass/layout/_dashboard.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/sass/layout/_compact.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/ultima-layout/css/layout-blue-grey.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5004">
+          <caret line="278" column="5" selection-start-line="278" selection-start-column="5" selection-end-line="278" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/taPublicacionesContentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/tbPbPublicacionesBll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/MemoriaBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="117" column="91" selection-start-line="117" selection-start-column="91" selection-end-line="117" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/libJava/primefaces/primefaces-6.0.jar!/META-INF/primefaces-p.taglib.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="14239" column="8" selection-start-line="14239" selection-start-column="8" selection-end-line="14239" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubTransUni.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="170" column="67" selection-start-line="170" selection-start-column="46" selection-end-line="170" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/tst.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-43831">
+          <caret line="887" column="10" selection-start-line="887" selection-start-column="10" selection-end-line="887" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubConvocatoriaAsambleaBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="86" column="59" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubcambioDom.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="136" column="66" selection-start-line="136" selection-start-column="66" selection-end-line="136" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/CambioLocalBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="112" column="108" selection-start-line="108" selection-start-column="10" selection-end-line="112" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubConvocatoria.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="185" column="46" selection-start-line="185" selection-start-column="46" selection-end-line="185" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/taPublicacionesContentBll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaDaoOrm/src/taPublicacionesContent.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaModel/src/bo/gaceta/rcb/modelo/tbPbPublicaciones.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-504">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubConvocatoriaBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="169" column="152" selection-start-line="169" selection-start-column="15" selection-end-line="169" selection-end-column="152" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/impl/taPublicacionesContentImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/impl/tbPbPublicacionesImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="308" column="0" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaModel/src/bo/gaceta/rcb/modelo/taPublicacionesContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding>
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1110#1111#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1284#1285#0" expanded="true" />
+            <element signature="e#1323#1324#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1530#1531#0" expanded="true" />
+            <element signature="e#1590#1591#0" expanded="true" />
+            <element signature="e#1638#1639#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
+            <element signature="e#1800#1801#0" expanded="true" />
+            <element signature="e#1840#1841#0" expanded="true" />
+            <element signature="e#1872#1873#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#1980#1981#0" expanded="true" />
+            <element signature="e#2017#2018#0" expanded="true" />
+            <element signature="e#2046#2047#0" expanded="true" />
+            <element signature="e#2100#2101#0" expanded="true" />
+            <element signature="e#2142#2143#0" expanded="true" />
+            <element signature="e#2177#2178#0" expanded="true" />
+            <element signature="e#2204#2205#0" expanded="true" />
+            <element signature="e#2254#2255#0" expanded="true" />
+            <element signature="e#2292#2293#0" expanded="true" />
+            <element signature="e#2323#2324#0" expanded="true" />
+            <element signature="e#2348#2349#0" expanded="true" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2426#2427#0" expanded="true" />
+            <element signature="e#2460#2461#0" expanded="true" />
+            <element signature="e#2486#2487#0" expanded="true" />
+            <element signature="e#2534#2535#0" expanded="true" />
+            <element signature="e#2570#2571#0" expanded="true" />
+            <element signature="e#2603#2604#0" expanded="true" />
+            <element signature="e#2628#2629#0" expanded="true" />
+            <element signature="e#2674#2675#0" expanded="true" />
+            <element signature="e#2708#2709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/CreaSABean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="48" column="31" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubconst.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="416" column="54" selection-start-line="380" selection-start-column="40" selection-end-line="416" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubConvocatoriaAsamblea.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="27" column="55" selection-start-line="25" selection-start-column="15" selection-end-line="27" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubModificacion.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-313">
+          <caret line="99" column="87" selection-start-line="99" selection-start-column="87" selection-end-line="99" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/ModificacionBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/CreaSRLBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="278" column="7" selection-start-line="239" selection-start-column="5" selection-end-line="278" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/utils/ConvertNum2Lit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/ModificacionBeanSA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="278" column="5" selection-start-line="278" selection-start-column="5" selection-end-line="278" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisminucionCapitalBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-403">
+          <caret line="289" column="100" selection-start-line="289" selection-start-column="100" selection-end-line="289" selection-end-column="100" />
+          <folding>
+            <element signature="e#15140#15141#0" expanded="true" />
+            <element signature="e#15164#15165#0" expanded="true" />
+            <element signature="e#15209#15210#0" expanded="true" />
+            <element signature="e#15241#15242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/AumentoCapitalBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="289" column="100" selection-start-line="289" selection-start-column="90" selection-end-line="289" selection-end-column="100" />
+          <folding>
+            <element signature="e#15100#15101#0" expanded="true" />
+            <element signature="e#15124#15125#0" expanded="true" />
+            <element signature="e#15169#15170#0" expanded="true" />
+            <element signature="e#15201#15202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubAumentoCapital.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="98" column="84" selection-start-line="98" selection-start-column="84" selection-end-line="98" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubDisminucionCapital.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/consultaPub.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="31" column="129" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/tbTaTipoSocietarioDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaDaoOrm/src/bo/gaceta/rcb/dao/impl/tbTaTipoSocietarioImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gacetaBll/src/bo/gaceta/rcb/bll/tbTaTipoSocietarioBll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/registroBeanNew.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="50" column="67" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/libJava/javax.faces/javax.faces-2.2.13.jar!/com/sun/faces/facelets/el/TagValueExpression.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubModificacionSA.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="134" column="99" selection-start-line="134" selection-start-column="69" selection-end-line="134" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/TransformacionBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="99" column="24" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/registroNew.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="97" column="38" selection-start-line="79" selection-start-column="24" selection-end-line="97" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/registro.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="88" column="42" selection-start-line="70" selection-start-column="28" selection-end-line="88" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubFusion.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/FusionBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="574" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="574" selection-end-column="0" />
+          <folding>
+            <element signature="e#15285#15286#0" expanded="true" />
+            <element signature="e#15310#15311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/PubTransCuotasBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+          <folding>
+            <element signature="e#2669#2685#0" expanded="true" />
+            <element signature="e#16954#16955#0" expanded="true" />
+            <element signature="e#16985#16986#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubTransformacion.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="41" column="81" selection-start-line="41" selection-start-column="81" selection-end-line="41" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubTransCuotas.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisolucionTercerosBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1206">
+          <caret line="312" column="78" selection-start-line="312" selection-start-column="78" selection-end-line="312" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bo/gaceta/rcb/presentacion/autorizado/perfiles/DisolucionLiquidacionBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2601#2617#0" expanded="true" />
+            <element signature="e#12137#12138#0" expanded="true" />
+            <element signature="e#12173#12174#0" expanded="true" />
+            <element signature="e#12252#12253#0" expanded="true" />
+            <element signature="e#12308#12309#0" expanded="true" />
+            <element signature="e#12349#12350#0" expanded="true" />
+            <element signature="e#12379#12380#0" expanded="true" />
+            <element signature="e#12438#12439#0" expanded="true" />
+            <element signature="e#12482#12483#0" expanded="true" />
+            <element signature="e#12516#12517#0" expanded="true" />
+            <element signature="e#12542#12543#0" expanded="true" />
+            <element signature="e#12591#12592#0" expanded="true" />
+            <element signature="e#12627#12628#0" expanded="true" />
+            <element signature="e#12663#12664#0" expanded="true" />
+            <element signature="e#12690#12691#0" expanded="true" />
+            <element signature="e#12741#12742#0" expanded="true" />
+            <element signature="e#12779#12780#0" expanded="true" />
+            <element signature="e#12821#12822#0" expanded="true" />
+            <element signature="e#12855#12856#0" expanded="true" />
+            <element signature="e#12919#12920#0" expanded="true" />
+            <element signature="e#12966#12967#0" expanded="true" />
+            <element signature="e#12997#12998#0" expanded="true" />
+            <element signature="e#13020#13021#0" expanded="true" />
+            <element signature="e#13063#13064#0" expanded="true" />
+            <element signature="e#13093#13094#0" expanded="true" />
+            <element signature="e#13124#13125#0" expanded="true" />
+            <element signature="e#13147#13148#0" expanded="true" />
+            <element signature="e#13190#13191#0" expanded="true" />
+            <element signature="e#13220#13221#0" expanded="true" />
+            <element signature="e#13251#13252#0" expanded="true" />
+            <element signature="e#13274#13275#0" expanded="true" />
+            <element signature="e#13317#13318#0" expanded="true" />
+            <element signature="e#13347#13348#0" expanded="true" />
+            <element signature="e#13378#13379#0" expanded="true" />
+            <element signature="e#13401#13402#0" expanded="true" />
+            <element signature="e#13444#13445#0" expanded="true" />
+            <element signature="e#13474#13475#0" expanded="true" />
+            <element signature="e#13505#13506#0" expanded="true" />
+            <element signature="e#13528#13529#0" expanded="true" />
+            <element signature="e#13571#13572#0" expanded="true" />
+            <element signature="e#13601#13602#0" expanded="true" />
+            <element signature="e#13634#13635#0" expanded="true" />
+            <element signature="e#13659#13660#0" expanded="true" />
+            <element signature="e#13705#13706#0" expanded="true" />
+            <element signature="e#13739#13740#0" expanded="true" />
+            <element signature="e#13772#13773#0" expanded="true" />
+            <element signature="e#13797#13798#0" expanded="true" />
+            <element signature="e#13843#13844#0" expanded="true" />
+            <element signature="e#13877#13878#0" expanded="true" />
+            <element signature="e#13910#13911#0" expanded="true" />
+            <element signature="e#13935#13936#0" expanded="true" />
+            <element signature="e#13981#13982#0" expanded="true" />
+            <element signature="e#14015#14016#0" expanded="true" />
+            <element signature="e#14046#14047#0" expanded="true" />
+            <element signature="e#14069#14070#0" expanded="true" />
+            <element signature="e#14111#14112#0" expanded="true" />
+            <element signature="e#14141#14142#0" expanded="true" />
+            <element signature="e#14172#14173#0" expanded="true" />
+            <element signature="e#14195#14196#0" expanded="true" />
+            <element signature="e#14237#14238#0" expanded="true" />
+            <element signature="e#14267#14268#0" expanded="true" />
+            <element signature="e#14319#14320#0" expanded="true" />
+            <element signature="e#14349#14350#0" expanded="true" />
+            <element signature="e#14419#14420#0" expanded="true" />
+            <element signature="e#14463#14464#0" expanded="true" />
+            <element signature="e#14498#14499#0" expanded="true" />
+            <element signature="e#14525#14526#0" expanded="true" />
+            <element signature="e#14575#14576#0" expanded="true" />
+            <element signature="e#14613#14614#0" expanded="true" />
+            <element signature="e#14660#14661#0" expanded="true" />
+            <element signature="e#14691#14692#0" expanded="true" />
+            <element signature="e#14757#14758#0" expanded="true" />
+            <element signature="e#14803#14804#0" expanded="true" />
+            <element signature="e#14839#14840#0" expanded="true" />
+            <element signature="e#14865#14866#0" expanded="true" />
+            <element signature="e#14915#14916#0" expanded="true" />
+            <element signature="e#14951#14952#0" expanded="true" />
+            <element signature="e#14982#14983#0" expanded="true" />
+            <element signature="e#15007#15008#0" expanded="true" />
+            <element signature="e#15051#15052#0" expanded="true" />
+            <element signature="e#15085#15086#0" expanded="true" />
+            <element signature="e#15119#15120#0" expanded="true" />
+            <element signature="e#15145#15146#0" expanded="true" />
+            <element signature="e#15193#15194#0" expanded="true" />
+            <element signature="e#15229#15230#0" expanded="true" />
+            <element signature="e#15264#15265#0" expanded="true" />
+            <element signature="e#15291#15292#0" expanded="true" />
+            <element signature="e#15341#15342#0" expanded="true" />
+            <element signature="e#15379#15380#0" expanded="true" />
+            <element signature="e#15412#15413#0" expanded="true" />
+            <element signature="e#15437#15438#0" expanded="true" />
+            <element signature="e#15483#15484#0" expanded="true" />
+            <element signature="e#15517#15518#0" expanded="true" />
+            <element signature="e#15556#15557#0" expanded="true" />
+            <element signature="e#15587#15588#0" expanded="true" />
+            <element signature="e#15645#15646#0" expanded="true" />
+            <element signature="e#15691#15692#0" expanded="true" />
+            <element signature="e#15750#15751#0" expanded="true" />
+            <element signature="e#15783#15784#0" expanded="true" />
+            <element signature="e#15863#15864#0" expanded="true" />
+            <element signature="e#15913#15914#0" expanded="true" />
+            <element signature="e#15968#15969#0" expanded="true" />
+            <element signature="e#16003#16004#0" expanded="true" />
+            <element signature="e#16081#16082#0" expanded="true" />
+            <element signature="e#16135#16136#0" expanded="true" />
+            <element signature="e#16171#16172#0" expanded="true" />
+            <element signature="e#16198#16199#0" expanded="true" />
+            <element signature="e#16248#16249#0" expanded="true" />
+            <element signature="e#16286#16287#0" expanded="true" />
+            <element signature="e#16314#16315#0" expanded="true" />
+            <element signature="e#16337#16338#0" expanded="true" />
+            <element signature="e#16376#16377#0" expanded="true" />
+            <element signature="e#16406#16407#0" expanded="true" />
+            <element signature="e#16438#16439#0" expanded="true" />
+            <element signature="e#16462#16463#0" expanded="true" />
+            <element signature="e#16507#16508#0" expanded="true" />
+            <element signature="e#16539#16540#0" expanded="true" />
+            <element signature="e#16571#16572#0" expanded="true" />
+            <element signature="e#16595#16596#0" expanded="true" />
+            <element signature="e#16639#16640#0" expanded="true" />
+            <element signature="e#16671#16672#0" expanded="true" />
+            <element signature="e#16717#16718#0" expanded="true" />
+            <element signature="e#16742#16743#0" expanded="true" />
+            <element signature="e#16801#16802#0" expanded="true" />
+            <element signature="e#16835#16836#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubDisolucionTerceros.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/autorizado/servicios/pubDisolucionLiquidacion.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="176" column="20" selection-start-line="176" selection-start-column="20" selection-end-line="176" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>gaceta_f</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.14619882" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hibernate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.14619882" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.14619882" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.14619882" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>gaceta</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.14619882" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>gacetaModel</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.14619882" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.14838709" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

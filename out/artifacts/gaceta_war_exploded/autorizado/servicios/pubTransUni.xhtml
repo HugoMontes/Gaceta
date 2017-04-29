@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="content">
+        <h:head>
+            <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+            <h:outputStylesheet name="css/animate.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+            <h:outputScript library="js" name="calendar_es.js"/>
+            <script type="text/javascript">
+                function redirectUser() {
+                    window.location = "../principal.xhtml";
+                }
+            </script>
+        </h:head>
+        <h:form id="formPubTransEmp">
+            <h1>Publicación Transferencia de Empresa Unipersonal</h1>
+            <p:wizard nextLabel="Siguiente" backLabel="Anterior"
+                      flowListener="#{modificacionBean.onFlowProcess}" showStepStatus="true"
+                      style="font-size: 100%">
+                <p:tab id="datosEmpresa" title="Datos de la Empresa" titleStyle="font-size: 90%">
+                    <p:growl id="msgsReg" showDetail="true"/>
+                    <div class="ui-fluid">
+                        <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-6" layout="grid"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Numero de Matrícula de Comercio:" class="txtLabel"/>
+                            <p:inputText id="txtMatricula" readonly="true"
+                                         value="#{pubTransUniBean.usuarioSesion.idMatriculaAsociada}"/>
+                            <p:outputLabel for="txtEmpresa" value="Denominacion/Razon Social:"
+                                           class="txtLabel"/>
+                            <p:inputText id="txtEmpresa" required="true" readonly="true"
+                                         value="#{pubTransUniBean.usuarioSesion.sociedadConstituye}"/>
+                            <p:outputLabel value="Fecha de Publicacion" class="txtLabel"/>
+                            <p:calendar id="fecFiltro" pattern="yyyy/MM/dd" required="true"
+                                        requiredMessage="Debe seleccionar la fecha de publicación"
+                                        value="#{pubTransUniBean.publicacionRegistro.fecDisplay}"
+                                        locale="es"
+                                        placeholder="Seleccione la fecha de publicacion">
+                                <f:convertDateTime pattern="yyyy/MM/dd"/>
+                            </p:calendar>
+                            <p:message for="fecFiltro"/>
+                        </p:panelGrid>
+                    </div>
+                </p:tab>
+
+                <p:tab id="propietario" title="Datos del Propietario"
+                       titleStyle="font-size: 90%">
+                    <div class="ui-fluid">
+                        <h2>Transferencia de Empresa Unipersonal</h2>
+                        <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2"
+                                     layout="grid" styleClass="ui-panelgrid-blank">
+                            <p:outputLabel style="text-align: right" for="lblNombre"
+                                           value="Nombre del Propietario:"/>
+                            <p:inputText id="lblNombre" value="#{pubTransUniBean.nombrePropietario}"
+                                         required="true" readonly="true" requiredMessage="Digite el nombre del  propietario"/>
+                            <p:message for="lblNombre"/>
+                            <p:outputLabel value="Tipo de Documento de Identidad:"/>
+                            <p:selectOneMenu id="cmbTipoDoc" value="#{pubTransUniBean.idDocPropietario}"
+                                             valueChangeListener="#{pubTransUniBean.valideTipoId}"
+                                             requiredMessage="Seleccione el tipo de documento de identidad">
+                                <p:ajax event="change" rendered="cmbLugExp" update="cmbLugExp"/>
+                                <f:selectItem itemLabel="Seleccione el Tipo de Documento" itemValue=""/>
+                                <f:selectItems var="tbTipoDoc"
+                                               value="#{pubTransUniBean.tiposIdentificacion}"
+                                               itemLabel="#{tbTipoDoc.tipoIdentificacion}"
+                                               itemValue="#{tbTipoDoc.tipoIdentificacion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbTipoDoc"/>
+                            <p:outputLabel value="Numero de Documento de Identidad:"/>
+                            <p:inputText id="lblNumDoc" value="#{pubTransUniBean.ciPropietario}"
+                                         required="false" readonly="true"/>
+                            <p:message for="lblNumDoc"/>
+                            <p:outputLabel for="cmbLugExp" value="Lugar de Expedición:"/>
+                            <p:selectOneMenu id="cmbLugExp" value="#{pubTransUniBean.expCiPropietario}"
+                                             required="#{pubTransUniBean.reqOrgId}"
+                                             disabled="#{!pubTransUniBean.reqOrgId}"
+                                             requiredMessage="Seleccione la extensión del tipo societario">
+                                <f:selectItem itemLabel="Seleccione el lugar de expedición" itemValue=""/>
+                                <f:selectItems var="tbLugExp" value="#{pubTransUniBean.lugarExp}"
+                                               itemLabel="#{tbLugExp.lugarExpedicion}"
+                                               itemValue="#{tbLugExp.lugarExpedicion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbLugExp"/>
+
+                        </p:panelGrid>
+                    </div>
+                </p:tab>
+
+                <p:tab id="nuevo" title="Datos del nuevo propietario"
+                       titleStyle="font-size: 90%">
+                    <div class="ui-fluid">
+                        <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2"
+                                     layout="grid"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel style="text-align: right" for="lblNombreNew" value="Nombre(s):"/>
+                            <p:inputText id="lblNombreNew" value="#{pubTransUniBean.nombreNewPropietario}"
+                                         required="true" placeholder="Digite el nombre del nuevo propietario"
+                                         requiredMessage="Digite el nombre del nuevo propietario"/>
+                            <p:message for="lblNombreNew"/>
+
+                            <p:outputLabel for="lblApatNew" value="Apellido Paterno:"/>
+                            <p:inputText id="lblApatNew" value="#{pubTransUniBean.apatNewPropietario}"
+                                         required="false"
+                                         placeholder="Digite el apellido paterno del nuevo propietario"
+                                         requiredMessage="Digite el apellido paterno del nuevo propietario"/>
+                            <p:message for="lblApatNew"/>
+                            <p:outputLabel value="Apellido Materno:" for="lblAmatNew"/>
+                            <p:inputText id="lblAmatNew" value="#{pubTransUniBean.amatNewPropietario}"
+                                         required="true"
+                                         placeholder="Digite el apellido materno del nuevo propietario"
+                                         requiredMessage="Digite el apellido materno del nuevo propietario"/>
+                            <p:message for="lblAmatNew"/>
+                            <p:outputLabel value="Tipo de Documento de Identidad:"/>
+                            <p:selectOneMenu id="cmbTipoDocNew" value="#{pubTransUniBean.idDocNewPropietario}"
+                                             valueChangeListener="#{pubTransUniBean.valideNewTipoId}"
+                                             requiredMessage="Seleccione el tipo de identificación">
+                                <p:ajax event="change" rendered="cmbLugExpNew" update="cmbLugExpNew"/>
+                                <f:selectItem itemLabel="Seleccione el Tipo de Documento" itemValue=""/>
+                                <f:selectItems var="tbTipoDoc" value="#{pubTransUniBean.tiposIdentificacion}"
+                                               itemLabel="#{tbTipoDoc.tipoIdentificacion}"
+                                               itemValue="#{tbTipoDoc.tipoIdentificacion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbTipoDocNew"/>
+                            <p:outputLabel value="Numero de Documento de Identidad:"/>
+                            <p:inputText id="lblNumNewDoc" value="#{pubTransUniBean.ciNewPropietario}"
+                                         required="true"
+                                         placeholder="Digite el numero de identificación del nuevo propietario"
+                                         requiredMessage="Digite el numero de identificación del nuevo propietario"/>
+                            <p:message for="lblNumNewDoc"/>
+                            <p:outputLabel value="Lugar de Expedición:"/>
+                            <p:selectOneMenu id="cmbLugExpNew" value="#{pubTransUniBean.expCiNewPropietario}"
+                                             required="#{pubTransUniBean.reqOrgNewId}"
+                                             disabled="#{!pubTransUniBean.reqOrgNewId}"
+                                             requiredMessage="Digite seleccionar el lugar de expedición de la identificación del nuevo propietario">
+                                <f:selectItem itemLabel="Seleccione el lugar de expedición" itemValue=""/>
+                                <f:selectItems var="tbLugExp" value="#{pubTransUniBean.lugarExp}"
+                                               itemLabel="#{tbLugExp.lugarExpedicion}"
+                                               itemValue="#{tbLugExp.lugarExpedicion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbLugExpNew"/>
+                            <h:outputLabel value=""/>
+                        </p:panelGrid>
+                    </div>
+                </p:tab>
+
+                <p:tab id="vistaprevia" title="Vista previa de la publicación"
+                       titleStyle="font-size: 90%">
+                    <div class="ui-g">
+                        <div class="ui-g-12">
+                            <div class="card card-w-title">
+                                <p:outputPanel id="pubDetail" style="text-align:center;">
+                                    <p:panelGrid columns="1" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid"
+                                                 styleClass="ui-panelgrid-blank">
+                                        <h:outputLabel value="Vista Preliminar de la Publicación"/>
+                                        <p:inputTextarea value="${pubTransUniBean.txtPublicacion}" readonly="true"
+                                                         rows="20"
+                                                         cols="150"/>
+                                    </p:panelGrid>
+                                </p:outputPanel>
+                            </div>
+                        </div>
+                    </div>
+                </p:tab>
+                <p:tab id="aprobacion" title="Confirmar Publicación"
+                       titleStyle="font-size: 90%">
+                    <div class="ui-fluid" id="proPublica">
+                        <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-6" layout="grid"
+                                     styleClass="ui-panelgrid-blank"
+                                     rendered="#{pubTransUniBean.vistaPrev}">
+                            <p/>
+                            <p:outputLabel
+                                    value="El contenido de esta publicacion es exclusiva responsabilidad del usuario"
+                                    class="txtLabel" style="text-align: center"/>
+                            <p/>
+                            <p:selectBooleanCheckbox value="#{pubTransUniBean.aceptacion}" required="true"
+                                                     requiredMessage="Debe aceptar las condiciones para realizar la publicacion">
+                                <p:ajax update="btReg"/>
+                            </p:selectBooleanCheckbox>
+                        </p:panelGrid>
+                        <p:panelGrid id="pnlBtn" columns="1" columnClasses="ui-grid-col-8" layout="grid"
+                                     styleClass="ui-panelgrid-blank" style="text-align: center"
+                                     rendered="#{pubTransUniBean.vistaPrev}">
+                            <p:commandButton id="btReg" value="Acepto los terminos"
+                                             action="#{pubTransUniBean.registraPublicacion()}"
+                                             update="formPubTransEmp"
+                                             style="width: 350px;align-content: center"/>
+                        </p:panelGrid>
+                    </div>
+                </p:tab>
+            </p:wizard>
+        </h:form>
+    </ui:define>
+</ui:composition>

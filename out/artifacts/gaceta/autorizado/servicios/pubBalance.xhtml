@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h:head>
+            <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+            <h:outputStylesheet name="css/animate.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+            <h:outputScript library="js" name="calendar_es.js"/>
+            <script type="text/javascript">
+                function redirectUser() {
+                    window.location = "../principal.xhtml";
+                }
+            </script>
+        </h:head>
+        <h:form id="formpub" enctype="multipart/form-data">
+            <h1>Balance Anual para la Emisión de Bonos</h1>
+            <p:growl id="msgsReg" showDetail="true"/>
+            <div class="card card-w-title">
+                <p:wizard nextLabel="Siguiente" backLabel="Anterior" flowListener="#{balanceBean.onFlowProcess}"
+                          showStepStatus="true" style="font-size: 100%">
+                    <p:tab id="datosMemoria" title="Datos del Balance" titleStyle="font-size: 90%">
+                        <p:growl id="msgsP1" showDetail="true"/>
+                        <div class="ui-g">
+                            <div class="ui-g-12">
+                                <div class="card">
+                                    <div class="ui-fluid">
+                                        <p:outputLabel value="DATOS DE LA EMPRESA" class="txtLabel"/>
+                                        <p:panelGrid columns="3"
+                                                     columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2"
+                                                     layout="grid" styleClass="ui-panelgrid-blank">
+                                            <p:outputLabel value="Numero de Matrícula de Comercio:" class="txtLabel"/>
+                                            <p:inputText id="txtMatricula" readonly="true"
+                                                         value="#{balanceBean.usuarioSesion.idMatriculaAsociada}"/>
+                                            <p/>
+                                            <p:outputLabel for="txtEmpresa" value="Denominacion/Razon Social:"
+                                                           class="txtLabel"/>
+                                            <p:inputText id="txtEmpresa" required="true" readonly="true"
+                                                         value="#{balanceBean.usuarioSesion.sociedadConstituye}"/>
+                                            <p/>
+                                            <p:outputLabel value="Fecha de Publicacion" class="txtLabel"/>
+                                            <p:calendar id="fecFiltro" pattern="yyyy/MM/dd" required="true"
+                                                        requiredMessage="Debe seleccionar la fecha de publicación"
+                                                        value="#{balanceBean.publicacionRegistro.fecDisplay}"
+                                                        locale="es" placeholder="Seleccione la fecha de publicación">
+                                                <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                            </p:calendar>
+                                            <p:message for="fecFiltro"/>
+                                            <p:outputLabel value="Gestión del Balance:" class="txtLabel"/>
+                                            <p:inputText id="txtGestion" required="true" readonly="false"
+                                                         value="#{balanceBean.gestionMemoria}"
+                                                         requiredMessage="Debe digitar la gestión correspondiente del Balance"
+                                                         validatorMessage="Revise el dato de la Gestión del Balance"
+                                                         converterMessage="El valor debe ser numerico"/>
+                                            <p:message for="txtGestion"/>
+                                        </p:panelGrid>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p:tab>
+                    <p:tab id="datosCarga" title="Seleccion de Archivo" titleStyle="font-size: 90%">
+                        <h2>Pasos para cargar el Archivo</h2>
+                        <h4>1. Seleccione el archivo con formato PDF, presionando el boton "Seleccionar Archivo"</h4>
+                        <h4>2. Cargue el archivo al servidor presionando el boton "Cargar archivo"</h4>
+                        <h4>3. Presione el boton "Siguiente" para continuar con la publicación </h4>
+                        <p:outputLabel value="SELECCION DE ARCHIVO A CARGAR" class="txtLabel"/>
+                        <p:fileUpload value="#{balanceBean.fileMemoria}" mode="advanced" uploadLabel="Cargar archivo "
+                                      cancelLabel="Cancelar Carga" label="Seleccionar Archivo" update="messages"
+                                      fileUploadListener="#{balanceBean.handleFileUpload}"
+                                      allowTypes="/(\.|\/)(pdf|PDF)$/" fileLimit="1"
+                                      fileLimitMessage="Solo se permite un archivo por publicación"
+                                      invalidFileMessage="Solo se pueden cargar archivos en formato PDF"></p:fileUpload>
+                        <p:growl id="messages" showDetail="true"/>
+                    </p:tab>
+                    <p:tab id="publicacion" title="Publicación de Balance" titleStyle="font-size: 90%">
+                        <div class="ui-g">
+                            <div class="ui-g-12">
+                                <div class="card">
+                                    <h2>Datos de la Publicación</h2>
+                                    <div class="ui-fluid">
+                                        <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-4"
+                                                     layout="grid" styleClass="ui-panelgrid-blank">
+                                            <p:outputLabel value="Numero de Matrícula de Comercio:" class="txtLabel"/>
+                                            <p:outputLabel id="txtMatriculaDisplay" readonly="true"
+                                                           value="#{balanceBean.usuarioSesion.idMatriculaAsociada}"/>
+                                            <p:outputLabel for="txtEmpresa" value="Denominacion/Razon Social:"
+                                                           class="txtLabel"/>
+                                            <p:outputLabel id="txtEmpresaDisplay" required="true" readonly="true"
+                                                           value="#{balanceBean.usuarioSesion.sociedadConstituye}"/>
+                                            <p:outputLabel value="Fecha de Publicacion" class="txtLabel"/>
+                                            <p:calendar id="fecFiltroDisplay" pattern="yyyy/MM/dd" readonly="true"
+                                                        value="${balanceBean.publicacionRegistro.fecDisplay}"
+                                                        locale="es"/>
+                                            <p:outputLabel value="Gestión del Balance:" class="txtLabel"/>
+                                            <p:outputLabel id="txtGestionDisplay"
+                                                           value="#{balanceBean.gestionMemoria}"/>
+                                            <p:outputLabel value="Archivo Seleccionado:" class="txtLabel"/>
+                                            <p:outputLabel id="txtFileDisplay" value="#{balanceBean.nameFile}"/>
+                                            <p:outputLabel value="Tamaño Archivo Aproximado(KB):" class="txtLabel"/>
+                                            <p:outputLabel id="txtSizeDisplay" value="#{balanceBean.sizeFile}"/>
+                                        </p:panelGrid>
+
+                                        <div class="ui-g">
+                                            <p:panelGrid id="pnlBtn" columns="2"
+                                                         columnClasses="ui-grid-col-2,ui-grid-col-6" layout="grid"
+                                                         styleClass="ui-panelgrid-blank" style="text-align: center">
+                                                <p:selectBooleanCheckbox value="#{balanceBean.aceptacion}"
+                                                                         required="true"
+                                                                         requiredMessage="Debe aceptar las condiciones para realizar la publicacion">
+                                                    <p:ajax update="btReg"/>
+                                                </p:selectBooleanCheckbox>
+                                                <p:outputLabel
+                                                        value="El contenido de esta publicacion es exclusiva responsabilidad del usuario"
+                                                        class="txtLabel"/>
+                                            </p:panelGrid>
+                                        </div>
+                                        <div class="ui-md-6">
+                                            <p:commandButton id="btReg" value="Confirmar Publicación"
+                                                             action="#{balanceBean.registraPublicacion()}"
+                                                             update="formpub" style="width: 350px" process="@all">
+                                            </p:commandButton>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p:tab>
+
+                </p:wizard>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

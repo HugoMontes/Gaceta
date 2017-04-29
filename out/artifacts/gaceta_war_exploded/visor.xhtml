@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <f:metadata>
+        <f:viewParam name="idPublica" value="#{visorBean.idPublica}" />
+    </f:metadata>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+    </f:facet>
+    <title>Gaceta Electronica del Registro de Comercio de Bolivia</title>
+    <h:outputScript name="js/ripple.js" library="ultima-layout"/>
+    <h:outputScript name="js/layout.js" library="ultima-layout"/>
+</h:head>
+<h:body>
+    <h:form id="visorImg">
+        <div class="layout-wrapper">
+            <ui:include src="./top.xhtml"/>
+        </div>
+        <div class="header-content clearfix">
+            <div class="header-subcontent">
+            </div>
+            <div class="header-subcontentit">
+                <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-8,ui-grid-col-2" layout="grid"
+                             styleClass="ui-panelgrid-blank">
+                    <!--
+                    <p:commandButton value="Publicación Anterior" icon="ui-icon-triangle-1-w" iconPos="left"
+                                     style="width:auto" actionListener="#{visorBean.callVisorAfter}"
+                                     update="visorImg" process="@all"  disabled="#{!visorBean.existBack}"/>
+                    -->
+                    <p:commandButton value="Publicación Anterior"
+                                     action="#{visorBean.callVisorAfter}"
+                                     disabled="#{!visorBean.existBack}"
+                                     title="Publicación Anterior" ajax="false" style="width:auto" icon="ui-icon-triangle-1-w" iconPos="left"  >
+                    </p:commandButton>
+
+                    <p>#{visorBean.publicacionSelecionada.tituloPublica}</p>
+
+                    <p:commandButton value="Publicación Siguiente"
+                                     action="#{visorBean.callVisorNext}"
+                                     disabled="#{!visorBean.existeNext}"
+                                     title="Publicación Siguiente" ajax="false" style="width:auto" icon="ui-icon-triangle-1-e" iconPos="right">
+                    </p:commandButton>
+                    <!--
+                    <p:commandButton value="Publicación Siguiente" icon="ui-icon-triangle-1-e" iconPos="right"
+                                     style="width:auto" actionListener="#{visorBean.callVisorNext}"
+                                     update="visorImg"  process="@all" disabled="#{!visorBean.existeNext}"/>
+                    -->
+                </p:panelGrid>
+            </div>
+        </div>
+        <div class="ui-fluid" id="detallePublic">
+            <p:growl id="msgs" showDetail="true"/>
+            <div class="ui-fluid">
+                <p:panel id="basic" header="DETALLE PUBLICACION"
+                         style="margin-bottom:20px">
+                    <p:panelGrid columns="6"
+                                 columnClasses="ui-grid-col-1,ui-grid-col-3,ui-grid-col-1,ui-grid-col-3,ui-grid-col-1,ui-grid-col-3"
+                                 layout="grid" styleClass="ui-panelgrid-blank">
+                        <p:outputLabel value="Codigo de publicacion:" class="txtLabel"/>
+                        <p:inputText value="#{visorBean.publicacionSelecionada.idPublicacion}" readonly="true"/>
+                        <p:outputLabel value="Fecha de Publicacion:" class="txtLabel"/>
+                        <p:inputText value="#{visorBean.publicacionSelecionada.fecDisplay}" readonly="true"/>
+                        <p:outputLabel value="Matrícula de Comercio:" class="txtLabel"/>
+                        <p:inputText value="#{visorBean.publicacionSelecionada.idMatricula}" readonly="true"/>
+                    </p:panelGrid>
+                </p:panel>
+            </div>
+            <div id="imagen" class="ui-fluid" align="center">
+                <p:graphicImage id="visImg" value="#{visorBean.dbImage}" stream="false"/>
+            </div>
+        </div>
+    </h:form>
+    <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+    <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+</h:body>
+</html>

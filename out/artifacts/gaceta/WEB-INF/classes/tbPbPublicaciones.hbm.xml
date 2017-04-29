@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+    <class name="tbPbPublicaciones" table="tbpbpublicaciones" >
+        <id name="idPublicacion" column="idPublicacion" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property name="idRegPublicacion" column="idregpublicacion" type="int"/>
+        <property name="idLoginEmpresa" column="idLoginEmpresa" type="string"/>
+        <property name="idMatricula" column="idMatricula" type="string"/>
+        <property name="tipoDocumento" column="tipoDocumento" type="int"/>
+        <property name="nroDocumento" column="nroDocumento" type="string"/>
+        <property name="origenDocumento" column="origenDocumento" type="string"/>
+        <property name="fechaDocumento" type="date" column="fechaDocumento"/>
+        <property name="ctrTipoPublica" column="ctrTipoPublica" type="int"/>
+        <property name="tituloPublica" column="tituloPublica" type="string"/>
+        <property name="textoPublica" column="textoPublica" type="string"/>
+        <property name="textoCompleto" column="textoCompleto" type="text"/>
+        <property name="fecPublica" type="timestamp" column="fecPublica"/>
+        <property name="fecDisplay" column="fecDisplay" type="date"/>
+        <property name="fecSolicitud" column="fecSolicitud" type="date"/>
+        <property name="urlFilePublica" column="urlFilePublica" type="string"/>
+        <property name="ctrDisplay" column="ctrDisplay" type="string"/>
+        <property name="desEstadoPublica" column="desEstadoPublica" type="string"/>
+        <property name="fecAprueba" column="fecAprueba" type="date"/>
+        <property name="ctrUserAprueba" column="ctrUserAprueba" type="string"/>
+        <property name="codigoDeposito" column="codigoDeposito" type="string"/>
+        <property name="montoDeposito" column="montoDeposito" type="double"/>
+        <property name="fecDeposito" column="fecDeposito" type="date"/>
+        <property name="fileUrlTransit" column="fileurltransit" type="string"/>
+    </class>
+</hibernate-mapping>

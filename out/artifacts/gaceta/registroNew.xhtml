@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+    </f:facet>
+    <title>Gaceta Electronica del Registro de Comercio de Bolivia</title>
+    <h:outputScript name="js/ripple.js" library="ultima-layout"/>
+    <h:outputScript name="js/layout.js" library="ultima-layout"/>
+    <h:outputScript name="js/validador-email.js" library="ultima-layout"/>
+</h:head>
+<h:body>
+    <div class="layout-wrapper">
+        <ui:include src="./top.xhtml"/>
+    </div>
+    <div class="header-content clearfix">
+        <div class="header-subcontent">
+        </div>
+    </div>
+    <div class="ui-fluid">
+        <h:form id="regCuenta">
+            <!-- begin : barra de estado -->
+            <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()"/>
+            <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                <p>Procesando, espere por favor...</p>
+                <p:graphicImage name="/libimg/ajaxloadingbar.gif" />
+            </p:dialog>
+            <!-- end : barra de estado -->
+            <p:growl id="msgsReg" showDetail="true" sticky="true" globalOnly="true"/>
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-10" layout="grid" styleClass="ui-panelgrid-blank">
+                <p:panel
+                        header="SOLICITUD DE HABILITACIÓN DE UNA NUEVA CUENTA PARA REALIZAR PUBLICACIONES EN LA GACETA ELECTRÓNICA DEL REGISTRO DE COMERCIO"
+                        style="margin-top:20px;">
+                    <p:panel header="Datos personales del Propietario o Representante Legal:" style="margin-top:10px;"
+                             footer="* Campos Obligatorios">
+                        <p:panelGrid columns="3" columnClasses="ui-grid-col-3,ui-grid-col-4,ui-grid-col-3" layout="grid"
+                                     styleClass="ui-panelgrid-blank">
+
+                            <p:outputLabel style="text-align: right" for="lblNombre" value="Nombre(s):"/>
+                            <p:inputText id="lblNombre" value="#{registroBeanNew.usuarioRegistro.nombreRepresentante}"
+                                         required="true" requiredMessage="Debe digitar el nombre"
+                                         placeholder="Ingrese su nombre" autocomplete="off"/>
+                            <p:message for="lblNombre"/>
+
+                            <p:outputLabel for="lblApat" value="Apellido Paterno:"/>
+                            <p:inputText id="lblApat" value="#{registroBeanNew.usuarioRegistro.apellidoPaterno}"
+                                         required="false" requiredMessage="Debe digitar el Apellido Paterno"
+                                         placeholder="Ingrese su apellido paterno" autocomplete="off"/>
+                            <p:message for="lblApat"/>
+
+                            <p:outputLabel value="Apellido Materno:" for="lblAmat"/>
+                            <p:inputText id="lblAmat" value="#{registroBeanNew.usuarioRegistro.apellidoMaterno}"
+                                         required="true" requiredMessage="Debe digitar el Apellido Materno"
+                                         placeholder="Ingrese su apellido materno" autocomplete="off"/>
+                            <p:message for="lblAmat"/>
+
+                            <p:outputLabel value="Tipo de Documento de Identidad:" for="cmbTipoDoc"/>
+                            <p:selectOneMenu id="cmbTipoDoc"
+                                             value="#{registroBeanNew.usuarioRegistro.idTipoIdentificacion}"
+                                             valueChangeListener="#{registroBeanNew.valideTipoId}"
+                                             requiredMessage="Debe selecccionar el tipo de identificación"
+                                             required="true">
+                                <p:ajax event="change" rendered="cmbLugExp" update="cmbLugExp"/>
+                                <f:selectItem itemLabel="Seleccione el Tipo de Documento" itemValue=""/>
+                                <f:selectItems var="tbTipoDoc" value="#{registroBeanNew.tiposIdentificacion}"
+                                               itemLabel="#{tbTipoDoc.tipoIdentificacion}"
+                                               itemValue="#{tbTipoDoc.idTipoIdentificacion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbTipoDoc"/>
+
+                            <p:outputLabel value="Numero de Documento de Identidad:" for="lblNumDoc"/>
+                            <p:inputText id="lblNumDoc" value="#{registroBeanNew.usuarioRegistro.numeroIdentificacion}"
+                                         required="true" placeholder="Ingrese su numero de identificacion"
+                                         requiredMessage="Ingrese su numero de identificacion" autocomplete="off"/>
+                            <p:message for="lblNumDoc"/>
+                            <p:outputLabel for="cmbLugExp" value="Lugar de Expedición:"/>
+                            <p:selectOneMenu id="cmbLugExp" value="#{registroBeanNew.usuarioRegistro.idLugarExpedicion}"
+                                             required="#{registroBeanNew.reqOrgId}"
+                                             disabled="#{!registroBeanNew.reqOrgId}"
+                                             requiredMessage="Debe seleccionar la extensión del documento de identidad">
+                                <f:selectItem itemLabel="Seleccione el lugar de expedición" itemValue=""/>
+                                <f:selectItems var="tbLugExp" value="#{registroBeanNew.lugarExp}"
+                                               itemLabel="#{tbLugExp.lugarExpedicion}"
+                                               itemValue="#{tbLugExp.idLugarExpedicion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbLugExp"/>
+                            <p:outputLabel for="lblMail" value="Correo Electronico:"/>
+                            <p:inputText id="lblMail" match="lblMailconf"
+                                         value="#{registroBeanNew.usuarioRegistro.correoElectronico}" required="true"
+                                         requiredMessage="Debe digitar la cuenta de correo electrónico de forma obligatoria"
+                                         placeholder="Ingrese su cuenta de correo electronico" autocomplete="off"
+                                         validatorMessage="Formato de correo electrónico incorrecto/El correo de confirmación no coincide">
+                                <f:validateRegex
+                                        pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
+                            </p:inputText>
+                            <p:message for="lblMail"/>
+
+                            <p:outputLabel for="lblMailconf" value="Digite nuevamente su Correo:"/>
+                            <p:inputText id="lblMailconf" value="#{registroBeanNew.mailConfirma}" required="true"
+                                         requiredMessage="Debe digitar nuevamente la cuenta de correo electrónico de forma obligatoria"
+                                         placeholder="Ingrese nuevamente su cuenta de correo electronico"
+                                         validatorMessage="Formato de correo electrónico incorrecto/El correo de confirmación no coincide"
+                                         onkeydown="return validar(event)" autocomplete="off">
+                                <f:validateRegex
+                                        pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
+                            </p:inputText>
+                            <p:message for="lblMailconf"/>
+                        </p:panelGrid>
+                    </p:panel>
+                    <p:panel id="pnEmpNueva" header="Datos de la Empresa:" style="margin-top:10px;">
+                        <p:panelGrid columns="3" columnClasses="ui-grid-col-3,ui-grid-col-6,ui-grid-col-3,ui-grid-col-3"
+                                     layout="grid" styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Tipo de Empresa a Constituir:" for="cmbTps"/>
+
+                            <p:selectOneMenu id="cmbTps" value="#{registroBeanNew.usuarioRegistro.idTipoSocietario}"
+                                             valueChangeListener="#{registroBeanNew.cargaAbreviacion}"
+                                             requiredMessage="Debe selecccionar el tipo de empresa a constituir"
+                                             required="true">
+                                <p:ajax event="change" update="cmbTerm"/>
+                                <f:selectItem itemLabel="Seleccione Tipo de Empresa a constituir" itemValue=""/>
+                                <f:selectItems var="tbTps" value="#{registroBeanNew.tiposSocietarios}"
+                                               itemLabel="#{tbTps.tipoSocietario}"
+                                               itemValue="#{tbTps.idTipoSocietario}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbTps"/>
+
+                            <p:outputLabel value="Nombre/Razon Social/Denominacion:" for="txtRazon"/>
+                            <p:inputText id="txtRazon" value="#{registroBeanNew.usuarioRegistro.sociedadConstituye}"
+                                         required="true" requiredMessage="Debe digitar el nombre-razon social/denominacion"
+                                         placeholder="Ingrese la Razon Social de la sociedad que desea constituir"
+                                         autocomplete="off"/>
+                            <p:message for="txtRazon"/>
+
+                            <p:outputLabel value="Terminación de la Razón Social" for="cmbTerm"/>
+                            <p:selectOneMenu id="cmbTerm" value="#{registroBeanNew.terminacion}"
+                                             requiredMessage="Debe selecccionar una terminación de la razón social"
+                                             required="true">
+                                <f:selectItem itemLabel="Seleccione la terminación de la empresa" itemValue=""/>
+                                <f:selectItems var="tbAb" value="#{registroBeanNew.listAbreviacion}"
+                                               itemLabel="#{tbAb.txtValor}" itemValue="#{tbAb.idReg}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbTerm"/>
+
+                        </p:panelGrid>
+                    </p:panel>
+                    <p:panel header="Aceptación:" style="margin-top:10px">
+                        <div align="center"><p:captcha label="Captcha"
+                                                       requiredMessage="Debe marcar la opción de verificacion"
+                                                       language="es"/></div>
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid"
+                                     styleClass="ui-panelgrid-blank" style="text-align: center">
+                            <h:outputText
+                                    value="He leido todos los  terminos y acepto crear una cuenta en la Gaceta Electrónica del Registro de Comercio"/>
+                            <p:commandButton id="btnCreaCuenta" value="Acepto todos los términos y condiciones"
+                                             style="width:350px" action="#{registroBeanNew.registrarSolicitud()}"
+                                             update="regCuenta"/>
+                        </p:panelGrid>
+                    </p:panel>
+                    <p:panel header="Términos y Condiciones" style="margin-top:10px">
+
+                    </p:panel>
+                </p:panel>
+            </p:panelGrid>
+        </h:form>
+    </div>
+    <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+    <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+</h:body>
+</html>

@@ -1,0 +1,56 @@
+.titulo {
+    font-family: Helvetica;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.sub {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.detalle {
+    font-family: Helvetica;
+    font-size: 1em;
+    text-align: justify;
+}
+
+.cuerpo {
+    margin: 20px 30px 20px 30px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.t1{
+    border-collapse:collapse;
+    border-spacing:0;
+    border-color: #757575;
+    width:100%;
+}
+.t1 th{
+    background-color:#757575;
+    color:#0f0f0f;
+    vertical-align:top;
+    text-align:center;
+    font-family:Helvetica;
+    font-size:1.2em;
+    padding:10px 5px;
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+}
+.t1 td{
+    font-family:Helvetica;
+    font-size:1em;
+    padding:10px 5px;
+    border-style:solid;
+    border-width:1px;
+    overflow:hidden;
+    word-break:normal;
+}
+
+

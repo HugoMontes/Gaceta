@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+  <class name="TbInCiiu" table="tbinciiu">
+    <id column="idClase" name="idClase" type="string">
+      <generator class="assigned"/>
+    </id>
+    <property column="clase" name="clase" type="string"/>
+    <property column="idSeccion" name="idSeccion" type="string"/>
+    <property column="seccion" name="seccion" type="string"/>
+    <property column="idDivision" name="idDivision" type="string"/>
+    <property column="division" name="division" type="string"/>
+    <property column="idGrupo" name="idGrupo" type="string"/>
+    <property column="grupo" name="grupo" type="string"/>
+  </class>
+</hibernate-mapping>

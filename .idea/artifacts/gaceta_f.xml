@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="gaceta_f">
+    <output-path>$PROJECT_DIR$/out/artifacts/gaceta_f</output-path>
+    <root id="archive" name="gaceta_f.war">
+      <element id="artifact" artifact-name="gaceta" />
+    </root>
+  </artifact>
+</component>

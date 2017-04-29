@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href="resources/css/cssRcb.css" rel="stylesheet" type="text/css"/>
+    <link href="resources/css/cssLayout.css" rel="stylesheet" type="text/css"/>
+    <title>Gaceta Electronica - Registro de Comercio de Bolivia</title>
+
+</h:head>
+<h:body>
+    <div id="top">
+        <ui:insert name="header">
+
+        </ui:insert>
+    </div>
+    <div id="left">
+        <ui:insert name="left">
+            <h:form id="formLogin">
+                <p:growl id="msgsReg" showDetail="true" />
+                <div class="ui-fluid">
+                    <p:panel header="Ingreso" style="margin-top:20px;" rendered="#{!credentialsBean.loginUser}">
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+                            <p:outputLabel class="txtLabel" value="Usuario:"/>
+                            <p:inputText id="txtUsuario" value="#{credentialsBean.username}" style="width: 100%"/>
+                            <p:outputLabel class="txtLabel" value="Contraseña:"/>
+                            <p:password id="txtPassword" value="#{credentialsBean.password}" style="width: 100%"/>
+                            <p:commandButton value="Iniciar Sesion" action="#{credentialsBean.iniciarSesion}"  update="formLogin" ajax="true" icon="ui-icon-key" />
+                        </p:panelGrid>
+                    </p:panel>
+
+                    <p:panel header="Sesion" style="margin-top:20px;" rendered="#{credentialsBean.loginUser}">
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+                            <p:outputLabel class="txtLabel" value="Usuario:"/>
+                            <p:outputLabel id="txtUserLogin" value="#{credentialsBean.usuarioSesion.idLoginEmpresa}" style="width: 100%"/>
+                            <p:link id="btnAppp"  outcome="autorizado/principal" value="Menu de servicios"/>
+                            <p:commandLink  actionListener="#{sessionBean.cerrarSesion()}"  action="/landing?faces-redirect=true" icon="ui-icon-power" value="Cerrar Sesión" style="color: #e30421"  />
+                        </p:panelGrid>
+                    </p:panel>
+
+
+
+                    <p:panel header="Habilitación de Cuentas" style="margin-top:20px;">
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Si su empresa se encuentra inscrita en el Registro de Comercio de Bolivia, solicite la activación de su cuenta en el siguiente enlace"/>
+                            <p:link id="btnRegistro"  outcome="registro" value="Solicitar Habilitación"/>
+                        </p:panelGrid>
+                    </p:panel>
+
+                    <p:panel header="Creación de Nueva Cuenta" style="margin-top:20px;">
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Para unidades económicas nuevas, solicite la Creacion de su cuenta en el siguiente enlace"/>
+                            <p:link id="btnRegistroNew"  outcome="registroNew" value="Solicitar Cuenta"/>
+                        </p:panelGrid>
+                    </p:panel>
+                </div>
+            </h:form>
+        </ui:insert>
+    </div>
+    <div id="content" class="left_content">
+        <ui:insert name="content">Content</ui:insert>
+    </div>
+</h:body>
+</html>

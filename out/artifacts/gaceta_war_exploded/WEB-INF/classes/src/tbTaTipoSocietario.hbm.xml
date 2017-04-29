@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+  <class name="tbTaTipoSocietario" table="tbtatiposocietario">
+    <id column="idTipoSocietario" name="idTipoSocietario" type="int">
+      <generator class="assigned"/>
+    </id>
+    <property column="tipoSocietario" name="tipoSocietario" type="string"/>
+    <property column="ctrShowReg" name="ctrShowReg" type="string"/>
+  </class>
+</hibernate-mapping>

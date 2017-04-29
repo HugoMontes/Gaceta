@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+    <class name="tbUsLogo" table="tbuslogo" >
+        <id name="idRegLogo" column="idreglogo" type="int">
+            <generator class="increment"/>
+        </id>
+        <property name="idLoginEmpresa" type="string" column="idloginempresa"/>
+        <property name="pathFile" column="pathfile" type="string"/>
+        <property name="tipoArchivo" column="tipoarchivo" type="string"/>
+        <property name="imgLogo" column="imglogo" type="binary"/>
+        <property name="fechaCarga" column="fechacarga" type="date"/>
+    </class>
+</hibernate-mapping>

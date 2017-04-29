@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: dzerain
+  Date: 31-08-16
+  Time: 07:02 PM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>Gaceta Electronica del Registro de Comercio de Bolivia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <h:outputStylesheet library="css" name="default.css" />
+    <h:outputScript library="js" name="calendar_es.js" />
+    <h:outputStylesheet library="ultima-layout" name="css/layout-blue-grey.css" />
+    <h:outputScript library="ultima-layout" name="js/layout.js"/>
+    <h:outputScript library="ultima-layout" name="js/nanoscroller.js"/>
+    <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+    <h:outputScript library="ultima-layout" name="js/swipe.js"/>
+
+</h:head>
+
+<h:body>
+    <div class="layout-wrapper">
+        <ui:include src="./top.xhtml" />
+    </div>
+    <div class="header-content clearfix">
+        <div class="header-subcontent">
+        </div>
+    </div>
+    <div class="layout-wrapper">
+        <div class="ui-fluid">
+            <h:form id="frmPublica">
+                <p:growl showDetail="true" />
+                <p:panel header="PUBLICACIÓN DE MEMORIAS ANUALES" style="text-align: center"  >
+                    <p:accordionPanel activeIndex="">
+                        <p:tab id="tab1" title="Busqueda por fecha de publicación:" closable="" >
+                            <p:focus context="tab1"/>
+                            <div class="ui-g">
+                                <div class="ui-g-12 ui-md-6 ui-lg-2"><p:outputLabel value="Fecha Inicial:"
+                                                                                    styleClass="txtPublicacionTitulo"/>
+                                </div>
+                                <div class="ui-g-12 ui-md-6 ui-lg-3"><p:calendar id="fecFiltro1" locale="es"
+                                                                                 pattern="yyyy/MM/dd" required="true"
+                                                                                 requiredMessage="Debe seleccionar la fecha de publicación"
+                                                                                 validatorMessage="Debe ingresar una fecha válida"
+                                                                                 converterMessage="Debe ingresar una fecha válida"
+                                                                                 value="#{memoriasBean.dateFiltra}">
+                                    <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                </p:calendar></div>
+                                <div class="ui-g-12 ui-md-6 ui-lg-2"><p:outputLabel value="Fecha Final:"
+                                                                                    styleClass="txtPublicacionTitulo"/>
+                                </div>
+                                <div class="ui-g-12 ui-md-6 ui-lg-3"><p:calendar id="fecFiltro2" locale="es"
+                                                                                 pattern="yyyy/MM/dd" required="true"
+                                                                                 requiredMessage="Debe seleccionar la fecha de publicación"
+                                                                                 validatorMessage="Debe ingresar una fecha válida"
+                                                                                 converterMessage="Debe ingresar una fecha válida"
+                                                                                 value="#{memoriasBean.dateFiltraFin}">
+                                    <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                </p:calendar></div>
+                                <div class="ui-g-12 ui-md-6 ui-lg-2"><p:commandButton value="Filtrar Publicaciones"
+                                                                                      action="#{memoriasBean.filtraFecha}"
+                                                                                      update="frmPublica"/></div>
+                            </div>
+                        </p:tab>
+                        <p:tab id="tab2" title="Busqueda por palabra clave:" closable="true">
+                            <p:focus context="tab2"/>
+                            <div class="ui-g">
+                                <div class="ui-g-12 ui-md-6 ui-lg-3"><p:outputLabel value="Texto o Palabra Clave:"
+                                                                                    styleClass="txtPublicacionTitulo"/>
+                                </div>
+                                <div class="ui-g-12 ui-md-6 ui-lg-3"><p:inputText value="#{memoriasBean.txtBusca}"/></div>
+                                <div class="ui-g-4">
+                                    <p:commandButton value="Filtrar Publicaciones por Palabra Clave"
+                                                     action="#{memoriasBean.filtraText}" update="frmPublica"/>
+                                </div>
+                            </div>
+
+                        </p:tab>
+                    </p:accordionPanel>
+                    <p:panelGrid id="pnlRes" columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+                        <p:dataGrid var="publicaciones" value="#{memoriasBean.listaPublicaciones}" columns="1" layout="grid" rows="10" paginator="true"
+                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                    currentPageReportTemplate="( Pagina: {currentPage} de {totalPages})"
+                                    id="pagePublica" emptyMessage="No se tienen publicaciones para el criterio de consulta" paginatorAlwaysVisible="true" paginatorPosition="bottom">
+
+                            <div class="ui-g ui-fluid">
+                                <div class="ui-g-12 ui-lg-12">
+
+                                    <div class="ui-g-12 ui-md-3">
+                                        <p:graphicImage id="imgRep" library="libimg" name="public.PNG" style="width: 50%;alignment: center;align-content: center"/>
+                                    </div>
+                                    <div class="ui-g-12 ui-md-6">
+                                        <h3>#{publicaciones.tituloPublica}</h3>
+                                        <div class="ui-g">
+                                            <div class="ui-g-12 ui-md-6 ui-lg-3"><p:outputLabel value="Fecha de Publicación:"/></div>
+                                            <div class="ui-g-12 ui-lg-8 ui-lg-4" style="font-weight: normal;text-align: left"><h:outputText value="#{publicaciones.fecDisplay}">
+                                                <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                            </h:outputText>
+                                            </div>
+                                        </div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-12 ui-md-6 ui-lg-3"><p:outputLabel value="Codigo de Publicación:"/></div>
+                                            <div class="ui-g-12 ui-lg-8 ui-lg-4" style="font-weight: normal;text-align: left"><h:outputText value="#{publicaciones.idPublicacion}"/></div>
+                                        </div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-12 ui-md-6 ui-lg-3"><p:outputLabel value="Resumen de Publicación:"/></div>
+                                            <div class="ui-g-12 ui-lg-8 ui-lg-4" style="font-weight: normal;text-align: left"><p:outputLabel value="#{publicaciones.textoPublica} ......." style="font-weight: normal;"/></div>
+                                        </div>
+                                        <div class="ui-g">
+                                            <div class="ui-g-12 ui-md-6 ui-lg-3"></div>
+                                            <div class="ui-g-12 ui-lg-8 ui-lg-4">
+                                                <p:commandLink value="Ver Publicacion Completa" action="#{memoriasBean.callVisor}"
+                                                               title="Detalle de la Publicación" styleClass="txtPublicacionDetalleLink">
+                                                    <f:setPropertyActionListener value="#{publicaciones}" target="#{memoriasBean.publicacionSelecionada}"/>
+                                                    <f:param name="idPublicacion" value="#{memoriasBean.publicacionSelecionada.idPublicacion}"/>
+                                                </p:commandLink></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </p:dataGrid>
+                    </p:panelGrid>
+                </p:panel>
+            </h:form>
+        </div>
+    </div>
+
+</h:body>
+
+</html>

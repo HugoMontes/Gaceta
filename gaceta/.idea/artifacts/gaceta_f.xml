@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="gaceta_f">
+    <output-path>C:/Deployment/ProyectoGaceta/gaceta/out/artifacts/gaceta_f</output-path>
+    <root id="archive" name="gaceta_f.war">
+      <element id="artifact" artifact-name="gaceta" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/libJava/log4j2/log4j-api-2.6.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/libJava/log4j2/log4j-core-2.6.2.jar" />
+          <element id="file-copy" path="$USER_HOME$/libJava/themes/ultima-theme-1.0.7.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

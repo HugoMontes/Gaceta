@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="head">
+        <h:head>
+            <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+            <h:outputStylesheet name="css/animate.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+            <h:outputScript library="js" name="calendar_es.js"/>
+            <script type="text/javascript">
+                function redirectUser() {
+                    window.location = "../principal.xhtml";
+                }
+                $(document).ready(function () {
+                    $('#formPubTransEmp\\:fileLogo_input').click(function () {
+                        $(this).attr('accept', 'image/x-png,image/gif,image/jpeg');
+                    });
+                });
+            </script>
+        </h:head>
+        <style type="text/css">
+            .nba-grid {
+                width: 100%;
+                table-layout: fixed;
+                word-wrap: break-word;
+            }
+
+            .ui-scrollpanel-content p:first-child {
+                margin: 0;
+            }
+        </style>
+    </ui:define>
+    <ui:define name="content">
+        <h:form id="formPubTransEmp">
+            <p:growl id="msgsReg" showDetail="true"/>
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <div class="card card-w-title">
+                        <h2>Datos de la Empresa</h2>
+                        <div class="ui-fluid">
+                            <p:panelGrid columns="2" columnClasses="ui-g-2, ui-g-8" layout="grid"
+                                         styleClass="ui-panelgrid-blank">
+                                <p:outputLabel value="Logo Registrado:" class="txtLabel"/>
+                                <p:graphicImage value="#{cargaLogoBean.dbImage}" stream="false"/>
+                                <p:outputLabel value="N° de Matrícula de Comercio:" class="txtLabel"/>
+                                <p:inputText id="txtMatricula" readonly="true" value="#{cargaLogoBean.txtMatricula}"/>
+                                <p:outputLabel for="txtEmpresa" value="Denominacion/Razon Social:" class="txtLabel"/>
+                                <p:inputText id="txtEmpresa" readonly="true" value="#{cargaLogoBean.razonSocial}"/>
+                            </p:panelGrid>
+                            <p:fileUpload id="fileLogo" fileUploadListener="#{cargaLogoBean.uploadPhoto}"
+                                          mode="advanced"
+                                          dragDropSupport="false" uploadLabel="Cargar Logotipo"
+                                          cancelLabel="Cancelar" label="Seleccionar Logotipo"
+                                          invalidSizeMessage="El archivo no puede exeder los 100 KB"
+                                          invalidFileMessage="Debe seleccionar una imagen"
+                                          fileLimitMessage="Solo se puede realizar una carga"
+                                          update="msgsReg" sizeLimit="100000" fileLimit="1"
+                                          allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+                                          style="color: #dddddd" multiple="false"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

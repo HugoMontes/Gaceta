@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+        </f:facet>
+        <title>Gaceta Electronica del Registro de Comercio de Bolivia</title>
+        <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+        <h:outputStylesheet name="css/animate.css" library="ultima-layout"/>
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+        <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+        <h:outputScript library="js" name="calendar_es.js"/>
+    </h:head>
+    <ui:define name="content">
+        <h:head>
+            <script type="text/javascript">
+                function redirectUser() {
+                    window.location = "../principal.xhtml";
+                }
+            </script>
+        </h:head>
+        <h:form id="formPubCambioDom">
+            <p:growl id="msgsReg" showDetail="true"/>
+            <div class="card card-w-title">
+                <h2>Publicación de Notificación de Cambio de Local</h2>
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <div class="card card-w-title">
+                            <div class="ui-fluid">
+                                <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2"
+                                             layout="grid" styleClass="ui-panelgrid-blank">
+                                    <p:outputLabel for="txtMatricula" value="Numero de Matrícula de Comercio:"
+                                                   class="txtLabel"/>
+                                    <p:inputText id="txtMatricula" required="true" readonly="true"
+                                                 value="#{cambioLocalBean.usuarioSesion.idMatriculaAsociada}"/>
+                                    <p:message for="txtMatricula"/>
+                                    <p:outputLabel for="txtEmpresa" value="Denominacion/ Razon Social:"
+                                                   class="txtLabel"/>
+                                    <p:inputText id="txtEmpresa" required="true" readonly="true"
+                                                 value="#{cambioLocalBean.usuarioSesion.sociedadConstituye}"/>
+                                    <p:message for="txtEmpresa"/>
+                                </p:panelGrid>
+                            </div>
+                        </div>
+                        <p:wizard nextLabel="Siguiente" backLabel="Anterior"
+                                  flowListener="#{cambioLocalBean.onFlowProcess}" showStepStatus="true"
+                                  style="font-size: 100%">
+                            <p:tab id="datosDireccion" title="Datos del Cambio de Domicilio"
+                                   titleStyle="font-size: 90%">
+                                <p:growl id="msgsP1" showDetail="true"/>
+                                <div class="card">
+                                    <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-6,ui-grid-col-2"
+                                                 layout="grid" styleClass="ui-panelgrid-blank">
+                                        <p:outputLabel value="Fecha de Publicacion" class="txtLabel"/>
+                                        <p:calendar id="fecFiltro" pattern="yyyy/MM/dd" locale="es" required="true"
+                                                    requiredMessage="Debe seleccionar la fecha de publicación"
+                                                    value="#{cambioLocalBean.publicacionRegistro.fecDisplay}"
+                                                    placeholder="Fecha de Publicación">
+                                            <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                        </p:calendar>
+                                        <p:message for="fecFiltro"/>
+                                    </p:panelGrid>
+                                </div>
+                                <div class="card">
+                                    <div class="ui-fluid">
+                                        <h2>Datos de la Nueva Dirección:</h2>
+                                        <p:panelGrid columns="6"
+                                                     columnClasses="ui-grid-col-1,ui-grid-col-3,ui-grid-col-1,ui-grid-col-3,ui-grid-col-1,ui-grid-col-3"
+                                                     layout="grid" styleClass="ui-panelgrid-blank">
+                                            <p:outputLabel for="txtDireccion" value="Calle / Avenida:"
+                                                           class="txtLabel"/>
+                                            <p:inputText id="txtDireccion" required="true"
+                                                         value="#{cambioLocalBean.txtDireccion}" class="txtValor"
+                                                         requiredMessage="Debe digitar la Calle o Avenida"
+                                                         placeholder="Digite la calle o avenida"/>
+                                            <p:outputLabel for="txtNro" value="Nro:" class="txtLabel"/>
+                                            <p:inputText id="txtNro" required="true" value="#{cambioLocalBean.txtNro}"
+                                                         class="txtValor"
+                                                         requiredMessage="Debe digitar el número de la casa o edificio"
+                                                         placeholder="Digite el N° "/>
+                                            <p:outputLabel for="txtZona" value="Zona:" class="txtLabel"/>
+                                            <p:inputText id="txtZona" required="true" value="#{cambioLocalBean.txtZona}"
+                                                         class="txtValor" requiredMessage="Debe digitar la zona"
+                                                         placeholder="Digite la Zona"/>
+                                            <p:outputLabel value=""/>
+                                            <p:message for="txtDireccion"/>
+                                            <p:outputLabel value=""/>
+                                            <p:message for="txtNro"/>
+                                            <p:outputLabel value=""/>
+                                            <p:message for="txtZona"/>
+                                            <p:outputLabel for="txtUV" value="Unidad Vecinal:" class="txtLabel"/>
+                                            <p:inputText id="txtUV" class="txtValor" value="#{cambioLocalBean.txtUV}"
+                                                         placeholder="Valor Opcional: Unidad Vecinal"/>
+                                            <p:outputLabel for="txtMza" value="Mza.:" class="txtLabel"/>
+                                            <p:inputText id="txtMza" class="txtValor" value="#{cambioLocalBean.txtMza}"
+                                                         placeholder="Valor Opcional: Mza."/>
+                                            <p:outputLabel for="txtEdif" value="Edificio:" class="txtLabel"/>
+                                            <p:inputText id="txtEdif" class="txtValor"
+                                                         value="#{cambioLocalBean.txtEdificio}"
+                                                         placeholder="Valor Opcional: Edificio"/>
+                                            <p:outputLabel for="txtPiso" value="Piso:" class="txtLabel"/>
+                                            <p:inputText id="txtPiso" class="txtValor"
+                                                         value="#{cambioLocalBean.txtPiso }"
+                                                         placeholder="Valor Opcional:  N° de Piso "/>
+                                            <p:outputLabel for="txtOficina" value="Oficina:" class="txtLabel"/>
+                                            <p:inputText id="txtOficina" class="txtValor"
+                                                         value="#{cambioLocalBean.txtOficina}"
+                                                         placeholder="Valor Opcional: N° de Oficina"/>
+                                        </p:panelGrid>
+                                    </div>
+                                </div>
+                            </p:tab>
+                            <p:tab id="vistaPrevia" title="Vista Previa de la Publicacion" titleStyle="font-size: 100%">
+                                <h1>Vista Preliminar de la publicación</h1>
+                                <p:outputPanel id="pubDetail" style="text-align:center;">
+                                    <p:panelGrid columns="1" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid"
+                                                 styleClass="ui-panelgrid-blank">
+                                        <p:inputTextarea value="${cambioLocalBean.txtPublicacion}" readonly="true"
+                                                         rows="20"
+                                                         cols="150" style="font-size: 1.2em"/>
+                                    </p:panelGrid>
+                                </p:outputPanel>
+                            </p:tab>
+                            <p:tab id="confirmacion" title="Confirmar Publicación" titleStyle="font-size: 90%">
+                                <h1>Confirmación de la publicación</h1>
+                                <div class="card">
+                                    <div class="ui-fluid" id="proPublica">
+                                        <p:panelGrid columns="2" columnClasses="ui-grid-col-1,ui-grid-col-6"
+                                                     layout="grid"
+                                                     styleClass="ui-panelgrid-blank"
+                                                     rendered="#{cambioLocalBean.vistaPrev}">
+                                            <p:selectBooleanCheckbox value="#{cambioLocalBean.aceptacion}"
+                                                                     required="true"
+                                                                     requiredMessage="Debe aceptar las condiciones para realizar la publicacion">
+                                                <p:ajax update="btReg"/>
+                                            </p:selectBooleanCheckbox>
+                                            <p:outputLabel
+                                                    value="El contenido de esta publicacion es exclusiva responsabilidad del usuario"
+                                                    class="txtLabel"/>
+                                        </p:panelGrid>
+                                        <p:panelGrid id="pnlBtn" columns="1" columnClasses="ui-grid-col-8" layout="grid"
+                                                     styleClass="ui-panelgrid-blank" style="text-align: center"
+                                                     rendered="#{cambioLocalBean.vistaPrev}">
+                                            <p:commandButton id="btReg" value="Confirmar Publicación"
+                                                             action="#{cambioLocalBean.registraPublicacion()}"
+                                                             update="formPubCambioDom" style="width: 350px"
+                                                             process="@all">
+                                            </p:commandButton>
+                                        </p:panelGrid>
+                                    </div>
+                                </div>
+                            </p:tab>
+                        </p:wizard>
+
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

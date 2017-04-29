@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/gaceta.iml" filepath="$PROJECT_DIR$/.idea/gaceta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../gacetaBll/gacetaBll.iml" filepath="$PROJECT_DIR$/../gacetaBll/gacetaBll.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../gacetaDaoOrm/gacetaDaoOrm.iml" filepath="$PROJECT_DIR$/../gacetaDaoOrm/gacetaDaoOrm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../gacetaModel/gacetaModel.iml" filepath="$PROJECT_DIR$/../gacetaModel/gacetaModel.iml" />
+    </modules>
+  </component>
+</project>

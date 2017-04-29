@@ -1,0 +1,28 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <div class="topbar clearfix">
+        <div class="topbar-left">
+            <div class="logo"></div>
+        </div>
+
+        <div class="topbar-right" style="background-color: #6f6f6f">
+            <a id="menu-button" href="#">
+                <i></i>
+            </a>
+            <!--a id="topbar-menu-button" href="#">
+                <i class="material-icons">&#xE5D2;</i>
+            </a-->
+            <div class="topbar-items">
+                <h1 style="color: white">GACETA ELECTRONICA DEL REGISTRO DE COMERCIO</h1>
+            </div>
+            <ul class="topbar-items fadeInDown animated">
+                <ui:fragment
+                        rendered="#{guestPreferences.profileMode == 'overlay'||guestPreferences.menuLayout == 'menu-layout-static menu-layout-horizontal'}">
+                </ui:fragment>
+            </ul>
+        </div>
+    </div>
+
+</ui:composition>

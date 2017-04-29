@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+        <class name="tbTaLugarExp" table="tbtalugarexp" >
+        <id name="idLugarExpedicion" column="idLugarExpedicion" type="int">
+            <generator class="assigned"/>
+        </id>
+        <property name="lugarExpedicion" column="lugarExpedicion" type="string"/>
+    </class>
+</hibernate-mapping>

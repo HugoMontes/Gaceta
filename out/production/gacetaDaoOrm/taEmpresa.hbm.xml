@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+    <class name="taEmpresa" table="taempresa">
+        <id name="codigoEmpresa" column="codigoempresa" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property name="idUsuario" column="idusuario" type="string"/>
+        <property name="denominacion" column="denominacion" type="string"/>
+        <property name="departamento" column="departamento" type="string"/>
+        <property name="domicilio" column="domicilio" type="string"/>
+        <property name="tipoDuracion" column="tipoduracion" type="string"/>
+        <property name="duracionNum" column="duracionnum" type="int"/>
+        <property name="duracionText" column="duraciontext" type="string"/>
+        <property name="aceptLugar" column="aceptlugar" type="string"/>
+        <property name="aceptFecha" column="aceptfecha" type="string"/>
+        <property name="organizaJuridica" column="organizajuridica" type="string"/>
+        <property name="categoriaMinuta" column="categoriaminuta" type="string"/>
+        <property name="objetoSocial" column="objetosocial" type="string"/>
+        <property name="ciiuObjeto" column="ciiuobjeto" type="string"/>
+        <property name="fechaRegistro" column="fecharegistro" type="date"/>
+        <property name="nroTestimonio" column="nrotestimonio" type="int"/>
+        <property name="idOrigenDoc" column="idorigendoc" type="int"/>
+        <property name="nroNotaria" column="nronotaria" type="int"/>
+        <property name="fechaDocumento" column="fechaDocumento" type="date"/>
+        <property name="idDepartamentoDoc" column="iddepartamentodoc" type="string"/>
+        <property name="idMunicipioDoc" column="idmunicipiodoc" type="string"/>
+        <property name="ctrEstado" column="ctrestado" type="string"/>
+    </class>
+</hibernate-mapping>

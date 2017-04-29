@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:tns="http://www.fundempresa.org.bo:10080/wsrcb"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  targetNamespace="http://www.fundempresa.org.bo:10080/wsrcb"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.fundempresa.org.bo:10080/wsrcb">
+      <s:element name="SrvMatricula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SrvMatriculaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SrvMatriculaResult" type="tns:ArrayOfMatriculaDatos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMatriculaDatos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MatriculaDatos" nillable="true" type="tns:MatriculaDatos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MatriculaDatos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CtrResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RazonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaInscripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaUltRenovacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltGestionRenovada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CtrEstado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SrvActividades">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SrvActividadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SrvActividadesResult" type="tns:ArrayOfMatriculaActividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMatriculaActividad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MatriculaActividad" nillable="true" type="tns:MatriculaActividad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MatriculaActividad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CtrResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TxtActividad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Seccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Division" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Clase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VersionClasificador" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SrvRepresentante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SrvRepresentanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SrvRepresentanteResult" type="tns:ArrayOfRepresentantes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRepresentantes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Representantes" nillable="true" type="tns:Representantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Representantes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CtrResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreVinculo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdClase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FecRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumDoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FecDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoticiaDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoVinculo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdLibro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumReg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SrvImagen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idLibro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numReg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SrvImagenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SrvImagenResult" type="tns:ArrayOfImagenDatos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfImagenDatos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ImagenDatos" nillable="true" type="tns:ImagenDatos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImagenDatos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CtrResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumReg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdLibro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodImagen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RutaImagen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SrvMatriculaVigencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SrvMatriculaVigenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SrvMatriculaVigenciaResult" type="tns:ArrayOfMatriculaDatosVigencia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMatriculaDatosVigencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MatriculaDatosVigencia" nillable="true" type="tns:MatriculaDatosVigencia" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MatriculaDatosVigencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CtrResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RazonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaInscripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaUltRenovacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltGestionRenovada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VigenciaMatricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FecVigenciaMatricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CtrEstado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SrvMatriculaDatosOperativos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyContrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SrvMatriculaDatosOperativosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SrvMatriculaDatosOperativosResult" type="tns:ArrayOfMatriculaDatosOperativos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMatriculaDatosOperativos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MatriculaDatosOperativos" nillable="true" type="tns:MatriculaDatosOperativos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MatriculaDatosOperativos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CtrResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdMatricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RazonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoSocietario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaInscripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaUltRenovacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltGestionRenovada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CtrEstado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CorreoElectronico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdCtrOrg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SrvMatriculaSoapIn">
+    <wsdl:part name="parameters" element="tns:SrvMatricula" />
+  </wsdl:message>
+  <wsdl:message name="SrvMatriculaSoapOut">
+    <wsdl:part name="parameters" element="tns:SrvMatriculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SrvActividadesSoapIn">
+    <wsdl:part name="parameters" element="tns:SrvActividades" />
+  </wsdl:message>
+  <wsdl:message name="SrvActividadesSoapOut">
+    <wsdl:part name="parameters" element="tns:SrvActividadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SrvRepresentanteSoapIn">
+    <wsdl:part name="parameters" element="tns:SrvRepresentante" />
+  </wsdl:message>
+  <wsdl:message name="SrvRepresentanteSoapOut">
+    <wsdl:part name="parameters" element="tns:SrvRepresentanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SrvImagenSoapIn">
+    <wsdl:part name="parameters" element="tns:SrvImagen" />
+  </wsdl:message>
+  <wsdl:message name="SrvImagenSoapOut">
+    <wsdl:part name="parameters" element="tns:SrvImagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="SrvMatriculaVigenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:SrvMatriculaVigencia" />
+  </wsdl:message>
+  <wsdl:message name="SrvMatriculaVigenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:SrvMatriculaVigenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SrvMatriculaDatosOperativosSoapIn">
+    <wsdl:part name="parameters" element="tns:SrvMatriculaDatosOperativos" />
+  </wsdl:message>
+  <wsdl:message name="SrvMatriculaDatosOperativosSoapOut">
+    <wsdl:part name="parameters" element="tns:SrvMatriculaDatosOperativosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceRCBSoap">
+    <wsdl:operation name="SrvMatricula">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS retorna datos de inscritos en arrays - compatibilidad con otros lenguajes (Java, etc)</wsdl:documentation>
+      <wsdl:input message="tns:SrvMatriculaSoapIn" />
+      <wsdl:output message="tns:SrvMatriculaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SrvActividades">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS retorna datos de actividades de inscritos en arrays - compatibilidad con otros lenguajes (Java, etc)</wsdl:documentation>
+      <wsdl:input message="tns:SrvActividadesSoapIn" />
+      <wsdl:output message="tns:SrvActividadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SrvRepresentante">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS retorna datos de representantes en arrays - compatibilidad con otros lenguajes (Java, etc)</wsdl:documentation>
+      <wsdl:input message="tns:SrvRepresentanteSoapIn" />
+      <wsdl:output message="tns:SrvRepresentanteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SrvImagen">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS consulta de imágenes</wsdl:documentation>
+      <wsdl:input message="tns:SrvImagenSoapIn" />
+      <wsdl:output message="tns:SrvImagenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SrvMatriculaVigencia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS retorna datos de inscrito con la fecha de la vigencia de la Matricula</wsdl:documentation>
+      <wsdl:input message="tns:SrvMatriculaVigenciaSoapIn" />
+      <wsdl:output message="tns:SrvMatriculaVigenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SrvMatriculaDatosOperativos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS retorna datos operativos del inscrito</wsdl:documentation>
+      <wsdl:input message="tns:SrvMatriculaDatosOperativosSoapIn" />
+      <wsdl:output message="tns:SrvMatriculaDatosOperativosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceRCBSoap" type="tns:WebServiceRCBSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SrvMatricula">
+      <soap:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvMatricula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvActividades">
+      <soap:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvActividades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvRepresentante">
+      <soap:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvRepresentante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvImagen">
+      <soap:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvImagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvMatriculaVigencia">
+      <soap:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvMatriculaVigencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvMatriculaDatosOperativos">
+      <soap:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvMatriculaDatosOperativos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceRCBSoap12" type="tns:WebServiceRCBSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SrvMatricula">
+      <soap12:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvMatricula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvActividades">
+      <soap12:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvActividades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvRepresentante">
+      <soap12:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvRepresentante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvImagen">
+      <soap12:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvImagen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvMatriculaVigencia">
+      <soap12:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvMatriculaVigencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SrvMatriculaDatosOperativos">
+      <soap12:operation soapAction="http://www.fundempresa.org.bo:10080/wsrcb/SrvMatriculaDatosOperativos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceRCB">
+    <wsdl:port name="WebServiceRCBSoap" binding="tns:WebServiceRCBSoap">
+      <soap:address location="http://ws.fundempresa.org.bo:10080/wsrcbdes/servrcb.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceRCBSoap12" binding="tns:WebServiceRCBSoap12">
+      <soap12:address location="http://ws.fundempresa.org.bo:10080/wsrcbdes/servrcb.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

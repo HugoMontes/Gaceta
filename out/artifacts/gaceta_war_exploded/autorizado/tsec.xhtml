@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#{guestPreferences.themeColors[guestPreferences.theme]}" />
+    </f:facet>
+    <h:outputStylesheet library="ultima-layout" name="css/layout-blue-grey.css" />
+    <h:outputScript library="ultima-layout" name="js/layout.js"/>
+    <h:outputScript library="ultima-layout" name="js/nanoscroller.js"/>
+    <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+    <h:outputScript library="ultima-layout" name="js/swipe.js"/>
+    <h:outputStylesheet library="css" name="cssRcb.css" />
+    <h:outputStylesheet library="css" name="cssLayout.css" />
+    <title>Gaceta Electronica - Registro de Comercio de Bolivia</title>
+</h:head>
+<h:body>
+    <div id="top" class="top">
+        <ui:insert name="top">
+            <div class="layout-wrapper">
+                <ui:include src="./../top.xhtml" />
+            </div>
+        </ui:insert>
+    </div>
+    <div id="left">
+        <ui:insert name="left">
+            <h:form id="formLogin">
+                <div class="ui-fluid">
+                    <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid" style="font-size: 0.8em">
+                        <div class="profile-image">
+                            <p:graphicImage value="#{perfilBean.dbImage}" stream="false"/>
+                        </div>
+                        <p:outputLabel style="text-align: right" value=" ${sessionBean.usuarioSesion.apellidoPaterno} ${sessionBean.usuarioSesion.apellidoMaterno}  ${sessionBean.usuarioSesion.nombreRepresentante} "/>
+                        <p:outputLabel style="text-align: right" value="${sessionBean.usuarioSesion.correoElectronico}"/>
+                        <p:outputLabel style="text-align: right" value="${sessionBean.usuarioSesion.idMatriculaAsociada}"/>
+                    </p:panelGrid>
+
+                    <p:menu style="font-size: 0.8em; color: #6f6f6e">
+                        <p:submenu label="Opciones de Usuario">
+                            <p:menuitem value="Cambiar Contraseña"  outcome="/autorizado/usuario/cambioClaveIngreso"  icon="ui-icon-key" styleClass="arrow"/>
+                            <p:menuitem value="Cargar Logotipo"  outcome="/autorizado/usuario/cargaLogo"   icon="ui-icon-image" />
+                            <p:menuitem value="Cerrar Sesión" actionListener="#{sessionBean.cerrarSesion()}"  action="/landing?faces-redirect=true" icon="ui-icon-power"/>
+                        </p:submenu>
+                    </p:menu>
+
+                    <p:menu style="font-size: 0.8em">
+                        <p:submenu label="Consultas y Reportes">
+                            <p:menuitem value="Pagina Principal" outcome="/autorizado/principal" icon="ui-icon-home"/>
+                            <p:menuitem value="Publicaciones por Pagar" outcome="/autorizado/pagos" icon="ui-icon-cart"/>
+                        </p:submenu>
+                    </p:menu>
+                    <p:menu header="Publicaciones" model="#{perfilBean.model}" styleClass="txtOpciones" style="font-size: 0.8em"/>
+                </div>
+            </h:form>
+        </ui:insert>
+    </div>
+    <div id="content" class="le">
+        <ui:insert name="content">
+
+        </ui:insert>
+    </div>
+</h:body>
+</html>

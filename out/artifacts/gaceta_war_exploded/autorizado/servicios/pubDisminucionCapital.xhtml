@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="content">
+        <h:head>
+            <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+            <h:outputStylesheet name="css/animate.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+            <h:outputScript library="js" name="calendar_es.js"/>
+            <script type="text/javascript">
+                function redirectUser() {
+                    window.location = "../principal.xhtml";
+                }
+            </script>
+        </h:head>
+        <h:form id="formpub">
+            <h1>Disminución de Capital de Sociedad de Responsabilidad Limitada</h1>
+            <p:wizard nextLabel="Siguiente" backLabel="Anterior"
+                      flowListener="#{disminucionCapitalBean.onFlowProcess}" showStepStatus="true"
+                      style="font-size: 100%">
+                <p:tab id="datosEmpresa" title="Datos de la Empresa" titleStyle="font-size: 90%">
+                    <p:growl id="msgsReg" showDetail="true"/>
+                    <div class="ui-fluid">
+                        <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-6" layout="grid"
+                                     styleClass="ui-panelgrid-blank">
+                            <p:outputLabel value="Numero de Matrícula de Comercio:" class="txtLabel"/>
+                            <p:inputText id="txtMatricula" readonly="true"
+                                         value="#{disminucionCapitalBean.usuarioSesion.idMatriculaAsociada}"/>
+                            <p:outputLabel for="txtEmpresa" value="Denominacion/Razon Social:"
+                                           class="txtLabel"/>
+                            <p:inputText id="txtEmpresa" required="true" readonly="true"
+                                         value="#{disminucionCapitalBean.usuarioSesion.sociedadConstituye}"/>
+                            <p:outputLabel value="Fecha de Publicacion" class="txtLabel"/>
+                            <p:calendar id="fecFiltro" pattern="yyyy/MM/dd" required="true"
+                                        requiredMessage="Debe seleccionar la fecha de publicación"
+                                        value="#{disminucionCapitalBean.publicacionRegistro.fecDisplay}"
+                                        locale="es"
+                                        placeholder="Seleccione la fecha de publicacion">
+                                <f:convertDateTime pattern="yyyy/MM/dd"/>
+                            </p:calendar>
+                            <p:message for="fecFiltro"/>
+                        </p:panelGrid>
+                    </div>
+                </p:tab>
+                <p:tab id="intronot" title="Introducción Notarial" titleStyle="font-size: 90%">
+                    <p:growl id="mesg1" showDetail="true"/>
+                    <h4>Introducción Notarial</h4>
+                    <p:inputTextarea id="textarea1" placeholder="Digite la Información referente a la Introduccion Notarial"
+                                     value="#{disminucionCapitalBean.introNot}"
+                                     autoResize="false" required="true" requiredMessage="La información es necesaria para continuar"
+                                     style="font-size:16px; width:100%; height:50%; padding-top: 10px; background: white">
+                    </p:inputTextarea>
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <h:outputText value="La información transcrita es correcta y es la que se desea publicar: " style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                        <p:selectBooleanCheckbox value="#{disminucionCapitalBean.value1}"/>
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="destext" title="Descripción Textual de la Modificación" titleStyle="font-size: 90%">
+                    <p:growl id="mesg2" showDetail="true"/>
+                    <h1>DATOS DEL CAPITAL</h1>
+                    <p:panelGrid columns="4"
+                                 columnClasses="ui-grid-col-2,ui-grid-col-2,ui-grid-col-4,ui-grid-col-3"
+                                 layout="grid" styleClass="ui-panelgrid-blank">
+
+                        <h:outputText value="Nuevo Capital de la Sociedad:"/>
+                        <p:inputNumber id="vrCap" onfocus="selectValue()" required="true"
+                                       maxlength="254" size="45"
+                                       style="font-size: 1.1em;background: #ffffff;"
+                                       value="#{disminucionCapitalBean.nuevoCapital}"
+                                       validatorMessage="Verifique que el datos introducido sea el correcto"
+                                       converterMessage="El capital Social debe ser un numero mayor a 0 y entero"
+                                       requiredMessage="Debe insertar el monto del Capital Social (Ej: 10000)"
+                                       title="Digite un valor entero" decimalPlaces="0">
+                            <f:validateDoubleRange minimum="1"/>
+                        </p:inputNumber>
+                    </p:panelGrid>
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <h:outputText value="La información transcrita es correcta y es la que se desea publicar: " style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                        <p:selectBooleanCheckbox value="#{disminucionCapitalBean.value2}"/>
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="destext2" title="Composición Societaria" titleStyle="font-size: 90%">
+                    <p:growl id="mesg2a" showDetail="true"/>
+                    <h4>Composición Societaria por efecto del aumento de capital</h4>
+                    <p:inputTextarea id="textarea2a" placeholder="Digite la composición Societaria por efecto de la disminución de capital"
+                                     value="#{disminucionCapitalBean.descr2}"
+                                     autoResize="false" required="true" requiredMessage="La información es necesaria para continuar"
+                                     style="font-size:16px; width:100%; height:50%; padding-top: 10px; background: white">
+                    </p:inputTextarea>
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <h:outputText value="La información transcrita es correcta y es la que se desea publicar: " style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                        <p:selectBooleanCheckbox value="#{disminucionCapitalBean.value2b}"/>
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="acta" title="Datos Referentes al Acta" titleStyle="font-size: 90%">
+                    <p:growl id="mesg3" showDetail="true"/>
+                    <h4>Datos Referentes al Acta</h4>
+                    <div class="ui-g">
+                        <div class="ui-g-12">
+                            <div class="card card-w-title">
+                                <div class="ui-fluid">
+                                    <p:panelGrid columns="3"
+                                                 columnClasses="ui-grid-col-2,ui-grid-col-6,ui-grid-col-4"
+                                                 layout="grid" styleClass="ui-panelgrid-blank">
+                                        <p:outputLabel for="selDptoDoc" value="Departamento de la Asamblea:"
+                                                       class="txtLabel"/>
+                                        <p:selectOneMenu id="selDptoDoc" value="#{disminucionCapitalBean.dptoOrigen}"
+                                                         style="font-size: 1.1em;background: #ffffff"
+                                                         requiredMessage="Debe seleccionar un Departamento"
+                                                         valueChangeListener="#{disminucionCapitalBean.cargaMunipDoc}"
+                                                         required="true">
+                                            <p:ajax event="change" update="municipioDoc"/>
+                                            <f:selectItem itemLabel="Seleccione un Departamento" itemValue=""/>
+                                            <f:selectItem itemLabel="Chuquisaca" itemValue="01"/>
+                                            <f:selectItem itemLabel="La Paz" itemValue="02"/>
+                                            <f:selectItem itemLabel="Cochabamba" itemValue="03"/>
+                                            <f:selectItem itemLabel="Oruro" itemValue="04"/>
+                                            <f:selectItem itemLabel="Potosi" itemValue="05"/>
+                                            <f:selectItem itemLabel="Tarija" itemValue="06"/>
+                                            <f:selectItem itemLabel="Santa Cruz" itemValue="07"/>
+                                            <f:selectItem itemLabel="Beni" itemValue="08"/>
+                                            <f:selectItem itemLabel="Pando" itemValue="09"/>
+                                        </p:selectOneMenu>
+                                        <p:message for="selDptoDoc"/>
+                                        <p:outputLabel for="municipioDoc" value="Municipio:" class="txtLabel"/>
+                                        <p:selectOneMenu id="municipioDoc" value="#{pubConvocatoriaBean.distOrigen}"
+                                                         style="font-size: 1.1em;background: #ffffff"
+                                                         required="true"
+                                                         requiredMessage="Debe seleccionar el distrito judicial"
+                                                         autoWidth="false" filter="true"
+                                                         filterMatchMode="startsWith">
+                                            <f:selectItem itemLabel="Seleccione el Municipio" itemValue=""/>
+                                            <f:selectItems var="tbMunipDoc"
+                                                           value="#{disminucionCapitalBean.municipiosDoc}"
+                                                           itemLabel="#{tbMunipDoc.municipio}"
+                                                           itemValue="#{tbMunipDoc.municipio}"/>
+                                        </p:selectOneMenu>
+                                        <p:message for="municipioDoc"/>
+                                        <p:outputLabel value="Fecha de la Asamblea:" class="txtLabel"
+                                                       for="fecPublica1"/>
+                                        <p:calendar id="fecPublica1" pattern="yyyy/MM/dd" required="true"
+                                                    requiredMessage="Debe seleccionar la fecha de convocatoria"
+                                                    value="#{disminucionCapitalBean.fecJunta}" locale="es"
+                                                    placeholder="Seleccione la fecha la Asamblea">
+                                            <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                        </p:calendar>
+                                        <p:message for="fecPublica1"/>
+                                        <p:outputLabel value="Tipo de Reunion:" class="txtLabel" for="selCaracter"/>
+                                        <p:selectOneMenu id="selCaracter"
+                                                         style="font-size: 1.1em;background: #ffffff"
+                                                         required="true" value="#{disminucionCapitalBean.tipoJunta}">
+                                            <f:selectItem itemLabel="Asamblea de Socios Ordinaria" itemValue="Ordinaria"/>
+                                            <f:selectItem itemLabel="Asamblea de Socios Extraordinaria" itemValue="Extraordinaria"/>
+                                        </p:selectOneMenu>
+                                        <p:message for="selCaracter"/>
+                                        <p:outputLabel value="Digitar Orden del día" class="txtLabel"/>
+                                        <p:panelGrid columns="2" columnClasses="ui-grid-col-8,ui-grid-col-4"
+                                                     layout="grid" styleClass="ui-panelgrid-blank">
+                                            <p:inputText id="txtOrden" value="#{disminucionCapitalBean.txtOrden}"
+                                                         cols="150" rows="15"
+                                                         placeholder="Digite la orden del día de la junta"/>
+                                            <p:commandButton id="addOrden" value="Registrar"
+                                                             actionListener="#{disminucionCapitalBean.registraOrden}"
+                                                             process="@this,txtOrden" update="tblOrdenDia,txtOrden"
+                                                             icon="ui-icon-triangle-1-w"/>
+                                        </p:panelGrid>
+                                        <p:message for="txtOrden"/>
+                                        <p:outputLabel for="tblOrdenDia" value="Detalle Orden del día"
+                                                       class="txtLabel"/>
+
+                                        <p:dataTable id="tblOrdenDia" var="tblOrden"
+                                                     value="${disminucionCapitalBean.contenidoOrden}"
+                                                     selectionMode="Single"
+                                                     selection="#{disminucionCapitalBean.itemOrden}"
+                                                     rowKey="#{tblOrden.idOrden}"
+                                                     emptyMessage="Complete la informacion del Orden del Día">
+                                            <p:column headerText="N°" width="10%" style="size: 8em;">
+                                                <h:outputLabel value="${tblOrden.idOrden}"/>
+                                            </p:column>
+                                            <p:column headerText="Detalle Orden del Día">
+                                                <h:outputLabel value="${tblOrden.ordenDia}"/>
+                                            </p:column>
+                                            <p:column headerText="Quitar" width="20%">
+                                                <p:commandButton icon="ui-icon-triangle-1-e"
+                                                                 actionListener="#{disminucionCapitalBean.eliminaItem(tblOrden)}"
+                                                                 process="@this,tblOrdenDia" update="tblOrdenDia"
+                                                                 width="20%"/>
+                                            </p:column>
+                                        </p:dataTable>
+                                        <p:message for="tblOrdenDia"/>
+
+                                    </p:panelGrid>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <h:outputText value="La información transcrita es correcta y es la que se desea publicar: " style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                        <p:selectBooleanCheckbox value="#{disminucionCapitalBean.value3}"/>
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="conclusion" title="Conclusión Notarial" titleStyle="font-size: 90%">
+                    <p:growl id="mesg4" showDetail="true"/>
+                    <h4>Conclusión Notarial</h4>
+                    <p:inputTextarea id="textarea3" placeholder="Digite la Información referente a la Conclusión Notarial"
+                                     value="#{disminucionCapitalBean.conclNot}"
+                                     autoResize="false" required="true" requiredMessage="La información es necesaria para continuar"
+                                     style="font-size:16px; width:100%; height:50%; padding-top: 10px; background: white">
+                    </p:inputTextarea>
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <h:outputText value="La información transcrita es correcta y es la que se desea publicar: " style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                        <p:selectBooleanCheckbox value="#{disminucionCapitalBean.value4}"/>
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="concordancia" title="Concordancia Notarial" titleStyle="font-size: 90%">
+                    <p:growl id="mesg5" showDetail="true"/>
+                    <h4>Concordancia Notarial</h4>
+                    <p:inputTextarea id="textarea4" placeholder="Digite la Información referente a la Concordancia Notarial"
+                                     value="#{disminucionCapitalBean.concoNot}"
+                                     autoResize="false" required="true" requiredMessage="La información es necesaria para continuar"
+                                     style="font-size:16px; width:100%; height:50%; padding-top: 10px; background: white">
+                    </p:inputTextarea>
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <h:outputText value="La información transcrita es correcta y es la que se desea publicar: " style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                        <p:selectBooleanCheckbox value="#{disminucionCapitalBean.value5}"/>
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="preview" title="Vista previa de la publicación" titleStyle="font-size: 90%">
+                    <p:growl id="mesg6" showDetail="true"/>
+                    <h4>Vista Previa de la publicación</h4>
+                    <p:inputTextarea id="textarea5"
+                                     value="#{disminucionCapitalBean.txtVistaPrevia}" readonly="true"
+                                     autoResize="false" required="true"
+                                     style="font-size:16px; width:100%; height:50%; padding-top: 10px; background: white">
+                    </p:inputTextarea>
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <h:outputText value="La información transcrita es correcta y es la que se desea publicar: " style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                        <p:selectBooleanCheckbox value="#{disminucionCapitalBean.vistaPrev}"/>
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab id="aprobacion" title="Confirmar Publicación" titleStyle="font-size: 90%">
+                    <p:growl id="mesg7" showDetail="true"/>
+                    <h1>Confirmación para realizar la publicación</h1>
+                    <div class="ui-fluid" id="proPublica">
+                        <p:panelGrid id="pnlAcep" columns="4"
+                                     columnClasses="ui-grid-col-2,ui-grid-col-1,ui-grid-col-4"
+                                     layout="grid"
+                                     styleClass="ui-panelgrid-blank" style="text-align: left"
+                                     rendered="#{disminucionCapitalBean.vistaPrev}">
+                            <h:outputLabel value=""/>
+                            <p:selectBooleanCheckbox value="#{disminucionCapitalBean.aceptacion}"
+                                                     required="true"
+                                                     requiredMessage="Debe aceptar las condiciones para realizar la publicacion">
+                                <p:ajax update="btReg"/>
+                            </p:selectBooleanCheckbox>
+                            <p:outputLabel
+                                    value="El contenido de esta publicacion es exclusiva responsabilidad del usuario"
+                                    class="txtLabel"/>
+                        </p:panelGrid>
+                        <p:panelGrid id="pnlBtn" columns="1" columnClasses="ui-grid-col-8" layout="grid"
+                                     styleClass="ui-panelgrid-blank" style="text-align: center"
+                                     rendered="#{disminucionCapitalBean.vistaPrev}">
+                            <p:commandButton id="btReg" value="Confirmar Publicación"
+                                             action="#{disminucionCapitalBean.registraPublicacion()}"
+                                             update="formpub"
+                                             style="width: 350px;align-content: center"/>
+                        </p:panelGrid>
+                    </div>
+                </p:tab>
+            </p:wizard>
+        </h:form>
+    </ui:define>
+</ui:composition>

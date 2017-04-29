@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+    </f:facet>
+    <title>Gaceta Electronica del Registro de Comercio de Bolivia</title>
+    <h:outputScript name="js/ripple.js" library="ultima-layout" />
+    <h:outputScript name="js/layout.js" library="ultima-layout" />
+</h:head>
+<h:form id="formSeleccion">
+    <h:body>
+        <ui:include src="./top.xhtml" />
+        <p:growl id="msgsReg" showDetail="true" />
+        <div class="landing-wrapper">
+            <div id="features">
+                <h2>HABILITACIÓN Y CREACIÓN DE UNA CUENTA</h2>
+                <p>Seleccione la opción adecuada a la acción que desea realizar:</p>
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-6">
+                        <div class="feature-icon">
+                            <i class="material-icons"><a href="registro.xhtml">&#xE563;</a></i>
+                        </div>
+                        <p>Si su empresa se encuentra inscrita en el Registro de Comercio de Bolivia, solicite la activación de su cuenta en el siguiente enlace</p>
+                        <br></br>
+                        <h3><a href="registro.xhtml">Habilitación de Cuentas</a></h3>
+
+                    </div>
+                    <div class="ui-g-12 ui-md-6">
+                        <div class="feature-icon">
+                            <i class="material-icons"><a href="registroNew.xhtml">&#xE7F1;</a></i>
+                        </div>
+                        <p>Para unidades económicas en etapa de creación. Solicite la creación de una cuenta para realizar publicaciones, en el siguiente enlace</p>
+                        <br></br>
+                        <h3><a href="registroNew.xhtml">Crear una Cuenta</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout" />
+    </h:body>
+</h:form>
+
+</html>

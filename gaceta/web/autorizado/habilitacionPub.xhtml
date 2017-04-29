@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/WEB-INF/template.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+  <ui:define name="content">
+    <h:form id="frmAutoriza">
+      <div class="ui-fluid">
+        <p:panel>
+          <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+            <h:outputLabel value="Seleccionar la fecha de Solicitud:" class="txtLabel"/>
+            <p:calendar id="fecFiltro" pattern="yyyy-MM-dd" value="#{habilitacionPubBean.dateFiltra}" timeZone="America/LaPaz">
+              <f:convertDateTime pattern="yyyy-MM-dd" />
+            </p:calendar>
+            <p:commandButton id="btnFechaCh" value="Filtro por Fecha" icon="ui-icon-calendar" action="#{habilitacionPubBean.filtraFecha}" update="pnlRes" />
+          </p:panelGrid>
+        </p:panel>
+        <p:panel id="pnlRes" header="Listado de Publicaciones no Aprobadas">
+          <p:dataTable var="listado" value="#{habilitacionPubBean.listaPublicaciones}">
+            <p:column headerText="Cod. Publicación">
+              <h:outputText value="#{listado.idPublicacion}" />
+            </p:column>
+            <p:column headerText="Usuario Publica">
+              <h:outputText value="#{listado.idLoginEmpresa}" />
+            </p:column>
+            <p:column headerText="Fecha de Solicitud">
+              <h:outputText value="#{listado.fecSolicitud}" />
+            </p:column>
+            <p:column headerText="Publicacion">
+              <h:outputText value="#{listado.textoPublica}" />
+            </p:column>
+            <p:column headerText="Vista Previa">
+              <p:commandButton update=":frmAutoriza:carDetail" oncomplete="PF('pubDialog').show()" icon="ui-icon-search" title="Publicación Completa">
+                <f:setPropertyActionListener value="#{listado}" target="#{habilitacionPubBean.publicacionSelecionada}" />
+              </p:commandButton>
+            </p:column>
+          </p:dataTable>
+        </p:panel>
+        <p:dialog header="Detalle de la Publicacion" widgetVar="pubDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+          <p:outputPanel id="pubDetail" style="text-align:center;">
+            <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+              <p:outputLabel value="Titulo Publicacion:" class="txtLabel"/>
+              <p:inputText value="#{dtSelectionView.publicacionSelecionada.tituloPublica}" readonly="true"/>
+
+              <p:outputLabel value="Codigo de publicacion:" class="txtLabel"/>
+              <p:inputText value="#{dtSelectionView.publicacionSelecionada.idPublicacion}" readonly="true"/>
+
+              <p:outputLabel value="Fecha de Publicacion" class="txtLabel"/>
+              <p:inputText value="#{dtSelectionView.publicacionSelecionada.fecDisplay}"   readonly="true"/>
+            </p:panelGrid>
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+              <p:outputLabel value="Publicacion Completa:" class="txtLabel"/>
+              <p:inputTextarea id="txtPublica" value="#{dtSelectionView.publicacionSelecionada.textoCompleto}" cols="150" rows="15" readonly="true"/>
+            </p:panelGrid>
+          </p:outputPanel>
+        </p:dialog>
+
+      </div>
+    </h:form>
+  </ui:define>
+</ui:composition>

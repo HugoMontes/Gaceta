@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <ui:define name="content">
+      <h:head>
+          <script type="text/javascript">
+              function redirectUser() {
+                  window.location = "principal.xhtml";
+              }
+          </script>
+          <h:outputScript name="js/ripple.js" library="ultima-layout" />
+      </h:head>
+      <h:form id="frmPagos">
+          <p:growl id="msgsReg" showDetail="true" sticky="false" />
+          <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+                  <p:dataTable var="pagos" value="#{billingBean.listaPublicaciones}" reflow="true" emptyMessage="No se tienen publicaciones pendientes de pago">
+                      <f:facet name="header">
+                          Solicitudes de Publicación sin pago
+                      </f:facet>
+                      <p:column headerText="Codigo de Publicacion">
+                          <h:outputText value="#{pagos.idPublicacion } " />
+                      </p:column>
+                      <p:column headerText="Fecha de Solicitud">
+                          <h:outputText value="#{pagos.fecSolicitud } " />
+                      </p:column>
+                      <p:column headerText="Fecha de Publicacion">
+                          <h:outputText value="#{pagos.fecDisplay} " />
+                      </p:column>
+                      <p:column headerText="Publicacion">
+                          <h:outputText value="#{pagos.tituloPublica} " />
+                      </p:column>
+                      <p:column headerText="Estado Publicacion">
+                          <h:outputText value="#{pagos.desEstadoPublica} " />
+                      </p:column>
+                      <p:column headerText="Pago" style="width:32px;text-align: center">
+                          <p:commandButton styleClass="primary" update=":exePagos:multiPayDetail" oncomplete="PF('payDialog').show()" icon="ui-icon-check" title="View">
+                              <f:setPropertyActionListener value="#{pagos}" target="#{billingBean.publicacionSelecionada}" />
+                          </p:commandButton>
+                      </p:column>
+                  </p:dataTable>
+          </p:panelGrid>
+      </h:form>
+      <h:form id="exePagos">
+          <p:dialog header="Publicacion Seleccionada" widgetVar="payDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="400">
+              <p:outputPanel id="multiPayDetail" style="text-align:center;">
+                  <div class="ui-fluid">
+                  <p:panelGrid columns="2" columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid" styleClass="ui-panelgrid-blank">
+                      <p:outputLabel value="Codigo de Publicación:"/>
+                      <p:outputLabel value="${billingBean.publicacionSelecionada.idPublicacion}"/>
+                      <p:outputLabel value="Digite el código del  Deposito:"/>
+                      <p:inputText value="#{billingBean.codigoDeposito}" required="true"  requiredMessage="Debe digitar la informacion del depósito"/>
+                      <p:outputLabel value="Digite el monto del  Deposito:"/>
+                      <p:inputText value="#{billingBean.montoPagado}" required="true"  requiredMessage="Debe digitar el monto del deposito"/>
+                      <p:outputLabel value="Fecha del Deposito:"/>
+                      <p:calendar id="fecFiltroFin" pattern="yyyy-MM-dd" value="#{billingBean.fechaDeposito}" timeZone="America/LaPaz">
+                          <f:convertDateTime pattern="yyyy-MM-dd" />
+                      </p:calendar>
+                      <p/>
+                      <p:commandButton id="btnProcPago" value="Registrar Pago " icon="ui-icon-document" update="frmPagos exePagos" actionListener="#{billingBean.registraPago}"  process="@all"  />
+                  </p:panelGrid>
+                  </div>
+              </p:outputPanel>
+          </p:dialog>
+      </h:form>
+      
+  </ui:define>
+</ui:composition>

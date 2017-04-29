@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+    <class name="taSocios" table="tasocios">
+        <id name="idRegistro" column="idregistro" type="int">
+            <generator class="increment"/>
+        </id>
+        <property name="codigoEmpresa" column="codigoempresa" type="string"/>
+        <property name="nroSocio" column="nrosocio" type="int"/>
+        <property name="nombreSocio" column="nombresocio" type="string"/>
+        <property name="paternoSocio" column="paternosocio" type="string"/>
+        <property name="maternoSocio" column="maternosocio" type="string"/>
+        <property name="nacionalidad" column="nacionalidad" type="string"/>
+        <property name="estadoCivil" column="estadocivil" type="string"/>
+        <property name="profesion" column="profesion" type="string"/>
+        <property name="domicilio" column="domicilio" type="string"/>
+        <property name="zona" column="zona" type="string"/>
+        <property name="tipoidentificacion" column="tipoidentificacion" type="string"/>
+        <property name="identificacion" column="identificacion" type="string"/>
+        <property name="idExpedido" column="idexpedido" type="string"/>
+        <property name="ctrTipoAporte" column="ctrtipoaporte" type="string"/>
+        <property name="aporteBien" column="aportebien" type="string"/>
+        <property name="aporteCapitalMon" column="aportecapitalmon" type="double"/>
+        <property name="aporteCapitalSus" column="aportecapitalsus" type="double"/>
+        <property name="aporteCapitalPag" column="aportecapitalpag" type="double"/>
+        <property name="cuotasCapital" column="cuotascapital" type="double"/>
+        <property name="acciones" column="acciones" type="double"/>
+        <property name="participaPercent" column="participapercent" type="double"/>
+        <property name="cargo" column="cargo" type="string"/>
+
+    </class>
+</hibernate-mapping>

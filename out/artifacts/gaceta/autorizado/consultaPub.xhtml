@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <ui:define name="content">
+    <p:growl id="msgsReg" showDetail="true"  />
+
+    <h:form id="frmPublica">
+      <div class="ui-fluid">
+
+        <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+          <p:panel id="pnlRes" header="Publicaciones de:  #{consultaPubBean.usuarioSesion.sociedadConstituye}" style="margin-top:15px;font-size: 1.2em;background: #EDF0F4" class="tituloPage">
+            <p:dataGrid var="publicaciones" value="#{consultaPubBean.listaPublicaciones}" columns="1" layout="grid"
+                        id="pagePublica" emptyMessage="No se tienen publicaciones realizadas por la empresa">
+              <p:panel header="#{publicaciones.tituloPublica}" style="text-align:left;font-size: 0.9em;background: #ffffff">
+                <h:panelGrid columns="1" style="width:100%;text-align:left;font-size: 0.8em;background: #ffffff">
+                  <p:panelGrid columns="2" columnClasses="ui-grid-col-3,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank" >
+                    <h:outputText value="Codigo de Publicacion:" class="txtLabelConsulta"/>
+                    <h:outputText value="#{publicaciones.idPublicacion}" class="txtConsulta"/>
+                    <h:outputText value="Fecha de Publicación:" class="txtLabelConsulta"/>
+                    <h:outputText value="#{publicaciones.fecDisplay}" class="txtConsulta"/>
+                    <h:outputText value="Resumen de Publicacion:" class="txtLabelConsulta"/>
+                    <h:outputText value="#{publicaciones.textoPublica}" class="txtConsulta"/>
+                    <h:outputText value="Estado de Publicacion:" class="txtLabelConsulta"/>
+                    <h:outputText value="#{publicaciones.desEstadoPublica}" class="txtEstadoPublica"/>
+                    <p:commandLink value="Ver Publicacion Completa" update=":frmPublica:pubDetail" oncomplete="PF('pubDialog').show()" title="Detalle de la Publicación" style="font-size: 1.0em;" >
+                      <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
+                      <f:setPropertyActionListener value="#{publicaciones}" target="#{consultaPubBean.publicacionSelecionada}" />
+                    </p:commandLink>
+                  </p:panelGrid>
+                </h:panelGrid>
+              </p:panel>
+            </p:dataGrid>
+          </p:panel>
+        </p:panelGrid>
+
+        <p:dialog header="Detalle de la Publicacion" widgetVar="pubDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+          <p:outputPanel id="pubDetail" style="text-align:center;">
+            <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+              <p:outputLabel value="Titulo Publicacion:" class="txtLabel"/>
+              <p:inputText value="#{consultaPubBean.publicacionSelecionada.tituloPublica}" readonly="true"/>
+
+              <p:outputLabel value="Codigo de publicacion:" class="txtLabel"/>
+              <p:inputText value="#{consultaPubBean.publicacionSelecionada.idPublicacion}" readonly="true"/>
+
+              <p:outputLabel value="Fecha de Publicacion" class="txtLabel"/>
+              <p:inputText value="#{consultaPubBean.publicacionSelecionada.fecDisplay}"   readonly="true"/>
+            </p:panelGrid>
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid" styleClass="ui-panelgrid-blank">
+              <p:outputLabel value="Publicacion Completa:" class="txtLabel"/>
+              <p:inputTextarea id="txtPublica" value="#{consultaPubBean.publicacionSelecionada.textoCompleto}" cols="150" rows="15" readonly="true"/>
+            </p:panelGrid>
+          </p:outputPanel>
+        </p:dialog>
+
+      </div>
+    </h:form>
+
+
+  </ui:define>
+
+</ui:composition>

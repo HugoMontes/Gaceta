@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+    <class name="tbRepositorio" table="tbrepositorio" >
+        <id name="idPublicacion" column="idPublicacion" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property name="fechaGeneracion" type="timestamp" column="fechaGeneracion"/>
+        <property name="imgPublicacion" column="imgPublicacion" type="binary"/>
+        <property name="urlFile" column="urlfile" type="string"/>
+        <property name="tipoArchivo" column="tipoArchivo" type="string"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,716 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h:head>
+            <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+            <h:outputStylesheet name="css/animate.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+            <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+            <h:outputScript library="js" name="calendar_es.js"/>
+            <script type="text/javascript">
+                function redirectUser() {
+                    window.location = "../principal.xhtml";
+                }
+            </script>
+            <script type="text/javascript">
+                function selectValue() {
+                    $(document).ready(function () {
+                        $("input[type=text]").focus(function () {
+                            this.select();
+                        });
+
+                        $("input[type=text]").mouseup(function (e) {
+                            e.preventDefault();
+                        });
+                    });
+                }
+            </script>
+        </h:head>
+        <h:form id="formPubConst">
+            <p:growl id="msgsReg" showDetail="true"/>
+            <p:growl/>
+            <div align="center">
+                <h:outputText value="PUBLICACION DE CONSTITUCIÓN DE SOCIEDAD DE RESPONSABILIDAD LIMITADA"
+                              class="tituloPage"/>
+                <p/>
+                <h:outputText value="ESCRITURA DE CONSTITUCIÓN" class="tituloPage"/>
+                <p/>
+            </div>
+            <div>
+                <p:wizard nextLabel="Siguiente" backLabel="Anterior" flowListener="#{creaSRLBean.onFlowProcess}"
+                          showStepStatus="true" style="font-size: 100%">
+                    <p:tab id="datosTestimonio" title="Datos de Testimonio de Constitución" titleStyle="font-size: 90%">
+                        <div class="ui-g">
+                            <div class="ui-g-12">
+                                <div class="card card-w-title">
+                                    <h2>Publicación del Testimonio de Constitución</h2>
+                                    <div class="ui-fluid">
+                                        <p:panelGrid columns="3"
+                                                     columnClasses="ui-grid-col-3,ui-grid-col-4,ui-grid-col-2"
+                                                     layout="grid" styleClass="ui-panelgrid-blank">
+
+                                            <p:outputLabel for="txtTest" value="N° de Testimonio:" class="txtLabel"/>
+                                            <p:inputNumber id="txtTest" required="true"
+                                                           requiredMessage="Digite el N° de Testimonio que publica"
+                                                           value="#{creaSABean.publicacionRegistro.nroDocumento}"
+                                                           placeholder="Digite el Numero de Testimonio; Ej, 125"
+                                                           decimalPlaces="0"/>
+                                            <p:message for="txtTest"/>
+
+                                            <p:outputLabel for="cmOrigen" value="Origen del Testimonio:"
+                                                           class="txtLabel"/>
+                                            <p:selectOneMenu id="cmOrigen"
+                                                             value="#{creaSRLBean.empresaData.idOrigenDoc}"
+                                                             style="font-size: 1.1em;background: #ffffff"
+                                                             required="true"
+                                                             requiredMessage="Debe seleccionar el origen del testimonio">
+                                                <f:selectItem itemLabel="Seleccione el origen del Documento"
+                                                              itemValue=""/>
+                                                <f:selectItems var="tbOrigen" value="#{creaSRLBean.origenes}"
+                                                               itemLabel="#{tbOrigen.origen}"
+                                                               itemValue="#{tbOrigen.idOrigen}"/>
+                                            </p:selectOneMenu>
+                                            <p:message for="cmOrigen"/>
+
+                                            <p:outputLabel for="numOrigen" value="N° de Notaria:" class="txtLabel"/>
+                                            <p:inputText id="numOrigen" required="true"
+                                                         requiredMessage="Digite el numero de Notaria"
+                                                         value="#{creaSRLBean.empresaData.nroNotaria}"
+                                                         placeholder="Digite el número de la notaría; Ej. 25"
+                                                         validatorMessage="Debe ingresar un valor numérico"
+                                                         converterMessage="Debe ingresar un valor numérico">
+                                                <f:validateDoubleRange minimum="1" maximum="99999"/>
+                                            </p:inputText>
+                                            <p:message for="numOrigen"/>
+
+                                            <p:outputLabel for="fecDoc" value="Fecha del Documento:" class="txtLabel"/>
+                                            <p:calendar id="fecDoc" pattern="yyyy/MM/dd" required="true"
+                                                        requiredMessage="Debe seleccionar la fecha del Documento"
+                                                        value="#{creaSRLBean.empresaData.fechaDocumento}"
+                                                        validatorMessage="Debe digitar una fecha anterior a hoy"
+                                                        locale="es">
+                                                <f:convertDateTime pattern="yyyy/MM/dd"/>
+                                            </p:calendar>
+                                            <p:message for="fecDoc"/>
+
+                                            <p:outputLabel for="selDptoDoc" value="Departamento de Notaria:"
+                                                           class="txtLabel"/>
+                                            <p:selectOneMenu id="selDptoDoc"
+                                                             value="#{creaSRLBean.empresaData.idDepartamentoDoc}"
+                                                             style="font-size: 1.1em;background: #ffffff"
+                                                             requiredMessage="Debe seleccionar un Departamento"
+                                                             valueChangeListener="#{creaSRLBean.cargaMunipDoc}"
+                                                             required="true">
+                                                <p:ajax event="change" update="municipioDoc"/>
+                                                <f:selectItem itemLabel="Seleccione un Departamento" itemValue=""/>
+                                                <f:selectItem itemLabel="Chuquisaca" itemValue="01"/>
+                                                <f:selectItem itemLabel="La Paz" itemValue="02"/>
+                                                <f:selectItem itemLabel="Cochabamba" itemValue="03"/>
+                                                <f:selectItem itemLabel="Oruro" itemValue="04"/>
+                                                <f:selectItem itemLabel="Potosi" itemValue="05"/>
+                                                <f:selectItem itemLabel="Tarija" itemValue="06"/>
+                                                <f:selectItem itemLabel="Santa Cruz" itemValue="07"/>
+                                                <f:selectItem itemLabel="Beni" itemValue="08"/>
+                                                <f:selectItem itemLabel="Pando" itemValue="09"/>
+                                            </p:selectOneMenu>
+                                            <p:message for="selDptoDoc"/>
+
+                                            <p:outputLabel for="municipioDoc" value="Distrito Judicial:"
+                                                           class="txtLabel"/>
+                                            <p:selectOneMenu id="municipioDoc"
+                                                             value="#{creaSRLBean.empresaData.idMunicipioDoc}"
+                                                             style="font-size: 1.1em;background: #ffffff"
+                                                             required="true"
+                                                             requiredMessage="Debe seleccionar el distrito judicial"
+                                                             filter="true" filterMatchMode="startsWith">
+                                                <f:selectItem itemLabel="Seleccione el Municipio" itemValue=""/>
+                                                <f:selectItems var="tbMunipDoc" value="#{creaSRLBean.municipiosDoc}"
+                                                               itemLabel="#{tbMunipDoc.municipio}"
+                                                               itemValue="#{tbMunipDoc.idMunicipio}"/>
+                                            </p:selectOneMenu>
+                                            <p:message for="municipioDoc"/>
+
+                                        </p:panelGrid>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                            <h:outputText value="La información transcrita es correcta y es la que se desea publicar: "
+                                          style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                            <p:selectBooleanCheckbox value="#{creaSRLBean.value1}"/>
+                        </h:panelGrid>
+                    </p:tab>
+
+                    <p:tab id="datosSociedad" title="Paso 1. Datos de la Sociedad" titleStyle="font-size: 90%">
+                        <div class="ui-g">
+                            <div class="ui-g-12">
+                                <div class="ui-fluid">
+                                    <div class="card card-w-title">
+                                        <h1>Ingreso de Datos de la Sociedad:</h1>
+                                        <h:outputText value="Razón Social o Denominacion:"
+                                                      style="font-size: 1.1em;background: #ffffff"/>
+                                        <p/>
+                                        <p:inputText id="razonsoc" required="true" maxlength="254" size="180"
+                                                     style="font-size: 1.1em;background: #ffffff"
+                                                     value="#{creaSRLBean.empresaData.denominacion}"
+                                                     requiredMessage="Debe ingresar el nombre de la Sociedad, seguida de la sigla S.R.L. (Ej: La Empresa S.R.L.)"/>
+                                        <p/>
+                                        <p:message for="razonsoc"/>
+                                        <h:outputText
+                                                value="Tomar nota que la Sociedad puede llevar una “Razón Social” formada con el nombre de uno o algunos socios; o puede llevar una “denominación” vinculada a un nombre de fantasía con referencia al objeto principal de su giro; Conforme al art. 197 del Código de Comercio de Bolivia."
+                                                style="color:#0D4173;font-weight: bolder"/>
+                                        <p/>
+                                    </div>
+                                    <div class="ui-fluid">
+                                        <div class="ui-g-12 ui-md-6">
+                                            <div class="card card-w-title">
+                                                <h1>Domicilio de la Sociedad:</h1>
+                                                <h:outputText value="Departamento:"/>
+                                                <p/>
+                                                <p:selectOneMenu id="selDpto"
+                                                                 value="#{creaSRLBean.empresaData.departamento}"
+                                                                 style="font-size: 1.1em;background: #ffffff"
+                                                                 requiredMessage="Debe seleccionar un Departamento"
+                                                                 valueChangeListener="#{creaSRLBean.cargaMunip}">
+                                                    <p:ajax event="change" update="municipio"/>
+                                                    <f:selectItem itemLabel="Seleccione un Departamento" itemValue=""/>
+                                                    <f:selectItem itemLabel="Chuquisaca" itemValue="01"/>
+                                                    <f:selectItem itemLabel="La Paz" itemValue="02"/>
+                                                    <f:selectItem itemLabel="Cochabamba" itemValue="03"/>
+                                                    <f:selectItem itemLabel="Oruro" itemValue="04"/>
+                                                    <f:selectItem itemLabel="Potosi" itemValue="05"/>
+                                                    <f:selectItem itemLabel="Tarija" itemValue="06"/>
+                                                    <f:selectItem itemLabel="Santa Cruz" itemValue="07"/>
+                                                    <f:selectItem itemLabel="Beni" itemValue="08"/>
+                                                    <f:selectItem itemLabel="Pando" itemValue="09"/>
+                                                </p:selectOneMenu>
+                                                <p:message for="selDpto"/>
+                                                <h:outputText value="Ciudad o Municipio:"/>
+                                                <p/>
+                                                <p:selectOneMenu id="municipio"
+                                                                 value="#{creaSRLBean.empresaData.domicilio}"
+                                                                 style="font-size: 1.1em;background: #ffffff"
+                                                                 required="true"
+                                                                 requiredMessage="Debe seleccionar el municipio del domicio legal de la Sociedad"
+                                                                 filter="true" filterMatchMode="startsWith">
+                                                    <f:selectItem itemLabel="Seleccione el Municipio" itemValue=""/>
+                                                    <f:selectItems var="tbMunip" value="#{creaSRLBean.municipios}"
+                                                                   itemLabel="#{tbMunip.municipio}"
+                                                                   itemValue="#{tbMunip.idMunicipio}"/>
+                                                </p:selectOneMenu>
+                                                <p:message for="municipio"/>
+                                            </div>
+                                        </div>
+                                        <div class="ui-g-12 ui-md-6">
+                                            <div class="card card-w-title">
+                                                <h1>Duración de la Sociedad:</h1>
+                                                <p:panelGrid columns="2" columnClasses="ui-grid-col-6" layout="grid"
+                                                             styleClass="ui-panelgrid-blank">
+                                                    <h:outputText
+                                                            value="Nota: El plazo de  duracion de la sociedad se computará partir de la fecha de inscripción en el Registro de Comercio de Bolivia"/>
+                                                    <p/>
+                                                    <h:outputText value="Digite los años de duración de la sociedad:"/>
+                                                    <p/>
+                                                    <p:inputText id="aniosDura" required="true" size="50"
+                                                                 style="font-size: 1.1em;background: #ffffff;"
+                                                                 value="#{creaSRLBean.empresaData.duracionNum}"
+                                                                 converterMessage="Debe introducir un valor numérico (Ej:10)"
+                                                                 requiredMessage="Debe ingresar un valor mayor o igual a 1 (cantidad de años de duración de la sociedad) ">
+                                                        <f:validateDoubleRange minimum="1" maximum="99999"/>
+                                                    </p:inputText>
+                                                    <p:message for="aniosDura"/>
+                                                </p:panelGrid>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p:dialog header="Elija correctamente la razón social o denominación de su empresa"
+                                          widgetVar="dlg2" modal="true" height="100">
+                                    <h:outputText value="Señor emprendedor, una vez que usted definió la forma para ejercer el comercio, corresponde ahora elegir la razón
+                            social o denominación de su empresa. Es importante que usted tenga presente que la razón social o denominación
+                            de su empresa le da identidad a su emprendimiento al ser la identificación empresarial."/>
+                                </p:dialog>
+
+                                <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                                    <h:outputText
+                                            value="La información transcrita es correcta y es la que se desea publicar: "
+                                            style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                                    <p:selectBooleanCheckbox value="#{creaSRLBean.value2}"/>
+                                </h:panelGrid>
+                            </div>
+                        </div>
+                    </p:tab>
+
+                    <p:tab id="datosObjeto" title="Paso 2. Objeto Social" titleStyle="font-size: 90%;">
+                        <div>
+                            <p:messages id="messagesOS" showDetail="true" autoUpdate="true" closable="true"
+                                        style="font-size: 1.5em"/>
+                            <div class="ui-g">
+                                <div class="ui-g-12">
+                                    <div class="card card-w-title">
+                                        <div class="ui-fluid">
+                                            <p:panelGrid columns="3"
+                                                         columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2"
+                                                         layout="grid" styleClass="ui-panelgrid-blank">
+                                                <h:outputText value="Seccion de Clasificación CIIU:"
+                                                              style="font-weight: bold"/>
+                                                <p:selectOneMenu id="seccionCiiu" value="#{creaSRLBean.varIdSeccion}"
+                                                                 style="font-size: 1.1em;background: #ffffff"
+                                                                 requiredMessage="Debe seleccionar una seccion de la CIIU"
+                                                                 valueChangeListener="#{creaSRLBean.cargaDivision}"
+                                                                 autoWidth="false">
+                                                    <p:ajax event="change" update="divisionCiiu grupoCiiu listaClase"/>
+                                                    <f:selectItem itemLabel="Seleccione la Sección CIIU" itemValue=""/>
+                                                    <f:selectItems var="tbSeccion"
+                                                                   value="#{creaSRLBean.listaCiiuSeccion}"
+                                                                   itemLabel="#{tbSeccion.seccion}"
+                                                                   itemValue="#{tbSeccion.idSeccion}"/>
+                                                </p:selectOneMenu>
+                                                <p:message for="seccionCiiu"/>
+                                                <h:outputText value="División de Clasificación CIIU:"
+                                                              style="font-weight: bold"/>
+                                                <p:selectOneMenu id="divisionCiiu" value="#{creaSRLBean.varIdDivision}"
+                                                                 style="font-size: 1.1em;background: #ffffff"
+                                                                 requiredMessage="Debe seleccionar una division de la CIIU"
+                                                                 valueChangeListener="#{creaSRLBean.cargaGrupo}"
+                                                                 autoWidth="false">
+                                                    <p:ajax event="change" update="grupoCiiu listaClase"/>
+                                                    <f:selectItem itemLabel="Seleccione la Division CIIU" itemValue=""/>
+                                                    <f:selectItems var="tbDivision"
+                                                                   value="#{creaSRLBean.listaCiiuDivision}"
+                                                                   itemLabel="#{tbDivision.division}"
+                                                                   itemValue="#{tbDivision.idDivision}"/>
+                                                </p:selectOneMenu>
+                                                <p:message for="divisionCiiu"/>
+                                                <h:outputText value="Grupo de Clasificación CIIU:"
+                                                              style="font-weight: bold"/>
+                                                <p:selectOneMenu id="grupoCiiu" value="#{creaSRLBean.varIdGrupo}"
+                                                                 style="font-size: 1.1em;background: #ffffff"
+                                                                 requiredMessage="Debe seleccionar un grupo de la CIIU"
+                                                                 valueChangeListener="#{creaSRLBean.cargaClase}"
+                                                                 autoWidth="false">
+                                                    <p:ajax event="change" update="listaClase"/>
+                                                    <f:selectItem itemLabel="Seleccione el Grupo CIIU" itemValue=""/>
+                                                    <f:selectItems var="tbGrupo" value="#{creaSRLBean.listaCiiuGrupo}"
+                                                                   itemLabel="#{tbGrupo.grupo}"
+                                                                   itemValue="#{tbGrupo.idGrupo}"/>
+                                                </p:selectOneMenu>
+                                                <p:message for="grupoCiiu"/>
+                                            </p:panelGrid>
+
+                                            <p:panelGrid columns="3"
+                                                         columnClasses="ui-grid-col-2,ui-grid-col-8,ui-grid-col-2"
+                                                         layout="grid" styleClass="ui-panelgrid-blank">
+                                                <h:outputText value="Filtra Clase CIIU por texto:"
+                                                              style="font-weight: bold"/>
+                                                <p:inputText id="txtBuscaClase" value="#{creaSRLBean.txtBuscaClase}"
+                                                             placeholder="Digite la palabra clave relacionada al rubro"/>
+                                                <p:commandButton value="Buscar CIIU" action="#{creaSRLBean.buscaClase}"
+                                                                 update="listaClase divisionCiiu grupoCiiu"
+                                                                 process="@this, txtBuscaClase"/>
+                                                <p/>
+                                                <p:scrollPanel mode="native" style="width:100%;height:200px">
+                                                    <p:dataTable id="listaClase" var="tablaClase"
+                                                                 value="#{creaSRLBean.listaCiiuClase}"
+                                                                 emptyMessage="No se encontraron clases con los filtros seleccionados o digitados"
+                                                                 reflow="true" styleClass="resTable"
+                                                                 style="table-layout: fixed"
+                                                                 rowKey="#{tablaClase.idClase}"
+                                                                 selection="#{creaSRLBean.itemSeleccionado}">
+                                                        <p:column headerText="Codigo de Clase" style="width:30px;"
+                                                                  resizable="true">
+                                                            <p:outputLabel value="#{tablaClase.idClase}"/>
+                                                        </p:column>
+                                                        <p:column headerText="Clase CIIU" style="width:250px;">
+                                                            <p:outputLabel value="#{tablaClase.clase}"/>
+                                                        </p:column>
+                                                        <p:column headerText="Selección"
+                                                                  style="width:45px;text-align: center">
+                                                            <p:commandButton update=":formPubConst:PanelPrincipal"
+                                                                             process="@parent:@parent"
+                                                                             icon="ui-icon-save" value="Seleccionar"
+                                                                             title="Selección"
+                                                                             actionListener="#{creaSRLBean.registraActividad(tablaClase)}"/>
+                                                        </p:column>
+                                                    </p:dataTable>
+                                                </p:scrollPanel>
+                                            </p:panelGrid>
+                                        </div>
+                                    </div>
+                                    <div class="card card-w-title">
+                                        <h1>ACTIVIDAD PRINCIPAL</h1>
+                                        <p:panelGrid id="PanelPrincipal" columns="2"
+                                                     columnClasses="ui-grid-col-2,ui-grid-col-8" layout="grid"
+                                                     styleClass="ui-panelgrid-blank">
+                                            <h:outputLabel value="Codigo de Clase CIIU:" class="txtLabel"/>
+                                            <p:outputLabel value="#{creaSRLBean.empresaData.ciiuObjeto}"/>
+                                            <h:outputLabel value="Descipcion Clase CIIU:" class="txtLabel"/>
+                                            <p:outputLabel value="#{creaSRLBean.actividadSeleccionada.clase}"/>
+                                        </p:panelGrid>
+                                    </div>
+                                    <div class="card card-w-title">
+                                        <h1>ACTIVIDAD SECUNDARIA</h1>
+                                        <p:panelGrid columns="1" columnClasses="ui-grid-col-8" layout="grid"
+                                                     styleClass="ui-panelgrid-blank">
+                                            <h:outputLabel
+                                                    value="Si tiene otra actividad secundaria, digitela a continuación:"/>
+                                            <p:inputTextarea value="#{creaSRLBean.empresaData.objetoSocial}" rows="5"
+                                                             cols="200"/>
+                                        </p:panelGrid>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                            <h:outputText value="La información transcrita es correcta y es la que se desea publicar: "
+                                          style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                            <p:selectBooleanCheckbox value="#{creaSRLBean.value3}"/>
+                        </h:panelGrid>
+                    </p:tab>
+
+                    <p:tab id="datosCapital" title="Paso 3. Capital" titleStyle="font-size: 90%;">
+                        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true"
+                                    style="font-size: 1.5em"/>
+                        <div class="ui-g">
+                            <div class="ui-g-12">
+                                <div class="card card-w-title">
+                                    <div class="ui-fluid">
+                                        <h1>DATOS DEL CAPITAL</h1>
+                                        <p:panelGrid columns="4"
+                                                     columnClasses="ui-grid-col-2,ui-grid-col-2,ui-grid-col-4,ui-grid-col-3"
+                                                     layout="grid" styleClass="ui-panelgrid-blank">
+
+                                            <h:outputText value="Capital de la Sociedad:"/>
+                                            <p:inputNumber id="vrCap" onfocus="selectValue()" required="true"
+                                                           maxlength="254" size="45"
+                                                           style="font-size: 1.1em;background: #ffffff;"
+                                                           value="#{creaSRLBean.capital.capitalSocialNum}"
+                                                           validatorMessage="Verifique que el datos introducido sea el correcto"
+                                                           converterMessage="El capital Social debe ser un numero mayor a 0 y entero"
+                                                           requiredMessage="Debe insertar el monto del Capital Social (Ej: 10000)"
+                                                           title="Digite un valor entero" decimalPlaces="0">
+                                                <f:validateDoubleRange minimum="1"/>
+                                            </p:inputNumber>
+                                            <p:outputLabel
+                                                    value="Monto total aportado por los socios en su integridad, Art. 199 Código de Comercio."
+                                                    style="font-size: 0.88em; color: #9999ff"/>
+                                            <p:message for="CntCuota"/>
+
+                                            <h:outputText value="Valor de la cuota:"/>
+                                            <p:inputNumber id="CntCuota" onfocus="selectValue()" required="true"
+                                                           maxlength="254" size="45"
+                                                           style="font-size: 1.1em;background: #ffffff;"
+                                                           value="#{creaSRLBean.capital.vrCuotasCapital}"
+                                                           converterMessage="La cantidad de cuotas de capital debe ser numero mayor a 0"
+                                                           validatorMessage="El Valor de las cuotas de capital debe ser numero mayor a 0"
+                                                           requiredMessage="Debe insertar el monto del Capital Social (Ej: 10000)"
+                                                           title="Digite un valor entero" decimalPlaces="0">
+                                                <f:validateDoubleRange minimum="1"/>
+                                            </p:inputNumber>
+                                            <p:outputLabel
+                                                    value="Valor de la cuota: Bs 100 o múltiplos de 100, Art. 198 Código de Comercio."
+                                                    style="font-size: 0.88em; color: #9999ff"/>
+                                            <p:message for="vrCap" showDetail="true"/>
+                                        </p:panelGrid>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                            <h:outputText value="La información transcrita es correcta y es la que se desea publicar: "
+                                          style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                            <p:selectBooleanCheckbox value="#{creaSRLBean.value4}"/>
+                        </h:panelGrid>
+                    </p:tab>
+
+                    <p:tab id="datosSocios" title="Paso 4. Socios" titleStyle="font-size: 90%;">
+                        <p:fieldset legend="Datos de Capital Registrados">
+                            <div class="ui-fluid">
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2"><h3>Capital Social:</h3></div>
+                                    <div class="ui-grid-col-2"><h3>${creaSRLBean.capital.capitalSocialNum}</h3></div>
+                                    <div class="ui-grid-col-2"><h3>Cuotas de Capital:</h3></div>
+                                    <div class="ui-grid-col-2"><h3>${creaSRLBean.capital.cntCuotasCapital}</h3></div>
+                                    <div class="ui-grid-col-2"><h3>Valor de las cuotas:</h3></div>
+                                    <div class="ui-grid-col-2"><h3>${creaSRLBean.capital.vrCuotasCapital}</h3></div>
+                                </div>
+                            </div>
+                        </p:fieldset>
+                        <h:form id="frmSocioReg">
+                            <p:messages id="messagesSocios" showDetail="true" autoUpdate="true" closable="true"/>
+                            <div class="ui-g">
+                                <div class="ui-g-12">
+                                    <div class="card card-w-title">
+                                        <h1>Ingreso de Datos de los Socios de la Sociedad:</h1>
+                                        <div class="ui-fluid">
+                                            <p:panelGrid columns="3"
+                                                         columnClasses="ui-grid-col-4,ui-grid-col-4,ui-grid-col-4"
+                                                         layout="grid" styleClass="ui-panelgrid-blank">
+
+                                                <h:panelGroup styleClass="md-inputfield">
+                                                    <p:inputText id="nombreSocio" required="${creaSRLBean.reqSoc}"
+                                                                 value="#{creaSRLBean.nombreSocio}"
+                                                                 requiredMessage="Debe digitar el nombre o los nombres"
+                                                                 style="width: 100%"/>
+                                                    <label>Nombres</label>
+                                                </h:panelGroup>
+                                                <h:panelGroup styleClass="md-inputfield">
+                                                    <p:inputText id="paternoSocio" required="false"
+                                                                 value="#{creaSRLBean.paternoSocio}"
+                                                                 requiredMessage="Debe digitar el Apellido Paterno"
+                                                                 style="width: 100%"/>
+                                                    <label>Apellido Paterno</label>
+                                                </h:panelGroup>
+                                                <h:panelGroup styleClass="md-inputfield">
+                                                    <p:inputText id="maternoSocio" required="${creaSRLBean.reqSoc}"
+                                                                 value="#{creaSRLBean.maternoSocio}"
+                                                                 requiredMessage="Debe digitar el Apellido Materno"
+                                                                 style="width: 100%"/>
+                                                    <label>Apellido Paterno</label>
+                                                </h:panelGroup>
+
+                                                <p:message for="nombreSocio"/>
+                                                <p:message for="paternoSocio"/>
+                                                <p:message for="maternoSocio"/>
+
+                                                <h:panelGroup styleClass="md-inputfield">
+                                                    <p:inputText id="vrIdentif" required="${creaSRLBean.reqSoc}"
+                                                                 maxlength="30" value="#{creaSRLBean.numIdentifica}"
+                                                                 requiredMessage="Debe digitar la identificación"/>
+                                                    <label>Numero de Identificacion:</label>
+                                                </h:panelGroup>
+                                                <p:selectOneMenu id="tipoIdent" required="${creaSRLBean.reqSoc}"
+                                                                 value="#{creaSRLBean.tipoIdentifica}"
+                                                                 requiredMessage="Debe seleccionar un tipo de identificación"
+                                                                 valueChangeListener="#{creaSRLBean.valideTipoId}">
+                                                    <p:ajax event="change" rendered="expDt" update="expDt"/>
+                                                    <f:selectItem itemLabel="Seleccione un Tipo de Identificación"
+                                                                  itemValue=""/>
+                                                    <f:selectItem itemLabel="Cedula de Identidad"
+                                                                  itemValue="Cedula de Identidad"/>
+                                                    <f:selectItem itemLabel="Pasaporte" itemValue="Pasaporte"/>
+                                                    <f:selectItem itemLabel="Cedula de Extranjeria"
+                                                                  itemValue="Cedula de Extranjeria"/>
+                                                </p:selectOneMenu>
+
+                                                <p:selectOneMenu id="expDt" required="#{creaSRLBean.reqOrgId}"
+                                                                 disabled="#{!creaSRLBean.reqOrgId}"
+                                                                 value="#{creaSRLBean.extIdentifica}"
+                                                                 requiredMessage="Debe seleccionar el lugar de expedición del documento de indentidad">
+                                                    <f:selectItem itemLabel="Seleccione un lugar de expedición"
+                                                                  itemValue=""/>
+                                                    <f:selectItem itemLabel="Chuquisaca" itemValue="CH"/>
+                                                    <f:selectItem itemLabel="La Paz" itemValue="LP"/>
+                                                    <f:selectItem itemLabel="Cochabamba" itemValue="CB"/>
+                                                    <f:selectItem itemLabel="Oruro" itemValue="OR"/>
+                                                    <f:selectItem itemLabel="Potosi" itemValue="PT"/>
+                                                    <f:selectItem itemLabel="Tarija" itemValue="TJ"/>
+                                                    <f:selectItem itemLabel="Santa Cruz" itemValue="SC"/>
+                                                    <f:selectItem itemLabel="Beni" itemValue="BN"/>
+                                                    <f:selectItem itemLabel="Pando" itemValue="PA"/>
+                                                </p:selectOneMenu>
+
+
+                                                <p:message for="vrIdentif"/>
+                                                <p:message for="tipoIdent"/>
+                                                <p:message for="expDt"/>
+
+
+                                                <h:panelGroup styleClass="md-inputfield">
+                                                    <p:inputText id="nac" required="${creaSRLBean.reqSoc}"
+                                                                 maxlength="30" value="#{creaSRLBean.nacionalidadSocio}"
+                                                                 requiredMessage="Digite la Nacionalidad del Socio"/>
+                                                    <label>Nacionalidad del Socio</label>
+                                                </h:panelGroup>
+                                                <p:selectOneMenu id="estado" required="${creaSRLBean.reqSoc}"
+                                                                 value="#{creaSRLBean.estadoCivil}"
+                                                                 requiredMessage="Debe seleccionar un Estado Civil">
+                                                    <f:selectItem itemLabel="Estado Civil" itemValue=""/>
+                                                    <f:selectItem itemLabel="Soltero(a)" itemValue="Soltero(a)"/>
+                                                    <f:selectItem itemLabel="Casado(a)" itemValue="Casad(a)"/>
+                                                    <f:selectItem itemLabel="Viudo(a)" itemValue="Viudo(a)"/>
+                                                    <f:selectItem itemLabel="Divorciado(a)" itemValue="Divorciado(a)"/>
+                                                </p:selectOneMenu>
+                                                <h:panelGroup styleClass="md-inputfield">
+                                                    <p:inputText id="prof" required="${creaSRLBean.reqSoc}"
+                                                                 maxlength="40" value="#{creaSRLBean.profesionSocio}"
+                                                                 requiredMessage="Digite la Profesión del Socio (Ej: Abogado, Administrador de Empresas, Estudiante)"/>
+                                                    <label>Ocupación:</label>
+                                                </h:panelGroup>
+                                                <p:message for="nac"/>
+                                                <p:message for="estado"/>
+                                                <p:message for="prof"/>
+
+                                                <h:panelGroup styleClass="md-inputfield">
+                                                    <p:inputText id="dom" required="${creaSRLBean.reqSoc}"
+                                                                 maxlength="254" value="#{creaSRLBean.domicilioSocio}"
+                                                                 requiredMessage="Digite el Domicilio del Socio"/>
+                                                    <label>Domicilio:</label>
+                                                </h:panelGroup>
+                                                <h:panelGroup styleClass="md-inputfield">
+                                                    <p:inputText id="Zondom" required="${creaSRLBean.reqSoc}"
+                                                                 maxlength="254"
+                                                                 value="#{creaSRLBean.zonaDomicilioSocio}"
+                                                                 requiredMessage="Digite la Zona del Domicilio del Socio"/>
+                                                    <label>Zona:</label>
+                                                </h:panelGroup>
+                                                <h:outputText value=""/>
+
+                                                <p:message for="dom"/>
+                                                <p:message for="Zondom"/>
+                                                <h:outputText value=""/>
+
+                                                <h:outputText value="Tipo de Aporte:"/>
+                                                <h:outputText value="Valor del Aporte en Bs.:"/>
+                                                <h:outputText value="Descripción del Bien:"/>
+
+                                                <p:selectOneMenu id="tipoAporte" value="#{creaSRLBean.tipoAporte}"
+                                                                 required="${creaSRLBean.reqSoc}"
+                                                                 requiredMessage="Debe seleccionar el tipo de aporte"
+                                                                 valueChangeListener="#{creaSRLBean.valideBien}">
+                                                    <p:ajax event="change" update="aporteBien"/>
+                                                    <f:selectItem itemLabel="Seleccione el Tipo de Aporte"
+                                                                  itemValue=""/>
+                                                    <f:selectItem itemLabel="Dinero" itemValue="D"/>
+                                                    <f:selectItem itemLabel="Bien Mueble/Inmueble" itemValue="B"/>
+                                                </p:selectOneMenu>
+                                                <p:inputNumber id="numCuotasSoc" required="${creaSRLBean.reqSoc}"
+                                                               maxlength="20" value="#{creaSRLBean.aporteCapital}"
+                                                               requiredMessage="Digite el aporte de Capital"
+                                                               onfocus="selectValue()"/>
+                                                <p:inputText id="aporteBien" disabled="#{!creaSRLBean.reqBien}"
+                                                             required="${creaSRLBean.reqBien}"
+                                                             readonly="${creaSRLBean.roBien}"
+                                                             value="#{creaSRLBean.descripcionBien}"
+                                                             requiredMessage="Digite la descripción del bien"/>
+
+                                                <p:message for="tipoAporte"/>
+                                                <p:message for="numCuotasSoc"/>
+                                                <p:message for="aporteBien"/>
+
+                                                <h:outputText value=""/>
+                                                <h:outputText value=""/>
+                                                <h:outputText
+                                                        value="(Cuando el aporte de capital sea con bienes inmuebles, se debe presentar el folio real original o fotocopia legalizada, o el testimonio de transferencia del bien, a nombre de la sociedad, registrado en Derechos Reales)"
+                                                        style="color:#0D4173;font-weight: bolder;font-size: 95%"/>
+                                            </p:panelGrid>
+                                        </div>
+                                        <div style="text-align: right">
+                                            <p:commandButton value="Registrar Socio"
+                                                             actionListener="#{creaSRLBean.registraSocio}"
+                                                             process="@parent:@parent" update="@form"
+                                                             icon="ui-icon-disk"></p:commandButton>
+                                        </div>
+                                    </div>
+                                    <div class="card card-w-title">
+                                        <h1>Socios Registrados</h1>
+                                        <p:dataTable id="tblSocios" var="tblSocios" value="${creaSRLBean.listaSocios}"
+                                                     selectionMode="Single" selection="#{creaSRLBean.socioSel}"
+                                                     rowKey="#{tblSocios.nroSocio}">>
+                                            <p:column headerText="N° Socio">
+                                                <h:outputLabel value="${tblSocios.nroSocio}"/>
+                                            </p:column>
+                                            <p:column headerText="Apellido Paterno">
+                                                <h:outputLabel value="${tblSocios.paternoSocio}"/>
+                                            </p:column>
+                                            <p:column headerText="Apellido Materno">
+                                                <h:outputLabel value="${tblSocios.maternoSocio}"/>
+                                            </p:column>
+                                            <p:column headerText="Nombre de Socio">
+                                                <h:outputLabel value="${tblSocios.nombreSocio}"/>
+                                            </p:column>
+                                            <p:column headerText="Identificacion">
+                                                <h:outputLabel value="${tblSocios.identificacion}"/>
+                                            </p:column>
+                                            <p:column headerText="Aporte de Capital en Bs.">
+                                                <h:outputLabel value="${tblSocios.aporteCapitalMon}"/>
+                                            </p:column>
+                                            <p:column headerText="Numero de Cuotas">
+                                                <h:outputLabel value="${tblSocios.cuotasCapital}"/>
+                                            </p:column>
+                                            <p:column headerText="Participacion Porcentual">
+                                                <h:outputLabel value="${tblSocios.participaPercent}"/>
+                                            </p:column>
+                                            <p:column headerText="Eliminar" width="10px">
+                                                <p:commandButton icon="ui-icon-circle-close"
+                                                                 actionListener="#{creaSRLBean.deleteSocio(tblSocios)}"
+                                                                 process="@parent:@parent" update="@form"/>
+                                            </p:column>
+                                        </p:dataTable>
+                                    </div>
+                                    <p:panelGrid columns="4">
+                                        <h:outputText
+                                                value="Total de Capital Social ya asignado (expresado en Bolivianos):"
+                                                style="font-size: 1.3em"/>
+                                        <h:outputText value="${creaSRLBean.capitalAsig}"
+                                                      style="font-size: 1.3em;color: ${creaSRLBean.colorSaldo}"/>
+                                        <h:outputText
+                                                value="Total de Capital Social por asignar (expresado en Bolivianos):"
+                                                style="font-size: 1.3em"/>
+                                        <h:outputText value="${creaSRLBean.capitalXAsig}"
+                                                      style="font-size: 1.3em;color: ${creaSRLBean.colorSaldo}"/>
+                                    </p:panelGrid>
+                                </div>
+                            </div>
+                        </h:form>
+                        <h:form id="idAceptSocios">
+                            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                                <h:outputText
+                                        value="La información transcrita es correcta y es la que se desea publicar: "
+                                        style="color: #D20005;font-size: 0.8em;font-weight: bold"/>
+                                <p:selectBooleanCheckbox value="#{creaSRLBean.value5}"/>
+                            </h:panelGrid>
+                        </h:form>
+                    </p:tab>
+
+                    <p:tab id="verifica" title="Paso 5. Verificación de datos" titleStyle="font-size: 90%;">
+                        <p:fieldset legend="Verifique los datos consignados si existe algun error puede corregirlo:"
+                                    style="font-size: 1em;color: #ff9900">
+                            <p:inputTextarea id="editor" style="width:680px;font-size: 1em;height: 500px"
+                                             value="${creaSRLBean.vistaPreliminar}" readonly="true" autoResize="false"/>
+                        </p:fieldset>
+                    </p:tab>
+
+                    <p:tab id="confirma" title="Paso 6. Aceptación" titleStyle="font-size: 90%;">
+                        <div/>
+
+                        <h4>Deberá aceptar los términos para solicitar la revisión de la publicación, una vez aprobada por el Registro de Comercio de Bolivia usted deberá realizar la cancelación conforme al monto establecido en el tarifario para proceder con la publicación </h4>
+
+                        <div/>
+                        <div class="ui-g">
+                            <div class="ui-g-1">
+                                <p:selectBooleanCheckbox value="#{creaSRLBean.aceptacion}" required="true"
+                                                         requiredMessage="Debe aceptar las condiciones para realizar la publicacion">
+                                    <p:ajax update="btReg"/>
+                                </p:selectBooleanCheckbox>
+                            </div>
+                            <div class="ui-md-8">
+                                <p:outputLabel
+                                        value="El contenido de esta publicacion es exclusiva responsabilidad del usuario"
+                                        class="txtLabel"/>
+                                <div/>
+                            </div>
+                        </div>
+                        <div class="ui-g">
+                            <div class="ui-g-12">
+                                <p:commandButton id="btReg" value="Confirmar Publicación"
+                                                 action="#{creaSRLBean.registraPublicacion()}" update="formPubConst"/>
+                            </div>
+                        </div>
+                        <div/>
+                        <div/>
+                    </p:tab>
+                </p:wizard>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

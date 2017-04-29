@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="gacetaDaoOrm">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/gacetaDaoOrm" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/gacetaDaoOrm/src" />
+    </SOURCES>
+  </library>
+</component>

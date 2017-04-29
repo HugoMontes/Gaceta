@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+  <class name="taTablas" table="tatablas">
+    <id name="idReg" column="idreg" type="int">
+      <generator class="assigned"/>
+    </id>
+    <property name="idTabla" column="idtabla" type="int"/>
+    <property name="idValor" column="idvalor" type="string"/>
+    <property name="txtValor" column="txtvalor" type="string"/>
+  </class>
+</hibernate-mapping>

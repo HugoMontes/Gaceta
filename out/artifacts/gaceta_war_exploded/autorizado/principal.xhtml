@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+        <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/template.xhtml">
+<ui:define name="content">
+    <h:head>
+        <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+        <h:outputStylesheet name="css/animate.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout" />
+        <h:outputScript library="js" name="calendar_es.js" />
+    </h:head>
+    <h:form id="frmPublicaAct">
+        <h1>Listado de Publicaciones Realizadas</h1>
+        <p:panelGrid  columns="5" columnClasses="ui-grid-col-1,ui-grid-col-4,ui-grid-col-1,ui-grid-col-4,ui-grid-col-2" layout="grid" >
+            <p:outputLabel value="Fecha Inicial:" style="font-weight: bold"/>
+            <p:calendar id="fecFiltroIni" pattern="yyyy/MM/dd" value="#{publicacionesBean.dateFiltra}" timeZone="America/LaPaz" locale="es" placeholder="Fecha Inicial">
+                <f:convertDateTime pattern="yyyy/MM/dd" />
+            </p:calendar>
+            <p:outputLabel value="Fecha Final:" style="font-weight: bold"/>
+            <p:calendar id="fecFiltroFin" pattern="yyyy/MM/dd" value="#{publicacionesBean.dateFiltraFin}" timeZone="America/LaPaz" locale="es">
+                <f:convertDateTime pattern="yyyy/MM/dd" />
+            </p:calendar>
+            <p:commandButton id="btnFechaCh" value="Filtrar por Fecha" icon="ui-icon-search" action="#{publicacionesBean.filtraFecha}" update="pagePublica pagePublica" />
+
+        </p:panelGrid>
+        <p:panelGrid  columns="4" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-3,ui-grid-col-3" layout="grid" >
+            <p:outputLabel value="Estado de Publicación:" style="font-weight: bold"/>
+            <p:selectOneMenu id="estadoP" value="#{publicacionesBean.estadoPub}">
+                <f:selectItem itemLabel="Seleccione el estado" itemValue="" />
+                <f:selectItem itemLabel="Publicaciones Pendientes de Pago" itemValue="2" />
+                <f:selectItem itemLabel="Publicaciones Pagadas" itemValue="1" />
+                <f:selectItem itemLabel="Publicacione en Revisión" itemValue="3" />
+            </p:selectOneMenu>
+            <p:commandButton id="btnEstCh" value="Filtrar por Estado" icon="ui-icon-search" action="#{publicacionesBean.filtroEstado}" update="pagePublica pagePublica" />
+            <p:commandButton id="btnAll" value="Mostrar todos los registros" icon="ui-icon-arrowrefresh-1-w" action="#{publicacionesBean.showAll}" update="pagePublica pagePublica" />
+        </p:panelGrid>
+
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="card">
+                    <h1>Publicaciones</h1>
+                    <p:dataGrid var="publicaciones" value="#{publicacionesBean.listaPublicaciones}" columns="1" layout="grid"
+                                id="pagePublica" emptyMessage="No se tienen publicaciones realizadas por la empresa">
+                        <p:fieldset header="#{publicaciones.tituloPublica}" style="text-align:left;font-size: 0.9em;background: #ffffff">
+                            <h:panelGrid columns="1" style="width:100%;text-align:left;font-size: 0.8em;background: #ffffff">
+                                <p:panelGrid columns="2" columnClasses="ui-grid-col-2,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank" >
+                                    <h:outputText value="Codigo de Publicacion:" class="txtLabel"/>
+                                    <h:outputText value="#{publicaciones.idPublicacion}" class="txtConsulta"/>
+                                    <h:outputText value="Fecha de Publicación:" class="txtLabel"/>
+                                    <h:outputText value="#{publicaciones.fecDisplay}" class="txtConsulta">
+                                        <f:convertDateTime pattern="yyyy/MM/dd" />
+                                    </h:outputText>
+                                    <h:outputText value="Resumen de Publicacion:" class="txtLabel"/>
+                                    <h:outputText value="#{publicaciones.textoPublica}" class="txtConsulta"/>
+                                    <h:outputText value="Estado de Publicacion:" class="txtLabel"/>
+                                    <h:outputText value="#{publicaciones.desEstadoPublica}" class="txtEstadoPublica"/>
+                                </p:panelGrid>
+                            </h:panelGrid>
+                        </p:fieldset>
+                    </p:dataGrid>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</ui:define>
+</ui:composition>

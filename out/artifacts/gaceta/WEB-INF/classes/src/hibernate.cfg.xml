@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC  "-//Hibernate/Hibernate Configuration DTD//EN"   "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.datasource">java:/jdbc/appGacetaDS</property>
+    <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+    <property name="hibernate.connection.autocommit">false</property>
+    <property name="connection.pool_size">1</property>
+    <property name="current_session_context_class">thread</property>
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
+    <property name="hibernate.show_sql">false</property>
+
+
+    <mapping resource="tbUSLogin.hbm.xml"/>
+    <mapping resource="tbTaIdentificacion.hbm.xml"/>
+    <mapping resource="tbTaLugarExp.hbm.xml"/>
+    <mapping resource="tbTaTipoSocietario.hbm.xml"/>
+    <mapping resource="tbFnPerfil.hbm.xml"/>
+    <mapping resource="tbPbPublicaciones.hbm.xml"/>
+    <mapping resource="tbInMatriculas.hbm.xml"/>
+    <mapping resource="tbInMunicipios.hbm.xml"/>
+    <mapping resource="tbInOrigenes.hbm.xml"/>
+    <mapping resource="tbInCiiu.hbm.xml"/>
+    <mapping resource="tbTaCorrelativos.hbm.xml"/>
+    <mapping resource="tbRepositorio.hbm.xml"/>
+    <mapping resource="taTablas.hbm.xml"/>
+    <mapping resource="taEmpresa.hbm.xml"/>
+    <mapping resource="taCapital.hbm.xml"/>
+    <mapping resource="taSocios.hbm.xml"/>
+    <mapping resource="tbUsLogo.xml"/>
+    <mapping resource="taPublicacionesContent.hbm.xml"/>
+
+
+    
+  </session-factory>
+</hibernate-configuration>

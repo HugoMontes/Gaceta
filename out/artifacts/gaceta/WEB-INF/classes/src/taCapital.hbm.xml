@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+    <class name="taCapital" table="tacapital">
+        <id name="codigoEmpresa" column="codigoempresa" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property name="capitalSocialNum" column="capitalsocialnum" type="int"/>
+        <property name="capitalSocialTexto" column="capitalsocialtexto" type="string"/>
+        <property name="cntCuotasCapital" column="cntcuotascapital" type="int"/>
+        <property name="cntCuotasCapitalTexto" column="cntcuotascapitaltexto" type="string"/>
+        <property name="vrCuotasCapital" column="vrcuotascapital" type="int"/>
+        <property name="vrCuotasCapitalTexto" column="vrcuotascapitaltexto" type="string"/>
+        <property name="capitalAutorizadoNum" column="capitalautorizadonum" type="int"/>
+        <property name="capitalAutorizadoTexto" column="capitalautorizadotexto" type="string"/>
+        <property name="capitalSuscritoNum" column="capitalsuscritonum" type="int"/>
+        <property name="capitalSuscritoTexto" column="capitalsuscritotexto" type="string"/>
+        <property name="capitalPagadoNum" column="capitalpagadonum" type="int"/>
+        <property name="capitalPagadoTexto" column="capitalpagadotexto" type="string"/>
+        <property name="cntAccionesNum" column="cntaccionesnum" type="int"/>
+        <property name="cntAccionesTexto" column="cntaccionestexto" type="string"/>
+        <property name="vrNominalNum" column="vrnominalnum" type="int"/>
+        <property name="vrNominalTexto" column="vrnominaltexto" type="string"/>
+
+    </class>
+</hibernate-mapping>

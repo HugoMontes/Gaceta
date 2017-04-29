@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+        <class name="tbPbPublicaciones" table="tbpbpublicaciones" >
+        <id name="idPublicacion" column="idPublicacion" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property name="idLoginEmpresa" column="idLoginEmpresa" type="string"/>
+        <property name="fecPublica" type="timestamp" column="fecPublica"/>
+        <property name="tipoDocumento" column="tipoDocumento" type="int"/>
+        <property name="nroDocumento" column="nroDocumento" type="string"/>
+        <property name="origenDocumento" column="origenDocumento" type="string"/>
+        <property name="fechaDocumento" type="date" column="fechaDocumento"/>
+        <property name="ctrTipoPublica" column="ctrTipoPublica" type="int"/>
+        <property name="urlFilePublica" column="urlFilePublica" type="string"/>
+        <property name="tituloPublica" column="tituloPublica" type="string"/>
+        <property name="textoPublica" column="textoPublica" type="string"/>
+        <property name="textoCompleto" column="textoCompleto" type="text"/>
+        <property name="fecDisplay" column="fecDisplay" type="date"/>
+        <property name="fecAprueba" column="fecAprueba" type="date"/>
+        <property name="ctrDisplay" column="ctrDisplay" type="string"/>
+        <property name="ctrUserAprueba" column="ctrUserAprueba" type="string"/>
+        <property name="desEstadoPublica" column="desEstadoPublica" type="string"/>
+    </class>
+</hibernate-mapping>

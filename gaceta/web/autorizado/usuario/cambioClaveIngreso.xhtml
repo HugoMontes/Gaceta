@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h:form id="formChangePass">
+            <p:growl id="msgsReg" showDetail="true" sticky="true" />
+            <p:panel header="Cambio de Contraseña">
+                <div class="ui-fluid">
+                    <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2" layout="grid" styleClass="ui-panelgrid-blank" >
+
+                        <p:outputLabel for="txtPassActual" value="Digite la contraseña actual:" class="txtLabel"/>
+                        <p:password  id="txtPassActual" required="true" requiredMessage="Digite la contraseña actual" value="#{cambioPasswordBean.txtPassword}"/>
+                        <p:message for="txtPassActual"/>
+
+                        <p:outputLabel for="txtPassNew" value="Digite la contraseña nueva:" class="txtLabel"/>
+                        <p:password id="txtPassNew" required="true" requiredMessage="Debe digitar la contraseña nueva" value="#{cambioPasswordBean.txtPasswordNew}" match="txtPassNewVerif" validatorMessage="Verifique la contraseña nueva"/>
+                        <p:message for="txtPassNew"/>
+
+                        <p:outputLabel for="txtPassNewVerif" value="Repita la contraseña nueva:" class="txtLabel"/>
+                        <p:password id="txtPassNewVerif" required="true" requiredMessage="Debe volver a digitar la nueva contraseña"  validatorMessage="Verifique la contraseña nueva"/>
+                        <p:message for="txtPassNewVerif"/>
+                    </p:panelGrid>
+                    <h:outputLabel value=""/>
+                </div>
+                <p:commandButton value="Cambiar Contraseña" update="formChangePass" actionListener="#{cambioPasswordBean.cambiaClaveIngreso}">
+                </p:commandButton>
+            </p:panel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

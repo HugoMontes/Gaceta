@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+    <class name="taPublicacionesContent" table="idregpublicacioncontent" >
+        <id name="idRegPublicacionContent" column="idregpublicacioncontent" type="int">
+            <generator class="assigned"/>
+        </id>
+        <property name="idPublicacion" column="idpublicacion" type="string"/>
+        <property name="introNotarial" column="intronotarrial" type="string"/>
+        <property name="concluNotarial" column="conclunotarial" type="string"/>
+        <property name="concorNotarial" column="concornotarial" type="string"/>
+        <property name="titDescripcion1" column="titdescripcion1" type="string"/>
+        <property name="descripcion1" column="descripcion1" type="string"/>
+        <property name="titDescripcion2" column="titdescripcion2" type="string"/>
+        <property name="descripcion2" column="descripcion2" type="string"/>
+        <property name="lugarJunta" column="lugarjunta" type="string"/>
+        <property name="fecJunta" column="fecjunta" type="date" />
+        <property name="tipoJunta" column="tipojunta" type="string"/>
+        <property name="ordenDia" column="ordendia" type="string"/>
+    </class>
+</hibernate-mapping>

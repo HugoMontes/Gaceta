@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+    </f:facet>
+    <title>Gaceta Electronica del Registro de Comercio de Bolivia</title>
+    <h:outputScript library="js" name="jquery-3.1.0.min.js"/>
+    <h:outputScript library="ultima-layout" name="js/ripple.js"/>
+    <h:outputStylesheet name="css/animate.css" library="ultima-layout" />
+    <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+    <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout" />
+</h:head>
+<h:body styleClass="landing-body">
+    <ui:include src="./top.xhtml" />
+    <div class="landing-wrapper">
+        <div id="header">
+            <div class="header-top clearfix">
+                <div class="header-content clearfix">
+                    <h1>GACETA ELECTRONICA</h1>
+                    <h2>DEL REGISTRO DE COMERCIO DE BOLIVIA</h2>
+                    <h3>PUBLICACIONES</h3>
+                    <div class="ui-fluid">
+                        <p:panelGrid columns="4" columnClasses="ui-grid-col-3,ui-grid-col-3,ui-grid-col-3,ui-grid-col-3" layout="grid" styleClass="ui-panelgrid-blank">
+                            <p:button outcome="/instrumentos.xhtml" value="INSTRUMENTOS" styleClass="buttonland"/>
+                            <p:button outcome="/convocatorias.xhtml" value="CONVOCATORIAS Y AVISOS" styleClass="buttonland"/>
+                            <p:button outcome="/memorias.xhtml" value="MEMORIAS" styleClass="buttonland"/>
+                            <p:button outcome="/balances.xhtml" value="BALANCES" styleClass="buttonland"/>
+                        </p:panelGrid>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="features">
+            <h2>SERVICIOS</h2>
+            <h3>Seleccione la opción a la que desea ingresar</h3>
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-4">
+                    <a href="login.xhtml"><img src="libimg/login.png" style="width: 20%;height: 40%"/></a>
+                    <h3><a href="login.xhtml">Ingreso de Usuarios</a></h3>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <a href="seleccion.xhtml"><img src="libimg/cuenta.png" style="width: 20%;height: 40%"/></a>
+                    <h3><a href="seleccion.xhtml">Crear una Cuenta</a></h3>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <a href="busqueda.xhtml"><img src="libimg/busqueda.png" style="width: 20%;height: 40%"/></a>
+                    <h3><a href="busqueda.xhtml">Busqueda Avanzada</a></h3>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE8A6;</i>
+                        </div>
+                        <p style="font-size: 1.1em;font-weight: bolder">gaceta@gacetadecomercio.gob.bo</p>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE0B0;</i>
+                        </div>
+                        <p style="font-size: 1.1em;font-weight: bolder">800 10 7990</p>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <i class="material-icons">&#xE0D0;</i>
+                        </div>
+                        <p style="font-size: 1.1em;font-weight: bolder">Manual de Usuario</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</h:body>
+
+</html>

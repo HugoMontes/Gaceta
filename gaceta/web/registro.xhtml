@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+    </f:facet>
+    <title>Gaceta Electronica del Registro de Comercio de Bolivia</title>
+    <h:outputScript name="js/ripple.js" library="ultima-layout"/>
+    <h:outputScript name="js/layout.js" library="ultima-layout"/>
+</h:head>
+<h:body>
+    <div class="layout-wrapper">
+        <ui:include src="./top.xhtml"/>
+    </div>
+    <div class="header-content clearfix">
+        <div class="header-subcontent">
+        </div>
+    </div>
+    <h:form id="regCuenta">
+        <div class="ui-fluid">
+            <!-- begin : barra de estado -->
+            <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()"/>
+            <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                <p>Procesando, espere porfavor...</p>
+                <p:graphicImage name="/libimg/ajaxloadingbar.gif" />
+            </p:dialog>
+            <!-- end : barra de estado -->
+
+            <!--p:growl id="msgsReg" showDetail="true" sticky="true"/-->
+            <p:growl id="msgsReg" showDetail="true" sticky="true" globalOnly="true"/>
+            <p:panelGrid columns="1" columnClasses="ui-grid-col-10" layout="grid" styleClass="ui-panelgrid-blank">
+                <p:panel
+                        header="SOLICITUD DE HABILITACIÓN DE UNA NUEVA CUENTA PARA REALIZAR PUBLICACIONES EN LA GACETA ELECTRÓNICA DEL REGISTRO DE COMERCIO"
+                        style="margin-top:20px;">
+                    <p:panel header="Datos personales del Propietario o Representante Legal:" style="margin-top:10px;"
+                             footer="* Campos Obligatorios">
+                        <p:panelGrid columns="3" columnClasses="ui-grid-col-3,ui-grid-col-4,ui-grid-col-3" layout="grid"
+                                     styleClass="ui-panelgrid-blank">
+
+                            <p:outputLabel style="text-align: right" for="lblNombre" value="Nombre(s):"/>
+                            <p:inputText id="lblNombre" value="#{registroBean.usuarioRegistro.nombreRepresentante}"
+                                         required="true" placeholder="Ingrese su nombre"
+                                         requiredMessage="Debe digitar el nombre"/>
+                            <p:message for="lblNombre"/>
+
+                            <p:outputLabel for="lblApat" value="Apellido Paterno:"/>
+                            <p:inputText id="lblApat" value="#{registroBean.usuarioRegistro.apellidoPaterno}"
+                                         required="false" placeholder="Ingrese su apellido paterno"/>
+                            <p:message for="lblApat"/>
+
+                            <p:outputLabel value="Apellido Materno:" for="lblAmat"/>
+                            <p:inputText id="lblAmat" value="#{registroBean.usuarioRegistro.apellidoMaterno}"
+                                         required="true" placeholder="Ingrese su apellido materno"
+                                         requiredMessage="Debe digitar el Apellido Materno"/>
+                            <p:message for="lblAmat"/>
+
+                            <p:outputLabel value="Tipo de Documento de Identidad:" for="cmbTipoDoc"/>
+                            <p:selectOneMenu id="cmbTipoDoc"
+                                             value="#{registroBean.usuarioRegistro.idTipoIdentificacion}"
+                                             valueChangeListener="#{registroBean.valideTipoId}"
+                                             requiredMessage="Debe seleccionar tipo de documento de identidad"
+                                             required="true">
+                                <p:ajax event="change" rendered="cmbLugExp" update="cmbLugExp"/>
+                                <f:selectItem itemLabel="Seleccione el Tipo de Documento" itemValue=""/>
+                                <f:selectItems var="tbTipoDoc" value="#{registroBean.tiposIdentificacion}"
+                                               itemLabel="#{tbTipoDoc.tipoIdentificacion}"
+                                               itemValue="#{tbTipoDoc.idTipoIdentificacion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbTipoDoc"/>
+
+                            <p:outputLabel value="Numero de Documento de Identidad:" for="lblNumDoc"/>
+                            <p:inputText id="lblNumDoc" value="#{registroBean.usuarioRegistro.numeroIdentificacion}"
+                                         required="true" placeholder="Ingrese su numero de identificacion"
+                                         requiredMessage="Debe digitar el numero de documento de identidad"/>
+                            <p:message for="lblNumDoc"/>
+
+                            <p:outputLabel value="Lugar de Expedición:" for="cmbLugExp"/>
+                            <p:selectOneMenu id="cmbLugExp" value="#{registroBean.usuarioRegistro.idLugarExpedicion}"
+                                             required="#{registroBean.reqOrgId}" disabled="#{!registroBean.reqOrgId}"
+                                             requiredMessage="Debe seleccionar la extensión del documento de identidad">>
+                                <f:selectItem itemLabel="Seleccione el lugar de expedición" itemValue=""/>
+                                <f:selectItems var="tbLugExp" value="#{registroBean.lugarExp}"
+                                               itemLabel="#{tbLugExp.lugarExpedicion}"
+                                               itemValue="#{tbLugExp.idLugarExpedicion}"/>
+                            </p:selectOneMenu>
+                            <p:message for="cmbLugExp"/>
+
+
+                        </p:panelGrid>
+                    </p:panel>
+                    <h:form id="updMat">
+                        <p:panel id="pnEmpNueva" header="Datos de la Empresa:" style="margin-top:10px;">
+                            <p:panelGrid columns="4"
+                                         columnClasses="ui-grid-col-3,ui-grid-col-4,ui-grid-col-1,ui-grid-col-2"
+                                         layout="grid" styleClass="ui-panelgrid-blank">
+
+                                <p:outputLabel id="lblMat" value="Digite el número de Matrícula:" for="txtMatricula"/>
+                                <p:inputText id="txtMatricula" value="#{registroBean.txtMatricula}"
+                                             required="true" placeholder="Digite su numero de matrícula"
+                                             requiredMessage="Debe digitar el número de matrícula"
+                                             onkeypress="if (event.keyCode == 13) { return false; return false; }">
+                                    <!--p:ajax event="blur" action="#{registroBean.buscaMatriculaWS()}"
+                                            update="txtRazonReg txtMatricula txtMailNotif" process="@form:updMat"/-->
+                                    <p:ajax event="blur" listener="#{registroBean.buscaMatriculaWS()}"
+                                            update="txtRazonReg txtMatricula txtMailNotif" process="@form:updMat"/>
+                                </p:inputText>
+                                <p:commandButton id="frmBusca" action="#{registroBean.buscaMatriculaWS()}"
+                                                 update="txtRazonReg txtMatricula txtMailNotif" process="@form:updMat"
+                                                 icon="ui-icon-circle-zoomin"/>
+                                <p:message for="txtMatricula"/>
+
+                                <h:outputText value="Nombre/Razon Social/Denominacion:"/>
+                                <p:inputText id="txtRazonReg" value="#{registroBean.usuarioRegistro.sociedadConstituye}" readonly="true"/>
+                                <p/>
+                                <p:message for="txtRazonReg"/>
+
+                                <h:outputText value="Correo electronico registrado para el envío del usuario:"/>
+                                <p:inputText id="txtMailNotif" value="${registroBean.correoMask}" readonly="true"
+                                             style="color: #056B93"/>
+                                <p/>
+                                <p:message for="txtMailNotif"/>
+                            </p:panelGrid>
+                        </p:panel>
+                    </h:form>
+                    <p:panel header="Aceptación:" style="margin-top:10px">
+                        <div align="center"><p:captcha label="Captcha"
+                                                       requiredMessage="Debe marcar la opción de verificacion"
+                                                       language="es"/></div>
+                        <p:panelGrid columns="1" columnClasses="ui-grid-col-12" layout="grid"
+                                     styleClass="ui-panelgrid-blank" style="text-align: center">
+                            <h:outputText
+                                    value="He leido todos los terminos y acepto crear una cuenta en la Gaceta Electrónica del Registro de Comercio"/>
+                            <p:commandButton id="btnCreaCuenta" value="Acepto todos los términos y condiciones"
+                                             style="width:400px" action="#{registroBean.registrarSolicitud()}"
+                                             update="regCuenta"/>
+                        </p:panelGrid>
+                    </p:panel>
+                    <p:panel header="Términos y Condiciones" style="margin-top:10px">
+
+                    </p:panel>
+
+                </p:panel>
+            </p:panelGrid>
+
+        </div>
+    </h:form>
+    <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+    <h:outputStylesheet name="css/layout-blue-grey.css" library="ultima-layout"/>
+</h:body>
+</html>

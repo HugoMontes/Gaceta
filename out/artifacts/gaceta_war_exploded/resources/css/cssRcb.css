@@ -1,0 +1,286 @@
+body {
+    background-color: #ffffff;
+    font-size: 0.8em;
+    font-family:  "Helvetica",  "Arial";
+    color: #000000;
+    margin: 5px;
+    width: auto;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ddd;
+}
+
+
+h1 {
+    font-family: "Helvetica",  "Arial";
+    border-bottom: 1px solid #AFAFAF;
+    font-size:  12px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: #D20005;
+}
+
+
+a:link, a:visited {
+    color: #e30421;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+    color: #e30421;
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+.ui-datatable table {
+    border-collapse:collapse;
+    width: 100%;
+    font-size: 1em;
+}
+
+
+.linkSesion{
+    color: #6f6f6e;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.txtLabel{
+    color: #000000;
+    font-weight: bold;
+}
+
+.txtValor{
+    color: #000000;
+    font-weight: normal;
+}
+
+
+.txtOpciones{
+    color: #ffffff;
+    font-size: 0.5em;
+    font-weight: lighter;
+}
+
+.txtOpcionesTitulo{
+    color: #000000;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.txtPublicacion{
+    text-align:left;
+    font-size: 0.8em;
+    background: #ffffff;
+    font-family: "Helvetica", "Arial";
+    font-weight: normal;
+    alignment: left;
+}
+
+.txtPublicacionResumen{
+    text-align:left;
+    font-size: 0.6em;
+    background: #ffffff;
+    font-family: "Helvetica", "Arial";
+    font-weight: normal;
+}
+
+.txtPublicacionTitulo{
+    text-align:left;
+    font-size: 2em;
+    color: #e30421;
+    font-family: "Helvetica", "Arial";
+    font-weight: bold;
+}
+
+.txtPublicacionDetalleLabel{
+    text-align:left;
+    font-size: 1em;
+    font-family: "Helvetica", "Arial";
+    font-weight: bold;
+}
+
+.txtPublicacionDetalle{
+    text-align:left;
+    font-size: 1em;
+    font-family: "Helvetica", "Arial";
+
+}
+
+
+
+.linkPublicacion{
+    color: #6f6f6e;
+    text-align:left;
+    font-size: 0.6em;
+    background: #ffffff;
+    font-family: "Helvetica", "Arial";
+    font-weight: bold;
+}
+
+/*Cabecera*/
+
+#wrapper {
+    margin: 0 auto;
+    width: 1000px;
+    background-position:  center center;
+    background-repeat: no-repeat;
+    height: 188px;
+}
+
+#headerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+#headerw {
+    background-position:  center center;
+    background-repeat: no-repeat;
+    background: #FFFFFF url(../../resources/libimg/banner.png) 100%100%no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 180px;
+    border-radius: 3px;
+    margin: 3px;
+    overflow: hidden;
+    align-content: center;
+    padding: 12px;
+}
+
+#contentwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+}
+
+#content {
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #ebebeb;
+    margin: 5px;
+}
+
+#footerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    clear: both;
+}
+
+#footer {
+    height: 40px;
+    background: #eb521f;
+    border-radius: 10px;
+    border: 1px solid #1feb52;
+    margin: 5px;
+}
+
+
+/*Estilo del menu dek header*/
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    color: #000000;
+}
+#cssmenu {
+    border-bottom: 1px solid #e30421;
+    padding: 0 5px;
+    width: auto;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+#cssmenu:after{
+    color: #000000;
+}
+#cssmenu ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    color: #000000;
+}
+#cssmenu ul li {
+    display: inline-block;
+}
+#cssmenu.align-right ul li {
+    float: right;
+}
+#cssmenu.align-center ul {
+    text-align: center;
+}
+#cssmenu ul li a {
+    font-size: 16px;
+    padding: 13px;
+    text-decoration: none;
+    color: #000000;
+}
+#cssmenu ul li:hover a {
+    color: #e30421;
+}
+#cssmenu ul li a:hover{
+    color: #e30421;
+}
+#cssmenu ul li.active a {
+    color: #e30421;
+}
+@media all and (max-width: 640px) {
+    #cssmenu {
+        padding: 0;
+        border-radius: 0;
+        border: 0;
+    }
+    #cssmenu ul li,
+    #cssmenu.align-center,
+    #cssmenu.align-right {
+        display: block;
+    }
+}
+
+
+.navigation{
+    width: 15em;
+    right: -15em;
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    height: 10000%;
+    background-color: #000;
+}
+
+@media only screen and (min-width: 37.5em){
+    .navigation{
+        max-height: inherit;
+        position: relative;
+        right: inherit;
+        width: auto;
+        background: transparent;
+    }
+}
+
+
+

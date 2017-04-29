@@ -1,0 +1,6 @@
+.ui-menuitem-icon, .ui-icon, .ui-icon-comment{
+    position: absolute;
+}
+.ui-menuitem-text{
+    margin-left: 30px;
+}

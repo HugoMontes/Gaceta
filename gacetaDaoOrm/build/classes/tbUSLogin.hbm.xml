@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="bo.gaceta.rcb.modelo">
+        <class name="tbUSLogin" table="tbuslogin" >
+        <id name="idLoginEmpresa" column="idLoginEmpresa" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property name="idMatriculaAsociada" column="idMatriculaAsociada" type="string"/>
+        <property name="idTipoSocietario" column="idTipoSocietario" type="int"/>
+        <property name="correoElectronico" column="correoElectronico" type="string"/>
+        <property name="numeroCelular" column="numeroCelular" type="string"/>
+        <property name="nombreRepresentante" column="nombreRepresentante" type="string"/>
+        <property name="apellidoPaterno" column="apellidoPaterno" type="string"/>
+        <property name="apellidoMaterno" column="apellidoMaterno" type="string"/>
+        <property name="idTipoIdentificacion" column="idTipoIdentificacion" type="int"/>
+        <property name="numeroIdentificacion" column="numeroIdentificacion" type="string"/>
+        <property name="idLugarExpedicion" column="idLugarExpedicion" type="int"/>
+        <property name="tipoVinculacion" column="tipoVinculacion" type="string"/>
+        <property name="claveIngreso" column="claveIngreso" type="string"/>
+        <property name="fechaSolicitud" type="timestamp" column="fechaSolicitud"/>
+        <property name="fechaAlta" type="timestamp" column="fechaAlta"/>
+        <property name="fechaClaveIngreso" type="timestamp" column="fechaClaveIngreso"/>
+        <property name="sociedadConstituye" column="sociedadConstituye" type="string"/>
+        <property name="fecUltimaPublicacion" type="date" column="fecUltimaPublicacion"/>
+        <property name="ctrEstadoCuenta" column="ctrEstadoCuenta" type="string"/>
+    </class>
+</hibernate-mapping>
